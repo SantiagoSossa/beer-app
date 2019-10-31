@@ -5,7 +5,6 @@ import beers from "../../assets/beers.json";
 
 //Components
 import NavLanding from "./NavLanding";
-import app from "../Backend/Base";
 
 export default class Landing extends Component {
   state = {
