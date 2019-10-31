@@ -1,9 +1,178 @@
 @include mobile {
+  .navLandingDesktop{
+    display: none;
+  }
+  .navLandingMobile {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    background: $bg-color-dark;
+    padding: 15px;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    @include box-shadow;
+    @include transition;
+
+    #{&}__mainTitle {
+      position: relative;
+
+      i {
+        color: $link-color;
+        font-size: 3vh;
+        left: 5%;
+        position: absolute;
+        transform: translateY(5px);
+      }
+      .brandMainTitleMobile {
+        text-decoration: none;
+        font-size: 4vh;
+        font-weight: bold;
+      }
+    }
+
+    #{&}__side {
+      position: fixed;
+      z-index: 300;
+      width: 60%;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      background: $font-color-dark;
+      box-shadow: 0 5px 10px -10px rgba(0,0,0,0.3);
+      padding: 20px 0px;
+      text-align: left;
+      @include transition;
+
+      a.brand{
+        box-shadow: 0 8px 10px -10px rgba(0,0,0,0.5);
+        padding-bottom: 10px;
+        display: block;
+        margin: 30px 0;
+        color: $link-color;
+        text-align: center;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .pill{
+      text-align: center;
+    }
+
+    li {
+      list-style: none;
+      display: block;
+      margin: 30px 20px;
+    }
+  
+  }
+
+  .headerLanding {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 20%;
+    background: $bg-color-dark;
+    overflow: hidden;
+
+    #{&}__right {
+      padding: 0 10%;
+      .title {
+        font-size: 8vh;
+      }
+    }
+
+    #{&}__left {
+      &-beerContainer {
+        height: 70vh;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        img {
+          display: block;
+          margin: auto;
+          width: auto;
+          height: 60vh;
+        }
+
+        .shadowOfCurrentImage {
+          position: absolute;
+          height: 40px;
+          width: 100%;
+          overflow: hidden;
+          transform: translateY(-10px);
+          z-index: -1;
+
+          img{
+            transform: translateY(-10px) rotate(180deg);
+            mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 9%);
+          }
+        }
+      }
+    }
+  }
+
+  .mainLanding{
+    text-align: center;
+    background: $primary-color;
+    min-height: 100vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+    .title{
+      color: $secondary-color;
+      font-size: 10vh;
+      text-shadow: 3px 3px 0 rgba($secondary-color,.5);;
+    }
+
+    #howItWorks{
+
+      .card {
+        background: $bg-color;
+      }
+      img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        display: block;
+        margin: 0px auto 20px auto;
+      }
+      .description{
+
+      }
+    }
+
+  }
+
+  .footerLanding{
+    background:$bg-color-dark;
+    color: white;
+    padding: 5%;
+
+    div.col-12{
+      padding:30px;
+    }
+
+    .social {
+      justify-content: center;
+      display: flex;
+      i{
+        font-size: 4vh;
+        margin-right: 30px;
+      }
+    }
+  }
 }
 
 @include desktop {
-  #navLanding {
-    display: flexbox;
+  .navLandingMobile{
+    display: none;
+  }
+  .navLandingDesktop {
+    display: flex;
     align-content: center;
     position: fixed;
     z-index: 100;
@@ -11,6 +180,7 @@
     padding: 20px;
     width: 100%;
     top: 0;
+    font-weight: bold;
     @include box-shadow;
 
     a {
@@ -23,15 +193,14 @@
     }
 
     .ghostLi{
-      width: 70%;
+      display: inline-block;
+      width: 60%;
     }
     
   }
 
   .headerLanding {
-    height: 100vh;
     min-height: 100vh;
-    max-height: 100vh;
     width: 100%;
     padding-top: 10%;
     background: $bg-color-dark;

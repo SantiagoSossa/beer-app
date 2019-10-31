@@ -6,7 +6,6 @@ import 'firebase/database';
 import "firebase/auth";
 
 const app = firebase.initializeApp(firebaseConfig);
-console.log("firebase",app);
 
 export default class Server extends Component {
 
@@ -23,7 +22,6 @@ export default class Server extends Component {
     }
 
     render() {
-        
         return(
             <div className="" id="">
                 <button onClick={this.sendData()}>Send</button>
