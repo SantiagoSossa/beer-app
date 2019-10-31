@@ -1,8 +1,10 @@
 //Dependencies
 import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
 
 //Components
 import NavLanding from "./NavLanding";
+import app from "../Backend/Base";
 
 export default class Landing extends Component {
   state = {};
@@ -27,7 +29,9 @@ export default class Landing extends Component {
                       <div className="text text-medium">
                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, repellat nihil laudantium fuga animi quibusdam quasi placeat nostrum totam veritatis.
                       </div>
-                      <button class="btn btn-big btn-primary btn-rounded btn-shadow-hover">Register</button>
+                      <Link  to="/signup">
+                        <button className="btn btn-big btn-primary btn-rounded btn-shadow-hover">Register</button>
+                      </Link>
                   </div>
               </div>
             </div>

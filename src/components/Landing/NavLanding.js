@@ -12,8 +12,8 @@ export default function NavLanding(props) {
           <Link to="/about">
             <li className=" ">About</li>
           </Link>
-          <Link  to="/login">
-            <li className="pill shadow">Login</li>
+          <Link  to="/dashboard">
+            <li className="pill shadow">Go to dashboard</li>
           </Link>
         </ul>
       </div>
