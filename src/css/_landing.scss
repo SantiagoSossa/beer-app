@@ -1,0 +1,47 @@
+@include mobile {
+}
+
+@include desktop {
+  #navLanding {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    background: $bg-color-dark;
+    padding: 20px;
+    width: 100%;
+    top: 0;
+    @include box-shadow;
+
+    a {
+      margin: 0 20px;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+  }
+
+  .headerLanding {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 10%;
+    background: $bg-color-dark;
+
+    #{&}__right {
+      padding: 0 10%;
+      .title {
+        font-size: 13vh;
+      }
+    }
+
+    #{&}__left {
+      &-beerContainer {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

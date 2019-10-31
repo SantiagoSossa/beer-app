@@ -1,0 +1,62 @@
+/*
+    Extrict Order
+        1. Resets
+        2. Mixins
+        3. Varibales
+        4. Up to you 
+*/
+
+@import 'resets';
+@import 'mixins';
+@import 'variables';
+@import 'texts';
+
+@import 'landing';
+
+
+/*
+    GENERAL
+*/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+}
+
+.red{
+    background: red;
+    color:white;
+}
+.blue{
+    background: blue;
+    color:white;
+}
+
+a {
+    color: $link-color;
+    @include transition;
+
+    &:hover{
+        opacity: 0.7;
+    }
+}
+
+body {
+    background: $bg-color;
+}
+
+
+
+@include mobile {
+    .container{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@include desktop {
+    .container{
+        width: 85%;
+        margin: 0 auto;
+    }
+}

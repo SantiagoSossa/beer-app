@@ -1,0 +1,35 @@
+.title {
+  color: $primary-header-color;
+  font-size: 5vh;
+  font-weight: bold;
+  margin-bottom: $margin-big;
+  line-height: 90%;
+
+  &-big {
+    font-size: 8vh;
+  }
+}
+
+// .subtitle{
+
+// }
+
+.text {
+  color: $font-color;
+  margin-top: $margin-small;
+  margin-bottom: $margin-small;
+
+  &-normal {
+    font-size: 1rem;
+  }
+
+  &-medium{
+      font-size:1.2rem;
+  }
+
+  &-big {
+    font-size: 1.3rem;
+    margin-top: $margin;
+    margin-bottom: $margin;
+  }
+}
