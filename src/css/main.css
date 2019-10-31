@@ -412,6 +412,273 @@ input::placeholder, textarea::placeholder {
 }
 
 /*
+    PADDING
+*/
+.p-auto {
+  padding: auto;
+}
+
+.pl-auto {
+  padding-left: auto;
+}
+
+.pl-1 {
+  padding-left: 10%;
+}
+
+.pl-2 {
+  padding-left: 20%;
+}
+
+.pl-3 {
+  padding-left: 30%;
+}
+
+.pl-4 {
+  padding-left: 40%;
+}
+
+.pl-5 {
+  padding-left: 50%;
+}
+
+.pl-6 {
+  padding-left: 60%;
+}
+
+.pl-7 {
+  padding-left: 70%;
+}
+
+.pl-8 {
+  padding-left: 80%;
+}
+
+.pl-9 {
+  padding-left: 90%;
+}
+
+.pr-auto {
+  padding-right: auto;
+}
+
+.pr-1 {
+  padding-right: 10%;
+}
+
+.pr-2 {
+  padding-right: 20%;
+}
+
+.pr-3 {
+  padding-right: 30%;
+}
+
+.pr-4 {
+  padding-right: 40%;
+}
+
+.pr-5 {
+  padding-right: 50%;
+}
+
+.pr-6 {
+  padding-right: 60%;
+}
+
+.pr-7 {
+  padding-right: 70%;
+}
+
+.pr-8 {
+  padding-right: 80%;
+}
+
+.pr-9 {
+  padding-right: 90%;
+}
+
+.pt-auto {
+  padding-top: auto;
+}
+
+.pt-1 {
+  padding-top: 10%;
+}
+
+.pt-2 {
+  padding-top: 20%;
+}
+
+.pt-3 {
+  padding-top: 30%;
+}
+
+.pt-4 {
+  padding-top: 40%;
+}
+
+.pt-5 {
+  padding-top: 50%;
+}
+
+.pt-6 {
+  padding-top: 60%;
+}
+
+.pt-7 {
+  padding-top: 70%;
+}
+
+.pt-8 {
+  padding-top: 80%;
+}
+
+.pt-9 {
+  padding-top: 90%;
+}
+
+.pb-auto {
+  padding-bottom: auto;
+}
+
+.pb-1 {
+  padding-bottom: 10%;
+}
+
+.pb-2 {
+  padding-bottom: 20%;
+}
+
+.pb-3 {
+  padding-bottom: 30%;
+}
+
+.pb-4 {
+  padding-bottom: 40%;
+}
+
+.pb-5 {
+  padding-bottom: 50%;
+}
+
+.pb-6 {
+  padding-bottom: 60%;
+}
+
+.pb-7 {
+  padding-bottom: 70%;
+}
+
+.pb-8 {
+  padding-bottom: 80%;
+}
+
+.pb-9 {
+  padding-bottom: 90%;
+}
+
+.py-auto {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.py-1 {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.py-2 {
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.py-3 {
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
+.py-4 {
+  padding-top: 40%;
+  padding-bottom: 40%;
+}
+
+.py-5 {
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+
+.py-6 {
+  padding-top: 60%;
+  padding-bottom: 60%;
+}
+
+.py-7 {
+  padding-top: 70%;
+  padding-bottom: 70%;
+}
+
+.py-8 {
+  padding-top: 80%;
+  padding-bottom: 80%;
+}
+
+.py-9 {
+  padding-top: 90%;
+  padding-bottom: 90%;
+}
+
+.px-auto {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.px-1 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.px-2 {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.px-3 {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.px-4 {
+  padding-left: 40%;
+  padding-right: 40%;
+}
+
+.px-5 {
+  padding-left: 50%;
+  padding-right: 50%;
+}
+
+.px-6 {
+  padding-left: 60%;
+  padding-right: 60%;
+}
+
+.px-7 {
+  padding-left: 70%;
+  padding-right: 70%;
+}
+
+.px-8 {
+  padding-left: 80%;
+  padding-right: 80%;
+}
+
+.px-9 {
+  padding-left: 90%;
+  padding-right: 90%;
+}
+
+/*
     FLOAT
 */
 .floatRight {
@@ -607,7 +874,9 @@ input::placeholder, textarea::placeholder {
 
 @media (min-width: 768px) {
   #navLanding {
-    display: block;
+    display: flexbox;
+    -ms-flex-line-pack: center;
+        align-content: center;
     position: fixed;
     z-index: 100;
     background: #1B1B1B;
@@ -624,11 +893,17 @@ input::placeholder, textarea::placeholder {
     list-style: none;
     display: inline-block;
   }
+  #navLanding .ghostLi {
+    width: 70%;
+  }
   .headerLanding {
+    height: 100vh;
     min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     padding-top: 10%;
     background: #1B1B1B;
+    overflow: hidden;
   }
   .headerLanding .headerLanding__right {
     padding: 0 10%;
@@ -636,9 +911,53 @@ input::placeholder, textarea::placeholder {
   .headerLanding .headerLanding__right .title {
     font-size: 13vh;
   }
-  .headerLanding .headerLanding__left-beerContainer img {
+  .headerLanding .headerLanding__left-beerContainer {
+    height: 70vh;
     width: 100%;
-    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .headerLanding .headerLanding__left-beerContainer img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 60vh;
+  }
+  .headerLanding .headerLanding__left-beerContainer .shadowOfCurrentImage {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    z-index: -1;
+  }
+  .headerLanding .headerLanding__left-beerContainer .shadowOfCurrentImage img {
+    -webkit-transform: translateY(-10px) rotate(180deg);
+            transform: translateY(-10px) rotate(180deg);
+    -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(12%, rgba(0, 0, 0, 0)));
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 12%);
+            mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), color-stop(12%, rgba(0, 0, 0, 0)));
+            mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 12%);
+  }
+  .mainLanding {
+    text-align: center;
+    background: #FFE7D0;
+    min-height: 100vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .mainLanding .title {
+    color: #323232;
+    font-size: 10vh;
+    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
+  }
+  .mainLanding #howItWorks img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
   }
 }
 
