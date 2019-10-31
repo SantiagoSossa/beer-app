@@ -3,7 +3,8 @@
 
 @include desktop {
   #navLanding {
-    display: block;
+    display: flexbox;
+    align-content: center;
     position: fixed;
     z-index: 100;
     background: $bg-color-dark;
@@ -20,13 +21,21 @@
       list-style: none;
       display: inline-block;
     }
+
+    .ghostLi{
+      width: 70%;
+    }
+    
   }
 
   .headerLanding {
+    height: 100vh;
     min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     padding-top: 10%;
     background: $bg-color-dark;
+    overflow: hidden;
 
     #{&}__right {
       padding: 0 10%;
@@ -37,11 +46,59 @@
 
     #{&}__left {
       &-beerContainer {
+        height: 70vh;
+        width: 100%;
+        position: relative;
+        z-index: 1;
         img {
+          display: block;
+          margin: auto;
+          width: auto;
+          height: 60vh;
+        }
+
+        .shadowOfCurrentImage {
+          position: absolute;
+          height: 40px;
           width: 100%;
-          height: auto;
+          overflow: hidden;
+          transform: translateY(-10px);
+          z-index: -1;
+
+          img{
+            transform: translateY(-10px) rotate(180deg);
+            mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 12%);
+          }
         }
       }
     }
+  }
+
+  .mainLanding{
+    text-align: center;
+    background: $primary-color;
+    min-height: 100vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+    .title{
+      color: $secondary-color;
+      font-size: 10vh;
+      text-shadow: 3px 3px 0 rgba($secondary-color,.5);;
+    }
+
+    #howItWorks{
+      img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        display: block;
+        margin: 20px auto;
+      }
+      .description{
+
+      }
+    }
+
   }
 }

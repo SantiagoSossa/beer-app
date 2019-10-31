@@ -9,10 +9,11 @@ export default function NavLanding(props) {
           <Link className="brand" to="/">
             <li>Home</li>
           </Link>
-          <Link to="/about">
+          <li className="ghostLi"></li>
+          <Link to="#about">
             <li className=" ">About</li>
           </Link>
-          <Link  to="/login">
+          <Link to="/login">
             <li className="pill shadow">Login</li>
           </Link>
         </ul>
