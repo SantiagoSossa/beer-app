@@ -2,17 +2,26 @@
   color: $primary-header-color;
   font-size: 5vh;
   font-weight: bold;
-  margin-bottom: $margin-big;
+  margin-bottom: $margin;
   line-height: 90%;
 
   &-big {
     font-size: 8vh;
+    margin-bottom: $margin-big;
   }
 }
 
-// .subtitle{
+.subtitle{
+  color: $primary-header-color;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: $margin-big;
+  line-height: 95%;
 
-// }
+  &-big {
+    font-size: 5vh;
+  }
+}
 
 .text {
   color: $font-color;

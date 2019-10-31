@@ -1,0 +1,115 @@
+@include mobile {
+    .signUp{
+
+        min-height: 100vh;
+
+        #{&}__left{
+            min-height: 100vh;
+            padding-top: 20%;
+            padding-bottom: 10%;
+
+            a.noStyle{
+                color: $link-color;
+                font-size: 5vh;
+            }
+
+            .title{
+                color: $font-color-dark;
+            }
+
+            .subtitle {
+                color: lighten($link-color,15%);
+            }
+
+            form {
+                display: block;
+                margin: auto;
+                width: 80%;
+            }
+        }
+
+        #{&}__right{
+            background: $link-color;
+            color: white;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            flex-flow: column wrap;
+            padding: 12% 10%;
+            
+            .phrase{
+                font-size: 5vh;
+                font-weight: bold;
+                text-shadow: 4px 4px 0  $font-color-dark;
+            }
+
+            .social{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-top: 20%;
+
+                i{
+                    font-size: 3vh;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+@include desktop{
+    .signUp{
+
+        min-height: 100vh;
+
+        #{&}__left{
+            min-height: 100vh;
+            padding-top: 6%;
+            padding-bottom: 10%;
+
+            a.noStyle{
+                color: $link-color;
+                font-size: 5vh;
+            }
+
+            .title{
+                color: $font-color-dark;
+            }
+
+            form {
+                display: block;
+                margin: auto;
+                width: 55%;
+            }
+        }
+
+        #{&}__right{
+            background: $link-color;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+            padding: 0% 10%;
+            
+            .phrase{
+                font-size: 10vh;
+                font-weight: bold;
+                text-shadow: 4px 4px 0  $font-color-dark;
+            }
+
+            .social{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-top: 30%;
+
+                i{
+                    font-size: 3vh;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
