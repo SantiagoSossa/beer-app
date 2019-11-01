@@ -29,21 +29,27 @@ export default class AddBeer extends Component {
 
     render() {
         return(
-            <div className="" id="">
+            <div className="addBeer" id="">
                 <form onSubmit={this.addNewBeer}>
+                    <div className="form-group">
                     <label>
                         Name
-                        <input type="text" name="name" id="" placeholder="Beer Name"/>
+                        <input className="form-control" type="text" name="name" id="" placeholder="Beer Name"/>
                     </label>
+                    </div>
+                    <div className="form-group">
                     <label>
                         Country
-                        <input type="text" name="country" id="" placeholder="Beer Country"/>
+                        <input className="form-control" type="text" name="country" id="" placeholder="Beer Country"/>
                     </label>
+                    </div>
+                    <div className="form-group">
                     <label>
                         Alcohol
-                        <input type="text" name="alcohol" id="" placeholder="Beer Acohol %"/>
+                        <input className="form-control" type="text" name="alcohol" id="" placeholder="Beer Acohol %"/>
                     </label>
-                    <button type="submit">Add</button>
+                    </div>
+                    <button type="submit" className="btn btn-big btn-primary btn-rounded btn-shadow-hover">Add</button>
                 </form>
             </div>
         )

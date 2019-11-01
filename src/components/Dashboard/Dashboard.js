@@ -39,10 +39,20 @@ export default class Dashboard extends Component {
             });
         }
         return(
-            <div className="" id="">
-                <AddBeer/>
-                {beers}
-                <button onClick={this.logout} className="btn btn-big btn-primary btn-rounded btn-shadow-hover">Logout</button>
+            <div className="dashboard" id="">
+                <div className="sideContainer">
+                    <h1>dashboard</h1>
+                    <div className="beersContainer">
+                        {beers}
+                    </div>
+                </div>
+                <div className="sideInfo">
+                    <div className="userInfo">
+                        {firebase.auth().currentUser.email}
+                    </div>
+                    <AddBeer/>
+                    <button onClick={this.logout} className="btn btn-big btn-primary btn-rounded btn-shadow-hover">Logout</button>
+                </div>
             </div>
         )
     }

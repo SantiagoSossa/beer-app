@@ -1522,6 +1522,96 @@ form.pretty button {
   }
 }
 
+@media (min-width: 768px) {
+  .dashboard {
+    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    height: auto;
+  }
+  .sideContainer {
+    width: 70%;
+    border: 1px solid blue;
+  }
+  .sideContainer .beersContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .sideContainer .beersContainer .beer {
+    border: 1px solid purple;
+    margin: 5%;
+    width: 220px;
+    height: 250px;
+    text-align: center;
+  }
+  .sideInfo {
+    width: 30%;
+    border: 1px solid green;
+    text-align: center;
+  }
+  .sideInfo .userInfo {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+  }
+  .sideInfo .addBeer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .sideInfo .addBeer .form-group {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .sideInfo .addBeer .form-group label {
+    display: block;
+    color: #212529;
+  }
+  .sideInfo .addBeer .form-group ::-webkit-input-placeholder {
+    color: #6c757d;
+  }
+  .sideInfo .addBeer .form-group :-ms-input-placeholder {
+    color: #6c757d;
+  }
+  .sideInfo .addBeer .form-group ::-ms-input-placeholder {
+    color: #6c757d;
+  }
+  .sideInfo .addBeer .form-group ::placeholder {
+    color: #6c757d;
+  }
+  .sideInfo .addBeer .form-group input.form-control {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  .sideInfo .addBeer .form-group input.form-control:focus {
+    -webkit-box-shadow: 0 0 0px 3px #bfdeff;
+            box-shadow: 0 0 0px 3px #bfdeff;
+    border: 1px solid #80bdff;
+  }
+}
+
 /*
     GENERAL
 */
