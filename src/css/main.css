@@ -1524,19 +1524,12 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .dashboard {
-    border: 1px solid red;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
     height: auto;
   }
   .sideContainer {
-    width: 70%;
-    border: 1px solid blue;
+    width: 75%;
+    float: right;
+    background: #1B1B1B;
   }
   .sideContainer .beersContainer {
     display: -webkit-box;
@@ -1550,21 +1543,52 @@ form.pretty button {
         flex-wrap: wrap;
   }
   .sideContainer .beersContainer .beer {
-    border: 1px solid purple;
+    background: white;
     margin: 5%;
     width: 220px;
     height: 250px;
     text-align: center;
   }
   .sideInfo {
-    width: 30%;
-    border: 1px solid green;
-    text-align: center;
+    width: 25%;
+    background: #1B1B1B;
+    position: fixed;
+    padding: 4% 2% 0 2%;
+    height: 100vh;
+    -webkit-box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  .sideInfo form {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #282828;
+    -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 7px;
+  }
+  .sideInfo form label {
+    color: white;
   }
   .sideInfo .userInfo {
+    color: #FC6E20;
     width: 100%;
-    height: 200px;
     text-align: center;
+    background: white;
+    border-radius: 200px;
+    width: 10vh;
+    height: 10vh;
+    overflow: hidden;
+    margin: 30px auto;
+    text-align: center;
+    -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  }
+  .sideInfo .userInfo .userName {
+    font-weight: bold;
+    font-size: 8vh;
   }
   .sideInfo .addBeer {
     display: -webkit-box;
