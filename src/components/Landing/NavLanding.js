@@ -31,7 +31,7 @@ export default function NavLanding(props) {
           <div className="container">
             <ul>
               <Link className="brand" to="/">
-                <li style={{"fontSize":"4vh"}}>Beer App</li>
+              <li><img src="/images/logo/beer-logoOnly.png" alt=""/></li>
               </Link>
               <li className="ghostLi"></li>
               <Link to="#about">
@@ -48,7 +48,7 @@ export default function NavLanding(props) {
         <div className="container">
           <ul>
             <Link className="brand" to="/">
-              <li>Home</li>
+              <li><img src="/images/logo/beer-logoOnly.png" alt=""/><span>Beer App</span></li>
             </Link>
             <li className="ghostLi"></li>
             <Link to="#about">

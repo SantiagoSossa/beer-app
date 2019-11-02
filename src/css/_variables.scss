@@ -98,7 +98,7 @@ $mobile : 320px;
     padding:1.5vh 3vh;
     cursor: pointer;
     // font-weight: bold;
-    margin-bottom: $margin-small;
+    margin: $margin-small $margin $margin-small 0;
     @include transition;
 
     &-primary{
@@ -106,8 +106,14 @@ $mobile : 320px;
         background: $link-color;
     }
 
+    &-outline-primary{
+        color:$link-color;
+        border: 2px solid $link-color;
+        background: rgba(0,0,0,0);
+    }
+
     &-shadow-hover:hover{
-        box-shadow: 0 7px 10px -3px rgba($link-color,.4);
+        box-shadow: 0 7px 10px -3px rgba($link-color,.3);
     }
 
     &-rounded{
@@ -124,8 +130,15 @@ $mobile : 320px;
     &-big{
         padding:1.7vh 6vh;
         font-size: 1.2rem;
-        margin-top: $margin-big;
-        margin-bottom: $margin-big;
+        @include desktop{
+            margin-top: $margin-big;
+            margin-bottom: $margin-big;
+        }
+
+        @include mobile{
+            margin-top: $margin-small;
+            margin-bottom: $margin;
+        }
     }
 
     &:hover{
