@@ -93,7 +93,7 @@ input::placeholder, textarea::placeholder {
 .pill {
   padding: 10px 20px;
   color: white;
-  background: #FC6E20;
+  background: #FF5B36;
   border-radius: 20px;
   font-weight: 550;
 }
@@ -112,7 +112,7 @@ input::placeholder, textarea::placeholder {
 
 .btn-primary {
   color: white;
-  background: #FC6E20;
+  background: #FF5B36;
 }
 
 .btn-outline-primary {
@@ -122,8 +122,8 @@ input::placeholder, textarea::placeholder {
 }
 
 .btn-shadow-hover:hover {
-  -webkit-box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
-          box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
+  -webkit-box-shadow: 0 7px 10px -3px rgba(255, 91, 54, 0.4);
+          box-shadow: 0 7px 10px -3px rgba(255, 91, 54, 0.4);
 }
 
 .btn-rounded {
@@ -261,7 +261,7 @@ form.pretty button {
 }
 
 .b-black {
-  background: white;
+  background: #fcf5de;
 }
 
 /*
@@ -1033,7 +1033,7 @@ form.pretty button {
 }
 
 .title {
-  color: #FFE7D0;
+  color: #DEE61D;
   font-size: 5vh;
   font-weight: bold;
   margin-bottom: 15px;
@@ -1046,7 +1046,7 @@ form.pretty button {
 }
 
 .subtitle {
-  color: #FFE7D0;
+  color: #DEE61D;
   font-size: 3.5vh;
   font-weight: bold;
   margin-bottom: 40px;
@@ -1058,7 +1058,7 @@ form.pretty button {
 }
 
 .text {
-  color: white;
+  color: #fcf5de;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1085,7 +1085,7 @@ form.pretty button {
     display: block;
     position: fixed;
     z-index: 100;
-    background: #1B1B1B;
+    background: #092A31;
     padding: 15px;
     width: 100%;
     top: 0;
@@ -1099,7 +1099,7 @@ form.pretty button {
     position: relative;
   }
   .navLandingMobile .navLandingMobile__mainTitle i {
-    color: #FC6E20;
+    color: #FF5B36;
     font-size: 3vh;
     left: 5%;
     position: absolute;
@@ -1130,9 +1130,8 @@ form.pretty button {
     -webkit-box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
             box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
     display: block;
-    padding-bottom: 1px;
-    margin: -20px auto 10px auto;
-    color: #FC6E20;
+    margin: 30px 0;
+    color: #FF5B36;
     text-align: center;
     position: relative;
   }
@@ -1160,9 +1159,8 @@ form.pretty button {
   .headerLanding {
     min-height: 100vh;
     width: 100%;
-    padding-top: 30%;
-    padding-bottom: 10%;
-    background: #1B1B1B;
+    padding-top: 20%;
+    background: #092A31;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1306,18 +1304,18 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-    background: #FFE7D0;
+    background: #DEE61D;
     min-height: 100vh;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-    color: #323232;
+    color: #34305E;
     font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
+    text-shadow: 3px 3px 0 rgba(52, 48, 94, 0.5);
   }
   .mainLanding #howItWorks .card {
-    background: white;
+    background: #fcf5de;
   }
   .mainLanding #howItWorks img {
     height: 200px;
@@ -1327,7 +1325,7 @@ form.pretty button {
     margin: 0px auto 20px auto;
   }
   .footerLanding {
-    background: #1B1B1B;
+    background: #092A31;
     color: white;
     padding: 5%;
   }
@@ -1360,8 +1358,8 @@ form.pretty button {
         align-content: center;
     position: fixed;
     z-index: 100;
-    background: #1B1B1B;
-    padding: 25px;
+    background: #092A31;
+    padding: 20px;
     width: 100%;
     top: 0;
     font-weight: bold;
@@ -1405,8 +1403,7 @@ form.pretty button {
     min-height: 100vh;
     width: 100%;
     padding-top: 10%;
-    padding-bottom: 0%;
-    background: #1B1B1B;
+    background: #092A31;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1454,15 +1451,15 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-    background: #FFE7D0;
+    background: #DEE61D;
     min-height: 100vh;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-    color: #323232;
+    color: #34305E;
     font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
+    text-shadow: 3px 3px 0 rgba(52, 48, 94, 0.5);
   }
   .mainLanding #howItWorks img {
     height: 200px;
@@ -1483,14 +1480,14 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-    color: #FC6E20;
+    color: #FF5B36;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
     color: #2E2E2E;
   }
   .signUp .signUp__left .subtitle {
-    color: #fd9f6b;
+    color: #ff9983;
   }
   .signUp .signUp__left form {
     display: block;
@@ -1498,7 +1495,7 @@ form.pretty button {
     width: 80%;
   }
   .signUp .signUp__right {
-    background: #FC6E20;
+    background: #FF5B36;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1549,7 +1546,7 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-    color: #FC6E20;
+    color: #FF5B36;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
@@ -1561,7 +1558,7 @@ form.pretty button {
     width: 55%;
   }
   .signUp .signUp__right {
-    background: #FC6E20;
+    background: #FF5B36;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1603,7 +1600,7 @@ form.pretty button {
 
 @media (min-width: 320px) {
   .login__right {
-    background: #1B1B1B;
+    background: #092A31;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1646,7 +1643,7 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .login__right {
-    color: white;
+    color: #fcf5de;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1678,7 +1675,7 @@ form.pretty button {
         -ms-flex-align: center;
             align-items: center;
     margin-top: 30%;
-    color: #FC6E20;
+    color: #FF5B36;
   }
   .login__right .social i {
     font-size: 3vh;
@@ -1693,7 +1690,7 @@ form.pretty button {
   .sideContainer {
     width: 75%;
     float: right;
-    background: #1B1B1B;
+    background: #DEE61D;
   }
   .sideContainer .beersContainer {
     display: -webkit-box;
@@ -1705,17 +1702,36 @@ form.pretty button {
             flex-flow: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-top: 80px;
   }
   .sideContainer .beersContainer .beer {
-    background: white;
-    margin: 5%;
+    background-color: white;
+    margin: 10% 5%;
     width: 220px;
-    height: 250px;
+    height: 180px;
     text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5%;
+  }
+  .sideContainer .beersContainer .beer .beerPhoto {
+    background-color: #ccc;
+    -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    height: 200px;
+    top: -150px;
+    border-radius: 5%;
+  }
+  .sideContainer .beersContainer .beer .beerInfo {
+    margin-top: 60px;
   }
   .sideInfo {
     width: 25%;
-    background: #1B1B1B;
+    background: #092A31;
     position: fixed;
     padding: 4% 2% 0 2%;
     height: 100vh;
@@ -1727,7 +1743,7 @@ form.pretty button {
     margin: auto;
     width: 100%;
     margin-bottom: 30px;
-    background: #282828;
+    background: #0d3c47;
     -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -1737,7 +1753,7 @@ form.pretty button {
     color: white;
   }
   .sideInfo .userInfo {
-    color: #FC6E20;
+    color: #FF5B36;
     width: 100%;
     text-align: center;
     background: white;
@@ -1841,7 +1857,7 @@ body {
 }
 
 a {
-  color: #FC6E20;
+  color: #FF5B36;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -1851,7 +1867,7 @@ a:hover {
 }
 
 a.noStyle {
-  color: white;
+  color: #fcf5de;
   text-decoration: none;
 }
 
@@ -1860,11 +1876,11 @@ a.noStyle:hover {
 }
 
 body {
-  background: white;
+  background: #fcf5de;
 }
 
 span {
-  color: #FC6E20;
+  color: #FF5B36;
 }
 
 @media (min-width: 320px) {
