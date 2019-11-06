@@ -93,7 +93,7 @@ input::placeholder, textarea::placeholder {
 .pill {
   padding: 10px 20px;
   color: white;
-  background: #FF5B36;
+  background: #FC6E20;
   border-radius: 20px;
   font-weight: 550;
 }
@@ -112,7 +112,7 @@ input::placeholder, textarea::placeholder {
 
 .btn-primary {
   color: white;
-  background: #FF5B36;
+  background: #FC6E20;
 }
 
 .btn-outline-primary {
@@ -122,8 +122,8 @@ input::placeholder, textarea::placeholder {
 }
 
 .btn-shadow-hover:hover {
-  -webkit-box-shadow: 0 7px 10px -3px rgba(255, 91, 54, 0.4);
-          box-shadow: 0 7px 10px -3px rgba(255, 91, 54, 0.4);
+  -webkit-box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
+          box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
 }
 
 .btn-rounded {
@@ -261,7 +261,7 @@ form.pretty button {
 }
 
 .b-black {
-  background: #fcf5de;
+  background: white;
 }
 
 /*
@@ -1033,7 +1033,7 @@ form.pretty button {
 }
 
 .title {
-  color: #DEE61D;
+  color: #FFE7D0;
   font-size: 5vh;
   font-weight: bold;
   margin-bottom: 15px;
@@ -1046,7 +1046,7 @@ form.pretty button {
 }
 
 .subtitle {
-  color: #DEE61D;
+  color: #FFE7D0;
   font-size: 3.5vh;
   font-weight: bold;
   margin-bottom: 40px;
@@ -1058,7 +1058,7 @@ form.pretty button {
 }
 
 .text {
-  color: #fcf5de;
+  color: white;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1085,7 +1085,7 @@ form.pretty button {
     display: block;
     position: fixed;
     z-index: 100;
-    background: #092A31;
+    background: #1B1B1B;
     padding: 15px;
     width: 100%;
     top: 0;
@@ -1099,7 +1099,7 @@ form.pretty button {
     position: relative;
   }
   .navLandingMobile .navLandingMobile__mainTitle i {
-    color: #FF5B36;
+    color: #FC6E20;
     font-size: 3vh;
     left: 5%;
     position: absolute;
@@ -1130,8 +1130,9 @@ form.pretty button {
     -webkit-box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
             box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
     display: block;
-    margin: 30px 0;
-    color: #FF5B36;
+    padding-bottom: 1px;
+    margin: -20px auto 10px auto;
+    color: #FC6E20;
     text-align: center;
     position: relative;
   }
@@ -1159,8 +1160,9 @@ form.pretty button {
   .headerLanding {
     min-height: 100vh;
     width: 100%;
-    padding-top: 20%;
-    background: #092A31;
+    padding-top: 30%;
+    padding-bottom: 10%;
+    background: #1B1B1B;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1304,18 +1306,18 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-    background: #DEE61D;
+    background: #FFE7D0;
     min-height: 100vh;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-    color: #34305E;
+    color: #323232;
     font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(52, 48, 94, 0.5);
+    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
   }
   .mainLanding #howItWorks .card {
-    background: #fcf5de;
+    background: white;
   }
   .mainLanding #howItWorks img {
     height: 200px;
@@ -1325,7 +1327,7 @@ form.pretty button {
     margin: 0px auto 20px auto;
   }
   .footerLanding {
-    background: #092A31;
+    background: #1B1B1B;
     color: white;
     padding: 5%;
   }
@@ -1358,8 +1360,8 @@ form.pretty button {
         align-content: center;
     position: fixed;
     z-index: 100;
-    background: #092A31;
-    padding: 20px;
+    background: #1B1B1B;
+    padding: 25px;
     width: 100%;
     top: 0;
     font-weight: bold;
@@ -1403,7 +1405,8 @@ form.pretty button {
     min-height: 100vh;
     width: 100%;
     padding-top: 10%;
-    background: #092A31;
+    padding-bottom: 0%;
+    background: #1B1B1B;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1451,15 +1454,15 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-    background: #DEE61D;
+    background: #FFE7D0;
     min-height: 100vh;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-    color: #34305E;
+    color: #323232;
     font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(52, 48, 94, 0.5);
+    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
   }
   .mainLanding #howItWorks img {
     height: 200px;
@@ -1480,14 +1483,14 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-    color: #FF5B36;
+    color: #FC6E20;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
     color: #2E2E2E;
   }
   .signUp .signUp__left .subtitle {
-    color: #ff9983;
+    color: #fd9f6b;
   }
   .signUp .signUp__left form {
     display: block;
@@ -1495,7 +1498,7 @@ form.pretty button {
     width: 80%;
   }
   .signUp .signUp__right {
-    background: #FF5B36;
+    background: #FC6E20;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1546,7 +1549,7 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-    color: #FF5B36;
+    color: #FC6E20;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
@@ -1558,7 +1561,7 @@ form.pretty button {
     width: 55%;
   }
   .signUp .signUp__right {
-    background: #FF5B36;
+    background: #FC6E20;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1600,7 +1603,7 @@ form.pretty button {
 
 @media (min-width: 320px) {
   .login__right {
-    background: #092A31;
+    background: #1B1B1B;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1643,7 +1646,7 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .login__right {
-    color: #fcf5de;
+    color: white;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1675,7 +1678,7 @@ form.pretty button {
         -ms-flex-align: center;
             align-items: center;
     margin-top: 30%;
-    color: #FF5B36;
+    color: #FC6E20;
   }
   .login__right .social i {
     font-size: 3vh;
@@ -1685,12 +1688,13 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .dashboard {
-    height: auto;
+    height: 100vh;
   }
   .sideContainer {
     width: 75%;
+    height: 100%;
     float: right;
-    background: #DEE61D;
+    background: #FFE7D0;
   }
   .sideContainer .beersContainer {
     display: -webkit-box;
@@ -1705,12 +1709,22 @@ form.pretty button {
     margin-top: 80px;
   }
   .sideContainer .beersContainer .beer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: white;
-    margin: 10% 5%;
-    width: 220px;
+    margin: 5%;
+    width: 400px;
     height: 180px;
-    text-align: center;
-    position: relative;
     -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
             box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5%;
@@ -1719,19 +1733,33 @@ form.pretty button {
     background-color: #ccc;
     -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 70%;
-    left: 15%;
-    height: 200px;
-    top: -150px;
+    width: 30%;
+    height: 80%;
     border-radius: 5%;
   }
-  .sideContainer .beersContainer .beer .beerInfo {
-    margin-top: 60px;
+  .sideContainer .beersContainer .beer .beerPhoto img {
+    width: 100%;
+    height: 100%;
+  }
+  .sideContainer .beersContainer .beer .beerSide {
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .sideContainer .beersContainer .beer .beerSide .beerTitle h1 {
+    font-size: 2rem;
   }
   .sideInfo {
     width: 25%;
-    background: #092A31;
+    background: #1B1B1B;
     position: fixed;
     padding: 4% 2% 0 2%;
     height: 100vh;
@@ -1743,17 +1771,26 @@ form.pretty button {
     margin: auto;
     width: 100%;
     margin-bottom: 30px;
-    background: #0d3c47;
+    background: #282828;
     -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
     padding: 20px;
     border-radius: 7px;
   }
+  .sideInfo form .rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
   .sideInfo form label {
     color: white;
   }
   .sideInfo .userInfo {
-    color: #FF5B36;
+    color: #FC6E20;
     width: 100%;
     text-align: center;
     background: white;
@@ -1857,7 +1894,7 @@ body {
 }
 
 a {
-  color: #FF5B36;
+  color: #FC6E20;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -1867,7 +1904,7 @@ a:hover {
 }
 
 a.noStyle {
-  color: #fcf5de;
+  color: white;
   text-decoration: none;
 }
 
@@ -1876,11 +1913,11 @@ a.noStyle:hover {
 }
 
 body {
-  background: #fcf5de;
+  background: white;
 }
 
 span {
-  color: #FF5B36;
+  color: #FC6E20;
 }
 
 @media (min-width: 320px) {

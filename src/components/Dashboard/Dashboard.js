@@ -33,14 +33,16 @@ export default class Dashboard extends Component {
     const firstLetter = userName.charAt(0);
     let beers = [];
     if (this.state.beerList) {
-      console.log("inside", this.state.beerList);
-      beers = Object.values(this.state.beerList).map(beer => {
-        console.log("pola", beer.key);
+      console.log("inside", typeof this.state.beerList);
+      beers = Object.values(this.state.beerList).map((beer,i) => {
+        console.log("pola", this.state.beerList[i]);
         return (
           <Beer
             name={beer.name}
             country={beer.country}
             alcohol={beer.alcohol}
+            photo={beer.photo}
+            rating={beer.rating}
           />
         );
       });

@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import 'firebase/database'; 
 import "firebase/auth";
 
+import Rating from './Rating';
 
 export default class AddBeer extends Component {
 
@@ -13,22 +14,31 @@ export default class AddBeer extends Component {
         photo: ''
     }
 
-    addNewBeer = (e) => {
+    addNewBeer = async (e) => {
         e.preventDefault();
         const { name, country, alcohol, photo } = e.target.elements;
+        this.addBeerInfo(name,country,alcohol,await this.addBeerPicture(photo));
+        name.value = '';
+        country.value = '';
+        alcohol.value = '';
+    }
+
+    addBeerInfo = (name, country, alcohol, url) => {
         const db =  firebase.database();
         const beerReference = db.ref('beers/'+firebase.auth().currentUser.uid).push({
             name: name.value,
             country: country.value,
             alcohol: alcohol.value,
-            photo: 'Photo'
+            photo: url
         });
-        const photoUpload = firebase.storage().ref('beer_photos/'+ photo.files[0].name);
-        const prueba = photoUpload.put(photo.files[0]);
-        console.log("la preuba",prueba);
-        name.value = '';
-        country.value = '';
-        alcohol.value = '';
+    }
+
+    addBeerPicture = async (photo) => {
+        console.log("the beer photo",photo,photo.files[0],photo.files[0].name)
+        const photoUpload = await firebase.storage().ref('beer_photos/'+ photo.files[0].name);
+        await photoUpload.put(photo.files[0]);
+        const url = await firebase.storage().ref().child('beer_photos/'+photo.files[0].name).getDownloadURL();
+        return url;
     }
 
     render() {
@@ -51,6 +61,13 @@ export default class AddBeer extends Component {
                     <label style={{"color": "white"}}>
                         Alcohol
                         <input className="form-control" type="text" name="alcohol" id="" placeholder="Beer Acohol %"/>
+                    </label>
+                    </div>
+                    <div className="form-group">
+                    <label style={{"color": "white"}}>
+                        Rating
+                        <Rating/>
+                        {/* <input className="form-control" type="text" name="alcohol" id="" placeholder="Beer Acohol %"/> */}
                     </label>
                     </div>
                     <div className="form-group">
