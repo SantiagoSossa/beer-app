@@ -1778,13 +1778,7 @@ form.pretty button {
     border-radius: 7px;
   }
   .sideInfo form .rating {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
+    border: none;
   }
   .sideInfo form label {
     color: white;
@@ -1822,7 +1816,7 @@ form.pretty button {
   }
   .sideInfo .addBeer .form-group label {
     display: block;
-    color: #212529;
+    color: #6c757d;
   }
   .sideInfo .addBeer .form-group ::-webkit-input-placeholder {
     color: #6c757d;
@@ -1850,6 +1844,47 @@ form.pretty button {
     -webkit-box-shadow: 0 0 0px 3px #bfdeff;
             box-shadow: 0 0 0px 3px #bfdeff;
     border: 1px solid #80bdff;
+  }
+  .star-rating {
+    margin: 50px auto;
+  }
+  .star-rating > fieldset {
+    border: none;
+    display: inline-block;
+  }
+  .star-rating > fieldset:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+  }
+  .star-rating > fieldset:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .05em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    color: #16a085;
+  }
+  .star-rating > fieldset:not(:checked) > label:before {
+    content: '\f006  ';
+  }
+  .star-rating > fieldset:not(:checked) > label:hover,
+  .star-rating > fieldset:not(:checked) > label:hover ~ label {
+    color: #1abc9c;
+    text-shadow: 0 0 3px #1abc9c;
+  }
+  .star-rating > fieldset:not(:checked) > label:hover:before,
+  .star-rating > fieldset:not(:checked) > label:hover ~ label:before {
+    content: '\f005  ';
+  }
+  .star-rating > fieldset > input:checked ~ label:before {
+    content: '\f005  ';
+  }
+  .star-rating > fieldset > label:active {
+    position: relative;
+    top: 2px;
   }
 }
 

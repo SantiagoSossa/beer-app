@@ -3,8 +3,6 @@ import firebase from 'firebase';
 import 'firebase/database'; 
 import "firebase/auth";
 
-import Rating from './Rating';
-
 export default class AddBeer extends Component {
 
     state = {
@@ -16,28 +14,38 @@ export default class AddBeer extends Component {
 
     addNewBeer = async (e) => {
         e.preventDefault();
-        const { name, country, alcohol, photo } = e.target.elements;
-        this.addBeerInfo(name,country,alcohol,await this.addBeerPicture(photo));
+        const { name, country, alcohol, ibu, rating, photo } = e.target.elements;
+        this.addBeerInfo(name,country,alcohol,ibu,rating,await this.addBeerPicture(photo));
         name.value = '';
         country.value = '';
         alcohol.value = '';
+        ibu.value = '';
+
     }
 
-    addBeerInfo = (name, country, alcohol, url) => {
+    addBeerInfo = (name, country, alcohol, ibu, rating, url) => {
         const db =  firebase.database();
         const beerReference = db.ref('beers/'+firebase.auth().currentUser.uid).push({
             name: name.value,
             country: country.value,
             alcohol: alcohol.value,
+            ibu: ibu.value,
+            rating: rating.value,
             photo: url
         });
     }
-
+S
     addBeerPicture = async (photo) => {
-        console.log("the beer photo",photo,photo.files[0],photo.files[0].name)
-        const photoUpload = await firebase.storage().ref('beer_photos/'+ photo.files[0].name);
-        await photoUpload.put(photo.files[0]);
-        const url = await firebase.storage().ref().child('beer_photos/'+photo.files[0].name).getDownloadURL();
+        const user = (firebase.auth().currentUser.uid).toString();
+        const fileName = photo.files[0].name;
+        const fileDate = photo.files[0].lastModified.toString();
+        console.log("test", user+fileDate+fileName);
+        var blob = photo.files[0].slice(0, photo.files[0].size, 'image/png'); 
+        const newFile = new File([blob], user+fileDate+fileName , {type: 'image/png'});
+        const photoUpload = await firebase.storage().ref('beer_photos/'+ newFile.name);
+        await photoUpload.put(newFile);
+        
+        const url = await firebase.storage().ref().child('beer_photos/'+newFile.name).getDownloadURL();
         return url;
     }
 
@@ -65,9 +73,22 @@ export default class AddBeer extends Component {
                     </div>
                     <div className="form-group">
                     <label style={{"color": "white"}}>
+                        IBU
+                        <input className="form-control" type="text" name="ibu" id="" placeholder="Beer IBU"/>
+                    </label>
+                    </div>
+                    <div className="form-group">
+                    <label style={{"color": "white"}}>
+                    <div className="star-rating">
                         Rating
-                        <Rating/>
-                        {/* <input className="form-control" type="text" name="alcohol" id="" placeholder="Beer Acohol %"/> */}
+                        <fieldset>
+                            <input type="radio" id="star1" name="rating" value="1"/><label htmlFor="star5" title="Outstanding">5 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2"/><label htmlFor="star4" title="Very Good">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3"/><label htmlFor="star3" title="Good">3 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4"/><label htmlFor="star2" title="Poor">2 stars</label>
+                            <input type="radio" id="star5" name="rating" value="5"/><label htmlFor="star1" title="Very Poor">1 star</label>
+                        </fieldset>
+                    </div>
                     </label>
                     </div>
                     <div className="form-group">

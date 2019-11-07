@@ -59,8 +59,7 @@ export default class Dashboard extends Component {
           <AddBeer />
           <button
             onClick={this.logout}
-            className="btn btn-block btn-primary rounded btn-shadow-hover"
-          >
+            className="btn btn-block btn-primary rounded btn-shadow-hover">
             Logout
           </button>
         </div>
