@@ -45,6 +45,7 @@ const ListOfBeers = props => {
           name={beer.name}
           country={beer.country}
           alcohol={beer.alcohol}
+          photo={beer.photo}
         />
       ))}{" "}
     </div>

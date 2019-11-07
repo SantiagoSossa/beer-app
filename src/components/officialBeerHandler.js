@@ -8,7 +8,8 @@ const officialBeerHandler = {
       name,
       alcohol,
       country,
-      // photo
+      photo,
+      IBU,
     } = beer;
 
     try {
@@ -19,12 +20,10 @@ const officialBeerHandler = {
           name,
           alcohol,
           country,
-          state: 'Pending'
+          IBU,
+          state: 'Pending',
+          photo
         });
-      // await firebase
-      // .storage()
-      // .ref("requestOfficialBeersPhotos/" + photo.files[0].name)
-      // .photoUpload.put(photo.files[0]);
       return true;
     } catch {
       return false;

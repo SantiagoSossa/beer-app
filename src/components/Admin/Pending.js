@@ -29,7 +29,7 @@ const Pending = props => {
     getData();
   }, []);
 
-  const makeOfficial = async ({ name, country, alcohol, id }) => {
+  const makeOfficial = async ({ name, country, alcohol, id, IBU, photo }) => {
     try {
       await firebase
         .database()
@@ -38,12 +38,21 @@ const Pending = props => {
           name,
           country,
           alcohol,
-          rating: 0
+          IBU,
+          rating: 0,
+          photo
         });
       await firebase
         .database()
         .ref("requestOfficialBeers/" + id)
-        .update({ name, country, alcohol, state: "published" });
+        .update({
+          name,
+          country,
+          alcohol,
+          state: "published",
+          IBU,
+          photo
+        });
       return true;
     } catch {
       return false;
@@ -53,22 +62,22 @@ const Pending = props => {
   let content = isLoading ? (
     <div className="loading">
       <div className="spiner">
-        <div className="circle"></div>
-      </div>
+        <div className="circle"> </div>{" "}
+      </div>{" "}
     </div>
   ) : (
     <div className="listOfRequests">
+      {" "}
       {requestsPending.map(request => (
         <div key={request.name}>
-          <p>{request.name}</p>
-          <p>{request.state}</p>
+          <p> {request.name} </p> <p> {request.state} </p>{" "}
           <button
             onClick={makeOfficial.bind(null, request)}
             className="btn btn-primary rounded btn-shadow-hover">
-            Make Official
-          </button>
+            Make Official{" "}
+          </button>{" "}
         </div>
-      ))}
+      ))}{" "}
     </div>
   );
 
