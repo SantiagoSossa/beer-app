@@ -5,7 +5,7 @@ import { AuthContext } from "./Auth.js";
 import { Link } from "react-router-dom";
 import phrases from "../../assets/phrases";
 
-const Login = ({ history }) => {
+const LoginAdmin = ({ history }) => {
   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
@@ -14,7 +14,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/dashboard");
+        history.push("/admin-dashboard");
       } catch (error) {
         alert(error);
       }
@@ -43,7 +43,7 @@ const Login = ({ history }) => {
                 </Link>
               </div>
               <div className='subtitle'>
-                Welcome Back, please login to your account. <br /> <br />
+                Welcome Back, please login to your admin account. <br /> <br />
                 Login
               </div>
               <div className='form-group'>
@@ -96,4 +96,4 @@ const Login = ({ history }) => {
   );
 };
 
-export default withRouter(Login);
+export default withRouter(LoginAdmin);

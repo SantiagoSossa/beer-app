@@ -1,32 +1,25 @@
-import React, { useCallback, useContext } from "react";
-import { withRouter, Redirect } from "react-router";
-import app from "../Backend/Base";
-import { AuthContext } from "./Auth.js";
+import React, { useCallback } from "react";
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
+import app from "../Backend/Base";
 import phrases from "../../assets/phrases";
 
-const Login = ({ history }) => {
-  const handleLogin = useCallback(
+const SignUpAdmin = ({ history }) => {
+  const handleSignUp = useCallback(
     async event => {
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
         await app
           .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/dashboard");
+          .createUserWithEmailAndPassword(email.value, password.value);
+        history.push("/admin-dashboard");
       } catch (error) {
         alert(error);
       }
     },
     [history]
   );
-
-  const { currentUser } = useContext(AuthContext);
-
-  if (currentUser) {
-    return <Redirect to='/dashboard' />;
-  }
 
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
@@ -35,7 +28,7 @@ const Login = ({ history }) => {
       <div className='row'>
         <div className='col-12 col-md-6 signUp__left'>
           <div className='container'>
-            <form className='pretty' onSubmit={handleLogin}>
+            <form className='pretty' onSubmit={handleSignUp}>
               <div className='title'>
                 We are{" "}
                 <Link to='/' className='noStyle'>
@@ -43,8 +36,9 @@ const Login = ({ history }) => {
                 </Link>
               </div>
               <div className='subtitle'>
-                Welcome Back, please login to your account. <br /> <br />
-                Login
+                Welcome, be an admin at Beer App
+                <br /> <br />
+                SignUp
               </div>
               <div className='form-group'>
                 <label htmlFor='emailSignUp'>
@@ -74,16 +68,16 @@ const Login = ({ history }) => {
               <button
                 className='btn btn-primary rounded btn-block'
                 type='submit'>
-                Login
+                Sign Up
               </button>
               <br />
               <p>
-                Don't have an account? <Link to='/signup'>Click here</Link>
+                Already a member? <Link to='/login'>Click here</Link>
               </p>
             </form>
           </div>
         </div>
-        <div className='col-12 col-md-6 login__right'>
+        <div className='col-12 col-md-6 signUp__right'>
           <div className='phrase'>"{randomPhrase}"</div>
           <div className='social'>
             <i className='fab fa-facebook-square'></i>
@@ -96,4 +90,4 @@ const Login = ({ history }) => {
   );
 };
 
-export default withRouter(Login);
+export default withRouter(SignUpAdmin);

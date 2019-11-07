@@ -1,20 +1,19 @@
-[
-    {
-        "id" : 0,
-        "name" : "Corona",
-        "image" : "/images/beers-cover/corona.png",
-        "country" : "Mexico",
-        "alcoholRate" : "4.6%",
-        "rating" : "4.5",
-        "IBU" : "43"
+[{
+        "id": 0,
+        "name": "Corona",
+        "image": "/images/beers-cover/corona.png",
+        "country": "Mexico",
+        "alcoholRate": "4.6%",
+        "rating": "4.5",
+        "ibu": "43"
     },
     {
-        "id" : 1,
-        "name" : "Heineken",
-        "image" : "/images/beers-cover/heineken.png",
-        "country" : "Germany",
-        "alcoholRate" : "5.0%",
-        "rating" : "4.2",
-        "IBU" : "35"
+        "id": 1,
+        "name": "Heineken",
+        "image": "/images/beers-cover/heineken.png",
+        "country": "Netherlands",
+        "alcoholRate": "5.0%",
+        "rating": "4.2",
+        "ibu": "35"
     }
 ]

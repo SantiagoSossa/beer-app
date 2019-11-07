@@ -1,0 +1,218 @@
+@include mobile {
+  #navAdmin {
+    width: 100%;
+    display: block;
+    top: 0;
+    padding: 0vh 3vh;
+    background: #ccc;
+    height: 7vh;
+    background: rgba(240, 240, 240, 0.2);
+    position: fixed;
+
+    ul {
+      list-style: none;
+      display: inline-block;
+      height: 7vh;
+      a {
+        text-decoration: none;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        color: $font-color-dark;
+        padding: 0 1vh;
+        height: 7vh;
+        font-size: 3vh;
+      }
+
+      .userLiItem {
+        margin-top: 1vh;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $font-color;
+        height: 5vh;
+        width: 5vh;
+        background: $secondary-color;
+        border-radius: 500px;
+      }
+    }
+  }
+
+  #adminDashboard {
+    .sideLeft {
+      width: 20%;
+      background: $bg-color;
+      float: left;
+      height: 100vh;
+      overflow: auto;
+      background: rgba(240, 240, 240, 0.2);
+      position: fixed;
+
+      .brand {
+        padding: 0vh 3vh;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        background: rgba(240, 240, 240, 0.2);
+        height: 7vh;
+        img {
+          width: 9%;
+          height: auto;
+          margin-right: 10px;
+        }
+        a {
+          text-decoration: none;
+          font-size: 3.5vh;
+          font-weight: 500;
+        }
+      }
+
+      .item {
+        padding: 0vh 3vh;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        text-align: left;
+        color: $font-color;
+        font-weight: bold;
+        color: $font-color-dark;
+        @include transition;
+        cursor: pointer;
+
+        i {
+          height: 13px;
+          width: 13px;
+          text-align: center;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background: darken($bg-color, 3%);
+        }
+      }
+      .active {
+        color: #74b9ff;
+        background: white;
+      }
+    }
+
+    .sideRight {
+      width: 80%;
+      float: right;
+      height: 100vh;
+      padding-top: 9vh;
+
+      .adminCardContainer {
+        display: flex;
+        justify-items: left;
+
+        .adminCard {
+          padding: 3vh;
+          cursor: pointer;
+          color: $font-color;
+          background: $secondary-color;
+          font-size: 1.2rem;
+          @include border-radius;
+          @include box-shadow;
+          @include transition;
+
+          &:hover {
+            box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .title {
+        color: lighten($font-color-dark, 10%);
+        margin-bottom: 20px;
+        padding: 0 3vh;
+      }
+
+      .active {
+        color: #0984e3;
+      }
+
+      .navSlide {
+        box-shadow: 0px 1px 0 0px #ccc;
+        width: 96%;
+        margin: auto;
+        height: 5vh;
+        @include transition;
+        ul {
+          font-weight: bold;
+          color: $font-color-dark;
+          list-style: none;
+          li {
+            display: inline-block;
+            height: 4.8vh;
+            padding-top: 1vh;
+            margin: 0 5vh 0 0;
+            cursor: pointer;
+          }
+
+          li.active {
+            box-shadow: 0 2px 0 0 #0984e3;
+          }
+        }
+      }
+
+      .actualInfo {
+        @include border-radius;
+        @include box-shadow;
+        padding: 2vh;
+        margin-top: 45px;
+
+        form {
+          background: rgb(221, 221, 221);
+          @include border-radius;
+          padding: 2vh;
+          width: 50%;
+          display: block;
+          // margin: auto;
+        }
+      }
+
+      .loading {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .circle {
+          height: 80px;
+          width: 80px;
+          border-radius: 500px;
+          border: 8px solid $bg-color-dark;
+          border-bottom: 8px solid rgba(0, 0, 0, 0);
+          border-right: 8px solid rgba(0, 0, 0, 0);
+          border-left: 8px solid rgba(0, 0, 0, 0);
+          animation: spinner 1s linear infinite;
+        }
+
+        @keyframes spinner {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      .listOfBeers {
+        display: flex;
+        justify-items: left;
+        .beer {
+          margin: 0 15px 0 0;
+          padding: 2vh;
+          @include border-radius;
+          @include box-shadow;
+        }
+      }
+    }
+  }
+}

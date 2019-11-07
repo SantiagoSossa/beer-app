@@ -2,225 +2,222 @@
     COLORS
 */
 // ---------> Principal Colors
-$primary-color: #FFE7D0;
-$secondary-color: #323232;
+$primary-color: #ffffff;
+$secondary-color: #ffc444;
 // $secondary-color: #1C1C1C;
 
 // ---------> Text Color
 $primary-header-color: $primary-color;
-$font-color: white;
-$font-color-dark: #2E2E2E;
+$font-color: #ffffff;
+$font-color-dark: #2e2e2e;
 
 // ---------> Link Color
-$link-color: #FC6E20;
-// $link-color: #0093FF;
+$link-color: #cd361f;
 
 // ---------> Bg Color
-$bg-color-dark : #1B1B1B;
-$bg-color : white;
+$bg-color-dark: #1b1b1b;
+$bg-color: white;
 
 /*
     MARGIN
 */
 $margin-small: 10px;
-$margin : 15px;
+$margin: 15px;
 $margin-big: 40px;
 
 /*
     FONT WEIGHT
 */
-$font-weight : (
-    "regular" : 400,
-    "medium" : 500,
-    "bold" : 600,
-    "bolder":700
+$font-weight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 600,
+  "bolder": 700
 );
 
 /*
     BORDER RADIUS
 */
-$border-radius : 7px;
-
+$border-radius: 7px;
 
 /*
     FONT SIZE
 */
-$font-size : (
-    "regular" : 1rem,
-    "medium" : 2rem,
-    "big" : 3rem,
-    "bigger": 4rem
+$font-size: (
+  "regular": 1rem,
+  "medium": 2rem,
+  "big": 3rem,
+  "bigger": 4rem
 );
 
 /*
     RESPONSIVE
 */
 
-$desktop : 768px;
-$mobile : 320px;
+$desktop: 768px;
+$mobile: 320px;
 
 /*
     FONT CHANGE
 */
 
-@function weight($type){
-    @return map-get($font-weight,$type);
+@function weight($type) {
+  @return map-get($font-weight, $type);
 }
 
-@function size($type){
-    @return map-get($font-size,$type);
+@function size($type) {
+  @return map-get($font-size, $type);
 }
 
-
-.rounded{
-    border-radius: 3px;
+.rounded {
+  border-radius: 3px;
 }
-.shadow{
-    box-shadow: 0 7px 10px -3px rgba(0,0,0,0.3);
+.shadow {
+  box-shadow: 0 7px 10px -3px rgba(0, 0, 0, 0.3);
 }
 
 /*
     PILLS
 */
-.pill{
-    padding: 10px 20px;
-    color:white;
-    background: $link-color;
-    border-radius: 20px;
-    font-weight: 550;
+.pill {
+  padding: 10px 20px;
+  color: white;
+  background: $link-color;
+  border-radius: 20px;
+  font-weight: 550;
 }
 
 /*
     BUTTONS
 */
 .btn {
-    border: 0;
-    padding:1.5vh 3vh;
-    cursor: pointer;
-    // font-weight: bold;
-    margin: $margin-small $margin $margin-small 0;
-    @include transition;
+  border: 0;
+  padding: 1.5vh 3vh;
+  cursor: pointer;
+  // font-weight: bold;
+  margin: $margin-small $margin $margin-small 0;
+  @include transition;
 
-    &-primary{
-        color:white;
-        background: $link-color;
+  &-primary {
+    color: white;
+    background: $link-color;
+  }
+
+  &-outline-primary {
+    color: $link-color;
+    border: 2px solid $link-color;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  &-shadow-hover:hover {
+    box-shadow: 0 7px 10px -3px rgba($link-color, 0.3);
+  }
+
+  &-rounded {
+    border-radius: 30px;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+    margin-top: $margin;
+    margin-bottom: $margin;
+  }
+
+  &-big {
+    padding: 1.7vh 6vh;
+    font-size: 1.2rem;
+    @include desktop {
+      margin-top: $margin-big;
+      margin-bottom: $margin-big;
     }
 
-    &-outline-primary{
-        color:$link-color;
-        border: 2px solid $link-color;
-        background: rgba(0,0,0,0);
+    @include mobile {
+      margin-top: $margin-small;
+      margin-bottom: $margin;
     }
+  }
 
-    &-shadow-hover:hover{
-        box-shadow: 0 7px 10px -3px rgba($link-color,.3);
-    }
-
-    &-rounded{
-        border-radius: 30px;
-    }
-
-    &-block {
-        display: block;
-        width: 100%;
-        margin-top: $margin;
-        margin-bottom: $margin;
-    }
-
-    &-big{
-        padding:1.7vh 6vh;
-        font-size: 1.2rem;
-        @include desktop{
-            margin-top: $margin-big;
-            margin-bottom: $margin-big;
-        }
-
-        @include mobile{
-            margin-top: $margin-small;
-            margin-bottom: $margin;
-        }
-    }
-
-    &:hover{
-        opacity: 0.9;
-    }
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 /*
     FORMS
 */
-.form-group{
+.form-group {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    color: #212529;
+  }
+
+  ::placeholder {
+    color: #6c757d;
+  }
+
+  input.form-control {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    @include transition;
+
+    &:focus {
+      box-shadow: 0 0 0px 3px #bfdeff;
+      border: 1px solid #80bdff;
+    }
+  }
+}
+
+form.pretty {
+  .form-group {
     margin-top: 10px;
     margin-bottom: 20px;
 
-    label{
-        display: block;
-        color: #212529;
+    label {
+      color: #cdd6e2;
+      font-size: 1rem;
     }
 
-    ::placeholder{
-        color: #6c757d;
+    ::placeholder {
+      color: #cdd6e2;
     }
 
-    input.form-control{
-        margin-top:10px;
-        display: block;
-        width: 100%;
-        padding: 10px ;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        @include transition;
+    input.form-control {
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border: 2px solid #cfd8e1;
+      border-radius: 4px;
+      @include transition;
 
-        &:focus{
-            box-shadow: 0 0 0px 3px #bfdeff;
-            border:1px solid #80bdff;
-        }
+      &:focus {
+        box-shadow: 0 0 0px 3px #bfdeff;
+        border: 2px solid #80bdff;
+      }
     }
-}
-
-form.pretty{
-    .form-group{
-        margin-top: 10px;
-        margin-bottom: 20px;
-    
-        label{
-            color: #cdd6e2;
-            font-size: 1rem;
-        }
-    
-        ::placeholder{
-            color: #cdd6e2;
-        }
-    
-        input.form-control{
-            margin-top:10px;
-            display: block;
-            width: 100%;
-            padding: 13px ;
-            border: 2px solid #cfd8e1;
-            border-radius: 4px;
-            @include transition;
-    
-            &:focus{
-                box-shadow: 0 0 0px 3px #bfdeff;
-                border:2px solid #80bdff;
-            }
-        }
-    }
-    button{
-        padding: 13px;
-    }
+  }
+  button {
+    padding: 13px;
+  }
 }
 
 /*
     BACKGROUND
 */
-.b-white{
-    background: white;
+.b-white {
+  background: white;
 }
 
-.b-black{
-    background: $font-color;
+.b-black {
+  background: $font-color;
 }
 
 /*
@@ -230,247 +227,247 @@ form.pretty{
 // --------> General
 
 // --------> Margin All
-.m-auto{
-    margin: auto;
+.m-auto {
+  margin: auto;
 }
 .m-1 {
-    margin: 10%;
+  margin: 10%;
 }
 .m-2 {
-    margin: 20%;
+  margin: 20%;
 }
 .m-3 {
-    margin: 30%;
+  margin: 30%;
 }
 .m-4 {
-    margin: 40%;
+  margin: 40%;
 }
 .m-5 {
-    margin: 50%;
+  margin: 50%;
 }
 .m-6 {
-    margin: 60%;
+  margin: 60%;
 }
 .m-7 {
-    margin: 70%;
+  margin: 70%;
 }
 .m-8 {
-    margin: 80%;
+  margin: 80%;
 }
 .m-9 {
-    margin: 90%;
+  margin: 90%;
 }
 
 // --------> Margin Left
-.ml-auto{
-    margin-left: auto;
+.ml-auto {
+  margin-left: auto;
 }
 .ml-1 {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 .ml-2 {
-    margin-left: 20%;
+  margin-left: 20%;
 }
 .ml-3 {
-    margin-left: 30%;
+  margin-left: 30%;
 }
 .ml-4 {
-    margin-left: 40%;
+  margin-left: 40%;
 }
 .ml-5 {
-    margin-left: 50%;
+  margin-left: 50%;
 }
 .ml-6 {
-    margin-left: 60%;
+  margin-left: 60%;
 }
 .ml-7 {
-    margin-left: 70%;
+  margin-left: 70%;
 }
 .ml-8 {
-    margin-left: 80%;
+  margin-left: 80%;
 }
 .ml-9 {
-    margin-left: 90%;
+  margin-left: 90%;
 }
 
 // --------> Margin Right
-.mr-auto{
-    margin-right: auto;
+.mr-auto {
+  margin-right: auto;
 }
 .mr-1 {
-    margin-right: 10%;
+  margin-right: 10%;
 }
 .mr-2 {
-    margin-right: 20%;
+  margin-right: 20%;
 }
 .mr-3 {
-    margin-right: 30%;
+  margin-right: 30%;
 }
 .mr-4 {
-    margin-right: 40%;
+  margin-right: 40%;
 }
 .mr-5 {
-    margin-right: 50%;
+  margin-right: 50%;
 }
 .mr-6 {
-    margin-right: 60%;
+  margin-right: 60%;
 }
 .mr-7 {
-    margin-right: 70%;
+  margin-right: 70%;
 }
 .mr-8 {
-    margin-right: 80%;
+  margin-right: 80%;
 }
 .mr-9 {
-    margin-right: 90%;
+  margin-right: 90%;
 }
 
 // --------> Margin Top
-.mt-auto{
-    margin-top: auto;
+.mt-auto {
+  margin-top: auto;
 }
 .mt-1 {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 .mt-2 {
-    margin-top: 20%;
+  margin-top: 20%;
 }
 .mt-3 {
-    margin-top: 30%;
+  margin-top: 30%;
 }
 .mt-4 {
-    margin-top: 40%;
+  margin-top: 40%;
 }
 .mt-5 {
-    margin-top: 50%;
+  margin-top: 50%;
 }
 .mt-6 {
-    margin-top: 60%;
+  margin-top: 60%;
 }
 .mt-7 {
-    margin-top: 70%;
+  margin-top: 70%;
 }
 .mt-8 {
-    margin-top: 80%;
+  margin-top: 80%;
 }
 .mt-9 {
-    margin-top: 90%;
+  margin-top: 90%;
 }
 
 // --------> Margin Bottom
-.mb-auto{
-    margin-bottom: auto;
+.mb-auto {
+  margin-bottom: auto;
 }
 .mb-1 {
-    margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 .mb-2 {
-    margin-bottom: 20%;
+  margin-bottom: 20%;
 }
 .mb-3 {
-    margin-bottom: 30%;
+  margin-bottom: 30%;
 }
 .mb-4 {
-    margin-bottom: 40%;
+  margin-bottom: 40%;
 }
 .mb-5 {
-    margin-bottom: 50%;
+  margin-bottom: 50%;
 }
 .mb-6 {
-    margin-bottom: 60%;
+  margin-bottom: 60%;
 }
 .mb-7 {
-    margin-bottom: 70%;
+  margin-bottom: 70%;
 }
 .mb-8 {
-    margin-bottom: 80%;
+  margin-bottom: 80%;
 }
 .mb-9 {
-    margin-bottom: 90%;
+  margin-bottom: 90%;
 }
 
 // --------> Margin Y
-.my-auto{
-    margin-top: auto;
-    margin-bottom: auto;
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .my-1 {
-    margin-top: 10%;
-    margin-bottom: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 .my-2 {
-    margin-top: 20%;
-    margin-bottom: 20%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 .my-3 {
-    margin-top: 30%;
-    margin-bottom: 30%;
+  margin-top: 30%;
+  margin-bottom: 30%;
 }
 .my-4 {
-    margin-top: 40%;
-    margin-bottom: 40%;
+  margin-top: 40%;
+  margin-bottom: 40%;
 }
 .my-5 {
-    margin-top: 50%;
-    margin-bottom: 50%;
+  margin-top: 50%;
+  margin-bottom: 50%;
 }
 .my-6 {
-    margin-top: 60%;
-    margin-bottom: 60%;
+  margin-top: 60%;
+  margin-bottom: 60%;
 }
 .my-7 {
-    margin-top: 70%;
-    margin-bottom: 70%;
+  margin-top: 70%;
+  margin-bottom: 70%;
 }
 .my-8 {
-    margin-top: 80%;
-    margin-bottom: 80%;
+  margin-top: 80%;
+  margin-bottom: 80%;
 }
 .my-9 {
-    margin-top: 90%;
-    margin-bottom: 90%;
+  margin-top: 90%;
+  margin-bottom: 90%;
 }
 
 // --------> Margin X
-.mx-auto{
-    margin-left: auto;
-    margin-right: auto;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .mx-1 {
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .mx-2 {
-    margin-left: 20%;
-    margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .mx-3 {
-    margin-left: 30%;
-    margin-right: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .mx-4 {
-    margin-left: 40%;
-    margin-right: 40%;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 .mx-5 {
-    margin-left: 50%;
-    margin-right: 50%;
+  margin-left: 50%;
+  margin-right: 50%;
 }
 .mx-6 {
-    margin-left: 60%;
-    margin-right: 60%;
+  margin-left: 60%;
+  margin-right: 60%;
 }
 .mx-7 {
-    margin-left: 70%;
-    margin-right: 70%;
+  margin-left: 70%;
+  margin-right: 70%;
 }
 .mx-8 {
-    margin-left: 80%;
-    margin-right: 80%;
+  margin-left: 80%;
+  margin-right: 80%;
 }
 .mx-9 {
-    margin-left: 90%;
-    margin-right: 90%;
+  margin-left: 90%;
+  margin-right: 90%;
 }
 
 /*
@@ -480,247 +477,247 @@ form.pretty{
 // --------> General
 
 // --------> Padding All
-.p-auto{
-    padding: auto;
+.p-auto {
+  padding: auto;
 }
 .p-1 {
-    padding: 1rem;
+  padding: 1rem;
 }
 .p-2 {
-    padding: 2rem;
+  padding: 2rem;
 }
 .p-3 {
-    padding: 3rem;
+  padding: 3rem;
 }
 .p-4 {
-    padding: 4rem;
+  padding: 4rem;
 }
 .p-5 {
-    padding: 5rem;
+  padding: 5rem;
 }
 .p-6 {
-    padding: 6rem;
+  padding: 6rem;
 }
 .p-7 {
-    padding: 7rem;
+  padding: 7rem;
 }
 .p-8 {
-    padding: 8rem;
+  padding: 8rem;
 }
 .p-9 {
-    padding: 9rem;
+  padding: 9rem;
 }
 
 // --------> Padding Left
-.pl-auto{
-    padding-left: auto;
+.pl-auto {
+  padding-left: auto;
 }
 .pl-1 {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 .pl-2 {
-    padding-left: 2rem;
+  padding-left: 2rem;
 }
 .pl-3 {
-    padding-left: 3rem;
+  padding-left: 3rem;
 }
 .pl-4 {
-    padding-left: 4rem;
+  padding-left: 4rem;
 }
 .pl-5 {
-    padding-left: 5rem;
+  padding-left: 5rem;
 }
 .pl-6 {
-    padding-left: 6rem;
+  padding-left: 6rem;
 }
 .pl-7 {
-    padding-left: 7rem;
+  padding-left: 7rem;
 }
 .pl-8 {
-    padding-left: 8rem;
+  padding-left: 8rem;
 }
 .pl-9 {
-    padding-left: 9rem;
+  padding-left: 9rem;
 }
 
 // --------> Padding Right
-.pr-auto{
-    padding-right: auto;
+.pr-auto {
+  padding-right: auto;
 }
 .pr-1 {
-    padding-right: 1rem;
+  padding-right: 1rem;
 }
 .pr-2 {
-    padding-right: 2rem;
+  padding-right: 2rem;
 }
 .pr-3 {
-    padding-right: 3rem;
+  padding-right: 3rem;
 }
 .pr-4 {
-    padding-right: 4rem;
+  padding-right: 4rem;
 }
 .pr-5 {
-    padding-right: 5rem;
+  padding-right: 5rem;
 }
 .pr-6 {
-    padding-right: 6rem;
+  padding-right: 6rem;
 }
 .pr-7 {
-    padding-right: 7rem;
+  padding-right: 7rem;
 }
 .pr-8 {
-    padding-right: 8rem;
+  padding-right: 8rem;
 }
 .pr-9 {
-    padding-right: 9rem;
+  padding-right: 9rem;
 }
 
 // --------> Padding Top
-.pt-auto{
-    padding-top: auto;
+.pt-auto {
+  padding-top: auto;
 }
 .pt-1 {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 .pt-2 {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 .pt-3 {
-    padding-top: 3rem;
+  padding-top: 3rem;
 }
 .pt-4 {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 .pt-5 {
-    padding-top: 5rem;
+  padding-top: 5rem;
 }
 .pt-6 {
-    padding-top: 6rem;
+  padding-top: 6rem;
 }
 .pt-7 {
-    padding-top: 7rem;
+  padding-top: 7rem;
 }
 .pt-8 {
-    padding-top: 8rem;
+  padding-top: 8rem;
 }
 .pt-9 {
-    padding-top: 9rem;
+  padding-top: 9rem;
 }
 
 // --------> Padding Bottom
-.pb-auto{
-    padding-bottom: auto;
+.pb-auto {
+  padding-bottom: auto;
 }
 .pb-1 {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 .pb-2 {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 .pb-3 {
-    padding-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 .pb-4 {
-    padding-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 .pb-5 {
-    padding-bottom: 5rem;
+  padding-bottom: 5rem;
 }
 .pb-6 {
-    padding-bottom: 6rem;
+  padding-bottom: 6rem;
 }
 .pb-7 {
-    padding-bottom: 7rem;
+  padding-bottom: 7rem;
 }
 .pb-8 {
-    padding-bottom: 8rem;
+  padding-bottom: 8rem;
 }
 .pb-9 {
-    padding-bottom: 9rem;
+  padding-bottom: 9rem;
 }
 
 // --------> Padding Y
-.py-auto{
-    padding-top: auto;
-    padding-bottom: auto;
+.py-auto {
+  padding-top: auto;
+  padding-bottom: auto;
 }
 .py-1 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .py-2 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-3 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .py-4 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .py-5 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .py-6 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 .py-7 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 .py-8 {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 .py-9 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 
 // --------> Padding X
-.px-auto{
-    padding-left: auto;
-    padding-right: auto;
+.px-auto {
+  padding-left: auto;
+  padding-right: auto;
 }
 .px-1 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-2 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .px-3 {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .px-4 {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 .px-5 {
-    padding-left: 5rem;
-    padding-right: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .px-6 {
-    padding-left: 6rem;
-    padding-right: 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 .px-7 {
-    padding-left: 7rem;
-    padding-right: 7rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
 .px-8 {
-    padding-left: 8rem;
-    padding-right: 8rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 .px-9 {
-    padding-left: 9rem;
-    padding-right: 9rem;
+  padding-left: 9rem;
+  padding-right: 9rem;
 }
 
 /*
@@ -728,25 +725,25 @@ form.pretty{
 */
 
 .floatRight {
-    float: right;
+  float: right;
 }
 
 .floatLeft {
-    float: left;
+  float: left;
 }
 
 /*
     TEXT ALIGN
 */
 
-.text-center{
-    text-align: center;
+.text-center {
+  text-align: center;
 }
-.text-left{
-    text-align: left;
+.text-left {
+  text-align: left;
 }
-.text-right{
-    text-align: right;
+.text-right {
+  text-align: right;
 }
 
 /*
@@ -754,133 +751,128 @@ form.pretty{
 */
 
 @include mobile {
-    .row {
-        display: flex;
-        flex-flow:  row wrap;
-        width: 100%;
-        
-        .col {
-            max-width: auto;
-            width: auto;
-        }
-        .col-1 {
-            width: 100/12%;
-        }
-        .col-2 {
-            width: (100/12)*2%;
-        }
-        .col-3 {
-            width: (100/12)*3%;
-        }
-        .col-4 {
-            width: (100/12)*4%;
-        }
-        .col-5 {
-            width: (100/12)*5%;
-        }
-        .col-6 {
-            width: (100/12)*6%;
-        }
-        .col-7 {
-            width: (100/12)*7%;
-        }
-        .col-8 {
-            width: (100/12)*8%;
-        }
-        .col-9 {
-            width: (100/12)*9%;
-        }
-        .col-10 {
-            width: (100/12)*10%;
-        }
-        .col-11 {
-            width: (100/12)*11%;
-        }
-        .col-12 {
-            width: 100%
-        }
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
 
-        .col-sm-1 {
-            width: calc(100%/12%);
-        }
-        .col-sm-2 {
-            width: (100/12)*2%;
-        }
-        .col-sm-3 {
-            width: (100/12)*3%;
-        }
-        .col-sm-4 {
-            width: (100/12)*4%;
-        }
-        .col-sm-5 {
-            width: (100/12)*5%;
-        }
-        .col-sm-6 {
-            width: (100/12)*6%;
-        }
-        .col-sm-7 {
-            width: (100/12)*7%;
-        }
-        .col-sm-8 {
-            width: (100/12)*8%;
-        }
-        .col-sm-9 {
-            width: (100/12)*9%;
-        }
-        .col-sm-10 {
-            width: (100/12)*10%;
-        }
-        .col-sm-11 {
-            width: (100/12)*11%;
-        }
-        .col-sm-12 {
-            width: 100%
-        }
+    .col {
+      max-width: auto;
+      width: auto;
     }
+    .col-1 {
+      width: 100/12%;
+    }
+    .col-2 {
+      width: (100/12) * 2%;
+    }
+    .col-3 {
+      width: (100/12) * 3%;
+    }
+    .col-4 {
+      width: (100/12) * 4%;
+    }
+    .col-5 {
+      width: (100/12) * 5%;
+    }
+    .col-6 {
+      width: (100/12) * 6%;
+    }
+    .col-7 {
+      width: (100/12) * 7%;
+    }
+    .col-8 {
+      width: (100/12) * 8%;
+    }
+    .col-9 {
+      width: (100/12) * 9%;
+    }
+    .col-10 {
+      width: (100/12) * 10%;
+    }
+    .col-11 {
+      width: (100/12) * 11%;
+    }
+    .col-12 {
+      width: 100%;
+    }
+
+    .col-sm-1 {
+      width: calc(100% / 12%);
+    }
+    .col-sm-2 {
+      width: (100/12) * 2%;
+    }
+    .col-sm-3 {
+      width: (100/12) * 3%;
+    }
+    .col-sm-4 {
+      width: (100/12) * 4%;
+    }
+    .col-sm-5 {
+      width: (100/12) * 5%;
+    }
+    .col-sm-6 {
+      width: (100/12) * 6%;
+    }
+    .col-sm-7 {
+      width: (100/12) * 7%;
+    }
+    .col-sm-8 {
+      width: (100/12) * 8%;
+    }
+    .col-sm-9 {
+      width: (100/12) * 9%;
+    }
+    .col-sm-10 {
+      width: (100/12) * 10%;
+    }
+    .col-sm-11 {
+      width: (100/12) * 11%;
+    }
+    .col-sm-12 {
+      width: 100%;
+    }
+  }
 }
 @include desktop {
-    .row {
-
-        .col-md-1 {
-            max-width: calc(100%/12%);
-            width: calc(100%/12%);
-        }
-        .col-md-2 {
-            width: (100/12)*2%;
-            max-width: (100/12)*2%;
-        }
-        .col-md-3 {
-            width: (100/12)*3%;
-        }
-        .col-md-4 {
-            width: (100/12)*4%;
-            max-width: (100/12)*4%;
-            overflow: hidden;
-        }
-        .col-md-5 {
-            width: (100/12)*5%;
-        }
-        .col-md-6 {
-            width: (100/12)*6%;
-        }
-        .col-md-7 {
-            width: (100/12)*7%;
-        }
-        .col-md-8 {
-            width: (100/12)*8%;
-            max-width: (100/12)*8%;
-        }
-        .col-md-9 {
-            width: (100/12)*9%;
-        }
-        .col-md-10 {
-            width: (100/12)*10%;
-        }
-        .col-md-11 {
-            width: (100/12)*11%;
-        }
-        .col-md-12 {
-            width: 100%
-        }
+  .row {
+    .col-md-1 {
+      width: calc(100% / 12);
     }
+    .col-md-2 {
+      width: (100/12) * 2%;
+    }
+    .col-md-3 {
+      width: (100/12) * 3%;
+    }
+    .col-md-4 {
+      width: (100/12) * 4%;
+      overflow: hidden;
+    }
+    .col-md-5 {
+      width: (100/12) * 5%;
+    }
+    .col-md-6 {
+      width: (100/12) * 6%;
+    }
+    .col-md-7 {
+      width: (100/12) * 7%;
+    }
+    .col-md-8 {
+      width: (100/12) * 8%;
+    }
+    .col-md-9 {
+      width: (100/12) * 9%;
+    }
+    .col-md-10 {
+      width: (100/12) * 10%;
+    }
+    .col-md-11 {
+      width: (100/12) * 11%;
+    }
+    .col-md-12 {
+      width: 100%;
+    }
+  }
 }
