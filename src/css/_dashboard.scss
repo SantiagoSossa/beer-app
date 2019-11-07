@@ -1,10 +1,11 @@
   
 @include desktop {
     .dashboard{
-        height: auto;
+        height: 100vh;
     }
     .sideContainer{
         width: 75%;
+        height: 100%;
         float: right;
         background: $primary-color;
         .beersContainer{
@@ -13,26 +14,37 @@
             flex-wrap: wrap;
             margin-top: 80px;
             .beer{
+                display: flex;
+                flex-flow: row;
+                justify-content: space-around;
+                align-items: center;
                 background-color: white;
-                margin: 10% 5%;
-                width: 220px;
+                margin: 5%;
+                width: 400px;
                 height: 180px;
-                text-align: center;
-                position: relative;
                 box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
                 border-radius: 5%;
                 .beerPhoto{
                     background-color: #ccc;
                     box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
-                    position: absolute;
-                    width: 70%;
-                    left: 15%;
-                    height: 200px;
-                    top:-150px;
+                    width: 30%;
+                    height: 80%;
                     border-radius: 5%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
-                .beerInfo{
-                    margin-top: 60px;
+                .beerSide{
+                    height: 80%;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-between;
+                    .beerTitle{
+                        h1{
+                            font-size: 2rem;
+                        }
+                    }
                 }
             }
         }
@@ -54,6 +66,10 @@
             box-shadow: 0 0 10px 4px rgba(0,0,0,0.3);
             padding: 20px;
             @include border-radius;
+
+            .rating{
+                border: none;
+            }
 
             label {
                 color:white
@@ -86,7 +102,7 @@
             
                 label{
                     display: block;
-                    color: #212529;
+                    color:  #6c757d;
                 }
             
                 ::placeholder{
@@ -111,5 +127,59 @@
             
         }
     }
+
+.star-rating { 
+  margin: 50px auto;
+  
+  > fieldset {
+    border: none;
+    display: inline-block;
+    
+    &:not(:checked) {
+      > input {
+        position: absolute;
+        top: -9999px;
+        clip: rect(0,0,0,0);
+      }
+
+      > label {
+        float: right;
+        width: 1em;
+        padding: 0 .05em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 200%;
+        color: #16a085;
+        
+        &:before {
+          content: '\f006  ';
+        }
+        
+        &:hover,
+        &:hover ~ label {
+          color: #1abc9c;
+          text-shadow: 0 0 3px #1abc9c;
+          &:before {
+            content: '\f005  ';
+          }
+        }
+      }
+    }
+    
+    > input:checked {
+      & ~ label {
+        &:before {
+          content: '\f005  ';
+        }
+      }    
+    }    
+
+    > label:active {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
 }
   

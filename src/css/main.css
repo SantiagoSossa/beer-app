@@ -93,7 +93,11 @@ input::placeholder, textarea::placeholder {
 .pill {
   padding: 10px 20px;
   color: white;
+<<<<<<< HEAD
   background: #cd361f;
+=======
+  background: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   border-radius: 20px;
   font-weight: 550;
 }
@@ -112,7 +116,11 @@ input::placeholder, textarea::placeholder {
 
 .btn-primary {
   color: white;
+<<<<<<< HEAD
   background: #cd361f;
+=======
+  background: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
 }
 
 .btn-outline-primary {
@@ -122,8 +130,13 @@ input::placeholder, textarea::placeholder {
 }
 
 .btn-shadow-hover:hover {
+<<<<<<< HEAD
   -webkit-box-shadow: 0 7px 10px -3px rgba(205, 54, 31, 0.3);
           box-shadow: 0 7px 10px -3px rgba(205, 54, 31, 0.3);
+=======
+  -webkit-box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
+          box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
 }
 
 .btn-rounded {
@@ -261,7 +274,11 @@ form.pretty button {
 }
 
 .b-black {
+<<<<<<< HEAD
   background: #ffffff;
+=======
+  background: white;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
 }
 
 /*
@@ -1029,7 +1046,11 @@ form.pretty button {
 }
 
 .title {
+<<<<<<< HEAD
   color: #ffffff;
+=======
+  color: #FFE7D0;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   font-size: 5vh;
   font-weight: bold;
   margin-bottom: 15px;
@@ -1042,7 +1063,11 @@ form.pretty button {
 }
 
 .subtitle {
+<<<<<<< HEAD
   color: #ffffff;
+=======
+  color: #FFE7D0;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   font-size: 3.5vh;
   font-weight: bold;
   margin-bottom: 40px;
@@ -1054,7 +1079,11 @@ form.pretty button {
 }
 
 .text {
+<<<<<<< HEAD
   color: #ffffff;
+=======
+  color: white;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1081,7 +1110,11 @@ form.pretty button {
     display: block;
     position: fixed;
     z-index: 100;
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     padding: 15px;
     width: 100%;
     top: 0;
@@ -1095,7 +1128,11 @@ form.pretty button {
     position: relative;
   }
   .navLandingMobile .navLandingMobile__mainTitle i {
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     font-size: 3vh;
     left: 5%;
     position: absolute;
@@ -1128,7 +1165,11 @@ form.pretty button {
     display: block;
     padding-bottom: 1px;
     margin: -20px auto 10px auto;
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     text-align: center;
     position: relative;
   }
@@ -1158,7 +1199,11 @@ form.pretty button {
     width: 100%;
     padding-top: 30%;
     padding-bottom: 10%;
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1310,11 +1355,17 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
+<<<<<<< HEAD
     background: #ffffff;
+=======
+    background: #FFE7D0;
+    min-height: 100vh;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
+<<<<<<< HEAD
     color: #ffc444;
     font-size: 10vh;
     text-shadow: 3px 3px 0 rgba(255, 196, 68, 0.5);
@@ -1325,6 +1376,14 @@ form.pretty button {
             align-items: center;
     -webkit-transform: translateX(3%);
             transform: translateX(3%);
+=======
+    color: #323232;
+    font-size: 10vh;
+    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
+  }
+  .mainLanding #howItWorks .card {
+    background: white;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .mainLanding #howItWorks .card .iconContainer {
     display: inline-block;
@@ -1396,7 +1455,11 @@ form.pretty button {
     margin-bottom: 10px;
   }
   .footerLanding {
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     padding: 5%;
   }
@@ -1429,7 +1492,11 @@ form.pretty button {
         align-content: center;
     position: fixed;
     z-index: 100;
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     padding: 25px;
     width: 100%;
     top: 0;
@@ -1475,7 +1542,11 @@ form.pretty button {
     width: 100%;
     padding-top: 10%;
     padding-bottom: 0%;
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1551,14 +1622,25 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
+<<<<<<< HEAD
     background: #ffffff;
+=======
+    background: #FFE7D0;
+    min-height: 100vh;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
+<<<<<<< HEAD
     color: #ffc444;
     font-size: 10vh;
     text-shadow: 3px 3px 0 rgba(255, 196, 68, 0.5);
+=======
+    color: #323232;
+    font-size: 10vh;
+    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .mainLanding #howItWorks {
     -webkit-box-align: center;
@@ -1645,14 +1727,22 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
     color: #2e2e2e;
   }
   .signUp .signUp__left .subtitle {
+<<<<<<< HEAD
     color: #e56753;
+=======
+    color: #fd9f6b;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .signUp .signUp__left form {
     display: block;
@@ -1660,7 +1750,11 @@ form.pretty button {
     width: 80%;
   }
   .signUp .signUp__right {
+<<<<<<< HEAD
     background: #cd361f;
+=======
+    background: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1711,7 +1805,11 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
@@ -1723,7 +1821,11 @@ form.pretty button {
     width: 55%;
   }
   .signUp .signUp__right {
+<<<<<<< HEAD
     background: #cd361f;
+=======
+    background: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1765,7 +1867,11 @@ form.pretty button {
 
 @media (min-width: 320px) {
   .login__right {
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1808,7 +1914,11 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .login__right {
+<<<<<<< HEAD
     color: #ffffff;
+=======
+    color: white;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1840,7 +1950,11 @@ form.pretty button {
         -ms-flex-align: center;
             align-items: center;
     margin-top: 30%;
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .login__right .social i {
     font-size: 3vh;
@@ -1850,12 +1964,17 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .dashboard {
-    height: auto;
+    height: 100vh;
   }
   .sideContainer {
     width: 75%;
+    height: 100%;
     float: right;
+<<<<<<< HEAD
     background: #ffffff;
+=======
+    background: #FFE7D0;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .sideContainer .beersContainer {
     display: -webkit-box;
@@ -1870,12 +1989,22 @@ form.pretty button {
     margin-top: 80px;
   }
   .sideContainer .beersContainer .beer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: white;
-    margin: 10% 5%;
-    width: 220px;
+    margin: 5%;
+    width: 400px;
     height: 180px;
-    text-align: center;
-    position: relative;
     -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
             box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5%;
@@ -1884,19 +2013,37 @@ form.pretty button {
     background-color: #ccc;
     -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    width: 70%;
-    left: 15%;
-    height: 200px;
-    top: -150px;
+    width: 30%;
+    height: 80%;
     border-radius: 5%;
   }
-  .sideContainer .beersContainer .beer .beerInfo {
-    margin-top: 60px;
+  .sideContainer .beersContainer .beer .beerPhoto img {
+    width: 100%;
+    height: 100%;
+  }
+  .sideContainer .beersContainer .beer .beerSide {
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .sideContainer .beersContainer .beer .beerSide .beerTitle h1 {
+    font-size: 2rem;
   }
   .sideInfo {
     width: 25%;
+<<<<<<< HEAD
     background: #1b1b1b;
+=======
+    background: #1B1B1B;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     position: fixed;
     padding: 4% 2% 0 2%;
     height: 100vh;
@@ -1914,11 +2061,18 @@ form.pretty button {
     padding: 20px;
     border-radius: 7px;
   }
+  .sideInfo form .rating {
+    border: none;
+  }
   .sideInfo form label {
     color: white;
   }
   .sideInfo .userInfo {
+<<<<<<< HEAD
     color: #cd361f;
+=======
+    color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     width: 100%;
     text-align: center;
     background: white;
@@ -1950,7 +2104,7 @@ form.pretty button {
   }
   .sideInfo .addBeer .form-group label {
     display: block;
-    color: #212529;
+    color: #6c757d;
   }
   .sideInfo .addBeer .form-group ::-webkit-input-placeholder {
     color: #6c757d;
@@ -1978,6 +2132,47 @@ form.pretty button {
     -webkit-box-shadow: 0 0 0px 3px #bfdeff;
             box-shadow: 0 0 0px 3px #bfdeff;
     border: 1px solid #80bdff;
+  }
+  .star-rating {
+    margin: 50px auto;
+  }
+  .star-rating > fieldset {
+    border: none;
+    display: inline-block;
+  }
+  .star-rating > fieldset:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+  }
+  .star-rating > fieldset:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .05em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    color: #16a085;
+  }
+  .star-rating > fieldset:not(:checked) > label:before {
+    content: '\f006  ';
+  }
+  .star-rating > fieldset:not(:checked) > label:hover,
+  .star-rating > fieldset:not(:checked) > label:hover ~ label {
+    color: #1abc9c;
+    text-shadow: 0 0 3px #1abc9c;
+  }
+  .star-rating > fieldset:not(:checked) > label:hover:before,
+  .star-rating > fieldset:not(:checked) > label:hover ~ label:before {
+    content: '\f005  ';
+  }
+  .star-rating > fieldset > input:checked ~ label:before {
+    content: '\f005  ';
+  }
+  .star-rating > fieldset > label:active {
+    position: relative;
+    top: 2px;
   }
 }
 
@@ -2264,7 +2459,11 @@ body {
 }
 
 a {
+<<<<<<< HEAD
   color: #cd361f;
+=======
+  color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -2274,6 +2473,10 @@ a:hover {
 }
 
 a.noStyle {
+<<<<<<< HEAD
+=======
+  color: white;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   text-decoration: none;
 }
 
@@ -2286,7 +2489,11 @@ body {
 }
 
 span {
+<<<<<<< HEAD
   color: #cd361f;
+=======
+  color: #FC6E20;
+>>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
 }
 
 @media (min-width: 320px) {
