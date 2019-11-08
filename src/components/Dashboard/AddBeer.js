@@ -34,7 +34,7 @@ export default class AddBeer extends Component {
             photo: url
         });
     }
-S
+
     addBeerPicture = async (photo) => {
         const user = (firebase.auth().currentUser.uid).toString();
         const fileName = photo.files[0].name;

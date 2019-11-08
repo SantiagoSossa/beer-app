@@ -22,9 +22,15 @@ export default class Dashboard extends Component {
       .database()
       .ref("beers/" + firebase.auth().currentUser.uid)
       .on("value", snapshot => {
-        const beer = snapshot.val();
-        this.setState({ beerList: beer });
-        console.log("here", beer);
+        const keys = Object.keys(snapshot.val());
+        const beer = Object.values(snapshot.val());
+        const pending = [];
+        for (let i = 0; i < beer.length; i++) {
+          beer[i].id = keys[i];
+          pending.push(beer[i]);
+        }
+        this.setState({ beerList: pending });
+        console.log("here", keys);
       });
   };
 
@@ -33,24 +39,41 @@ export default class Dashboard extends Component {
     const firstLetter = userName.charAt(0);
     let beers = [];
     if (this.state.beerList) {
-      console.log("inside", typeof this.state.beerList);
-      beers = Object.values(this.state.beerList).map((beer,i) => {
-        console.log("pola", this.state.beerList[i]);
+      console.log("inside", this.state.beerList);
+      beers = this.state.beerList.map((beer,i) => {
         return (
           <Beer
             name={beer.name}
             country={beer.country}
             alcohol={beer.alcohol}
+            IBU={beer.ibu}
             photo={beer.photo}
             rating={beer.rating}
+            id={beer.id}
           />
         );
       });
     }
     return (
-      <div className="dashboard" id="">
-        <div className="sideContainer">
-          <div className="beersContainer">{beers}</div>
+      <div className="dashboard">
+        <div className="sideBar">
+          <div className="brand">
+            <img src="/images/logo/beer-logoOnly.png" alt="" />
+          </div>
+          <div className="sideLinks">
+            <div className="link">
+              <i class="far fa-user-circle"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-beer"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </div>
         </div>
         <div className="sideInfo">
           <div className="userInfo">
@@ -62,6 +85,9 @@ export default class Dashboard extends Component {
             className="btn btn-block btn-primary rounded btn-shadow-hover">
             Logout
           </button>
+        </div>
+        <div className="sideContainer">
+          <div className="beersContainer">{beers}</div>
         </div>
       </div>
     );
