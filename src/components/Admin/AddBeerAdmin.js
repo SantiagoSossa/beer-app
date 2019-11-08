@@ -15,11 +15,11 @@ export default class AddBeer extends Component {
     e.preventDefault();
     const { name, country, alcohol, photo } = e.target.elements;
     const db = firebase.database();
-    const beerReference = db.ref("officialBeers/").push({
+    db.ref("officialBeers/").push({
       name: name.value,
       country: country.value,
       alcohol: alcohol.value,
-      photo: "Photo"
+      IBU: 0
     });
     const photoUpload = firebase
       .storage()
@@ -33,59 +33,59 @@ export default class AddBeer extends Component {
 
   render() {
     return (
-      <div className='addBeer' id=''>
-        <form className='' onSubmit={this.addNewBeer}>
-          <div className='form-group'>
+      <div className="addBeer" id="">
+        <form className="" onSubmit={this.addNewBeer}>
+          <div className="form-group">
             <label style={{ color: "white" }}>
               Name
               <input
-                className='form-control'
-                type='text'
-                name='name'
-                id=''
-                placeholder='Beer Name'
+                className="form-control"
+                type="text"
+                name="name"
+                id=""
+                placeholder="Beer Name"
               />
             </label>
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <label style={{ color: "white" }}>
               Country
               <input
-                className='form-control'
-                type='text'
-                name='country'
-                id=''
-                placeholder='Beer Country'
+                className="form-control"
+                type="text"
+                name="country"
+                id=""
+                placeholder="Beer Country"
               />
             </label>
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <label style={{ color: "white" }}>
               Alcohol
               <input
-                className='form-control'
-                type='text'
-                name='alcohol'
-                id=''
-                placeholder='Beer Acohol %'
+                className="form-control"
+                type="text"
+                name="alcohol"
+                id=""
+                placeholder="Beer Acohol %"
               />
             </label>
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <label style={{ color: "white" }}>
               Photo
               <input
-                className='form-control'
-                type='file'
-                name='photo'
-                id=''
-                placeholder='Beer Photo'
+                className="form-control"
+                type="file"
+                name="photo"
+                id=""
+                placeholder="Beer Photo"
               />
             </label>
           </div>
           <button
-            type='submit'
-            className='btn btn-block btn-primary rounded btn-shadow-hover'>
+            type="submit"
+            className="btn btn-block btn-primary rounded btn-shadow-hover">
             Add
           </button>
         </form>

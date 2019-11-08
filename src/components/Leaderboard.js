@@ -13,9 +13,11 @@ const Leaderboard = props => {
         .database()
         .ref("officialBeers/")
         .on("value", async snapshot => {
-          const beers = Object.values(Object.values(snapshot.val()));
-          const sortedBeers = await beers.sort((a, b) => b.rating - a.rating);
-          setBeerList(sortedBeers);
+          if (snapshot.val() != null) {
+            const beers = Object.values(Object.values(snapshot.val()));
+            const sortedBeers = await beers.sort((a, b) => b.rating - a.rating);
+            setBeerList(sortedBeers);
+          }
           setIsLoading(false);
         });
     };

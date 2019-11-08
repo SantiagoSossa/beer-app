@@ -11,7 +11,7 @@
   }
 }
 
-.subtitle{
+.subtitle {
   color: $primary-header-color;
   font-size: 3.5vh;
   font-weight: bold;
@@ -24,7 +24,6 @@
 }
 
 .text {
-  color: $font-color;
   margin-top: $margin-small;
   margin-bottom: $margin-small;
 
@@ -32,8 +31,8 @@
     font-size: 1rem;
   }
 
-  &-medium{
-      font-size:1.2rem;
+  &-medium {
+    font-size: 1.2rem;
   }
 
   &-big {

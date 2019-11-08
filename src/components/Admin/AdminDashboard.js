@@ -47,6 +47,31 @@ const AdminDashboard = props => {
     }
   };
 
+  const [requestsPending, setRequestsPending] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      await firebase
+        .database()
+        .ref("requestOfficialBeers/")
+        .on("value", async snapshot => {
+          if (snapshot.val() != null) {
+            const keys = Object.keys(snapshot.val());
+            const request = Object.values(snapshot.val());
+            const pending = [];
+            for (let i = 0; i < request.length; i++) {
+              request[i].id = keys[i];
+              if (request[i].state == "Pending") {
+                pending.push(request[i]);
+              }
+            }
+            setRequestsPending(pending);
+          }
+        });
+    };
+    getData();
+  }, []);
+
   return (
     <div className="dashboard" id="adminDashboard">
       <div className="sideLeft">
@@ -66,7 +91,12 @@ const AdminDashboard = props => {
           name="Requests"
           onClick={changeDiv.bind(null, "Requests")}
           className="item">
-          <i className="fas fa-exclamation"></i>Requests
+          <i className="fas fa-exclamation"></i>Requests{" "}
+          {requestsPending.length > 0 ? (
+            <span className="pendingNotification">
+              {requestsPending.length}
+            </span>
+          ) : null}
         </div>
         {/* <button
           onClick={logout}

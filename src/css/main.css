@@ -93,11 +93,7 @@ input::placeholder, textarea::placeholder {
 .pill {
   padding: 10px 20px;
   color: white;
-<<<<<<< HEAD
-  background: #cd361f;
-=======
-  background: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  background: #ffc20f;
   border-radius: 20px;
   font-weight: 550;
 }
@@ -116,27 +112,18 @@ input::placeholder, textarea::placeholder {
 
 .btn-primary {
   color: white;
-<<<<<<< HEAD
-  background: #cd361f;
-=======
-  background: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  background: #ffc20f;
 }
 
 .btn-outline-primary {
-  color: #cd361f;
-  border: 2px solid #cd361f;
+  color: #ffc20f;
+  border: 2px solid #ffc20f;
   background: rgba(0, 0, 0, 0);
 }
 
 .btn-shadow-hover:hover {
-<<<<<<< HEAD
-  -webkit-box-shadow: 0 7px 10px -3px rgba(205, 54, 31, 0.3);
-          box-shadow: 0 7px 10px -3px rgba(205, 54, 31, 0.3);
-=======
-  -webkit-box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
-          box-shadow: 0 7px 10px -3px rgba(252, 110, 32, 0.3);
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  -webkit-box-shadow: 0 7px 10px -3px rgba(255, 194, 15, 0.3);
+          box-shadow: 0 7px 10px -3px rgba(255, 194, 15, 0.3);
 }
 
 .btn-rounded {
@@ -274,11 +261,7 @@ form.pretty button {
 }
 
 .b-black {
-<<<<<<< HEAD
   background: #ffffff;
-=======
-  background: white;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
 }
 
 /*
@@ -1046,11 +1029,7 @@ form.pretty button {
 }
 
 .title {
-<<<<<<< HEAD
-  color: #ffffff;
-=======
-  color: #FFE7D0;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  color: #000000;
   font-size: 5vh;
   font-weight: bold;
   margin-bottom: 15px;
@@ -1063,11 +1042,7 @@ form.pretty button {
 }
 
 .subtitle {
-<<<<<<< HEAD
-  color: #ffffff;
-=======
-  color: #FFE7D0;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  color: #000000;
   font-size: 3.5vh;
   font-weight: bold;
   margin-bottom: 40px;
@@ -1079,11 +1054,6 @@ form.pretty button {
 }
 
 .text {
-<<<<<<< HEAD
-  color: #ffffff;
-=======
-  color: white;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1110,11 +1080,7 @@ form.pretty button {
     display: block;
     position: fixed;
     z-index: 100;
-<<<<<<< HEAD
-    background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffffff;
     padding: 15px;
     width: 100%;
     top: 0;
@@ -1128,11 +1094,7 @@ form.pretty button {
     position: relative;
   }
   .navLandingMobile .navLandingMobile__mainTitle i {
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
     font-size: 3vh;
     left: 5%;
     position: absolute;
@@ -1165,22 +1127,18 @@ form.pretty button {
     display: block;
     padding-bottom: 1px;
     margin: -20px auto 10px auto;
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
     text-align: center;
     position: relative;
   }
   .navLandingMobile .navLandingMobile__side a.brand img {
-    background: white;
+    background: #ffffff;
     height: 80px;
     width: 80px;
     padding: 5px;
     border-radius: 200px;
-    -webkit-box-shadow: 0 0 15px 0 rgba(205, 54, 31, 0.4);
-            box-shadow: 0 0 15px 0 rgba(205, 54, 31, 0.4);
+    -webkit-box-shadow: 0 0 15px 0 rgba(255, 194, 15, 0.4);
+            box-shadow: 0 0 15px 0 rgba(255, 194, 15, 0.4);
   }
   .navLandingMobile a {
     text-decoration: none;
@@ -1199,11 +1157,7 @@ form.pretty button {
     width: 100%;
     padding-top: 30%;
     padding-bottom: 10%;
-<<<<<<< HEAD
-    background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffffff;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
@@ -1221,7 +1175,7 @@ form.pretty button {
   .headerLanding .headerLanding__left-beerContainer #landingCardInfo {
     opacity: 0;
     position: absolute;
-    background: #cd361f;
+    background: #ffc20f;
     color: #ffffff;
     right: 5%;
     top: 35%;
@@ -1240,7 +1194,7 @@ form.pretty button {
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff;
-    background: #a12a18;
+    background: #dba300;
     padding: 10px;
     font-weight: bold;
     overflow: hidden;
@@ -1252,7 +1206,7 @@ form.pretty button {
     font-weight: bold;
   }
   .headerLanding .headerLanding__left-beerContainer #landingCardInfo .beerData .label {
-    color: #ffffff;
+    color: #000000;
     font-size: 0.8rem;
     margin-bottom: 2px;
   }
@@ -1264,12 +1218,12 @@ form.pretty button {
     position: absolute;
     top: 10%;
     right: 10%;
-    background: #cd361f;
+    background: #ffc20f;
     color: #ffffff;
     font-weight: bold;
-    border: 5px solid #1b1b1b;
-    -webkit-box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.3);
-            box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.3);
+    border: 5px solid #ffc20f;
+    -webkit-box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.3);
+            box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.3);
     -webkit-transform: rotate(340deg);
             transform: rotate(340deg);
     -webkit-animation: changeColorAndBounce 5s infinite;
@@ -1290,8 +1244,8 @@ form.pretty button {
               box-shadow: 0 0 20px 0 rgba(9, 132, 227, 0.8);
     }
     25% {
-      -webkit-box-shadow: 0 0 20px 0 rgba(253, 121, 168, 0.8);
-              box-shadow: 0 0 20px 0 rgba(253, 121, 168, 0.8);
+      -webkit-box-shadow: 0 0 20px 0 #dba300;
+              box-shadow: 0 0 20px 0 #dba300;
     }
     50% {
       -webkit-box-shadow: 0 0 20px 0 rgba(108, 92, 231, 0.8);
@@ -1302,8 +1256,8 @@ form.pretty button {
               box-shadow: 0 0 20px 0 rgba(0, 206, 201, 0.8);
     }
     100% {
-      -webkit-box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.8);
-              box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.8);
+      -webkit-box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.8);
+              box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.8);
     }
   }
   @keyframes changeColorAndBounce {
@@ -1312,8 +1266,8 @@ form.pretty button {
               box-shadow: 0 0 20px 0 rgba(9, 132, 227, 0.8);
     }
     25% {
-      -webkit-box-shadow: 0 0 20px 0 rgba(253, 121, 168, 0.8);
-              box-shadow: 0 0 20px 0 rgba(253, 121, 168, 0.8);
+      -webkit-box-shadow: 0 0 20px 0 #dba300;
+              box-shadow: 0 0 20px 0 #dba300;
     }
     50% {
       -webkit-box-shadow: 0 0 20px 0 rgba(108, 92, 231, 0.8);
@@ -1324,8 +1278,8 @@ form.pretty button {
               box-shadow: 0 0 20px 0 rgba(0, 206, 201, 0.8);
     }
     100% {
-      -webkit-box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.8);
-              box-shadow: 0 0 20px 0 rgba(205, 54, 31, 0.8);
+      -webkit-box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.8);
+              box-shadow: 0 0 20px 0 rgba(255, 194, 15, 0.8);
     }
   }
   .headerLanding .headerLanding__left-beerContainer img {
@@ -1355,17 +1309,11 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-<<<<<<< HEAD
-    background: #ffffff;
-=======
-    background: #FFE7D0;
-    min-height: 100vh;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffc444;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-<<<<<<< HEAD
     color: #ffc444;
     font-size: 10vh;
     text-shadow: 3px 3px 0 rgba(255, 196, 68, 0.5);
@@ -1376,14 +1324,6 @@ form.pretty button {
             align-items: center;
     -webkit-transform: translateX(3%);
             transform: translateX(3%);
-=======
-    color: #323232;
-    font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
-  }
-  .mainLanding #howItWorks .card {
-    background: white;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   }
   .mainLanding #howItWorks .card .iconContainer {
     display: inline-block;
@@ -1404,7 +1344,7 @@ form.pretty button {
     left: -15%;
     top: -15%;
     z-index: 1;
-    background: #cd361f;
+    background: #ffc20f;
     color: #ffffff;
     height: 30px;
     width: 30px;
@@ -1420,13 +1360,13 @@ form.pretty button {
     border-radius: 400px;
   }
   .mainLanding #howItWorks .card .description {
-    background: #cd361f;
+    background: #ffc20f;
     border-radius: 7px;
     padding: 10px 8px;
     color: #ffffff;
     font-weight: bold;
-    -webkit-box-shadow: 3px 3px 0 1px rgba(205, 54, 31, 0.4);
-            box-shadow: 3px 3px 0 1px rgba(205, 54, 31, 0.4);
+    -webkit-box-shadow: 3px 3px 0 1px rgba(255, 194, 15, 0.4);
+            box-shadow: 3px 3px 0 1px rgba(255, 194, 15, 0.4);
   }
   .mainLanding #howItWorks .dots {
     font-size: 10vh;
@@ -1455,11 +1395,7 @@ form.pretty button {
     margin-bottom: 10px;
   }
   .footerLanding {
-<<<<<<< HEAD
     background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     padding: 5%;
   }
@@ -1492,11 +1428,7 @@ form.pretty button {
         align-content: center;
     position: fixed;
     z-index: 100;
-<<<<<<< HEAD
-    background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffffff;
     padding: 25px;
     width: 100%;
     top: 0;
@@ -1513,20 +1445,17 @@ form.pretty button {
   .navLandingDesktop .brand img {
     position: absolute;
     top: -140%;
-    background: white;
+    background: #ffffff;
     height: 60px;
     width: 60px;
-    padding: 5px;
-    border-radius: 200px;
-    -webkit-box-shadow: 0 0 15px 0 rgba(205, 54, 31, 0.4);
-            box-shadow: 0 0 15px 0 rgba(205, 54, 31, 0.4);
+    padding: 7px;
   }
   .navLandingDesktop .brand span {
     font-size: 4vh;
     position: absolute;
     top: -40%;
-    -webkit-transform: translateX(40%);
-            transform: translateX(40%);
+    -webkit-transform: translateX(34%);
+            transform: translateX(34%);
     width: 200px;
   }
   .navLandingDesktop li {
@@ -1542,15 +1471,12 @@ form.pretty button {
     width: 100%;
     padding-top: 10%;
     padding-bottom: 0%;
-<<<<<<< HEAD
-    background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffffff;
     overflow: hidden;
   }
   .headerLanding .headerLanding__right {
     padding: 0 10%;
+    color: #2e2e2e;
   }
   .headerLanding .headerLanding__right .title {
     font-size: 13vh;
@@ -1564,7 +1490,7 @@ form.pretty button {
   .headerLanding .headerLanding__left-beerContainer #landingCardInfo {
     opacity: 0;
     position: absolute;
-    background: #ffc444;
+    background: #ffc20f;
     color: #ffffff;
     right: 10%;
     top: 35%;
@@ -1583,7 +1509,7 @@ form.pretty button {
     text-align: center;
     font-size: 1.2rem;
     color: #ffffff;
-    background: #ffb411;
+    background: #dba300;
     padding: 10px;
     font-weight: bold;
   }
@@ -1622,25 +1548,14 @@ form.pretty button {
   }
   .mainLanding {
     text-align: center;
-<<<<<<< HEAD
-    background: #ffffff;
-=======
-    background: #FFE7D0;
-    min-height: 100vh;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffc20f;
     padding-top: 10%;
     padding-bottom: 10%;
   }
   .mainLanding .title {
-<<<<<<< HEAD
-    color: #ffc444;
+    color: #ffffff;
     font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(255, 196, 68, 0.5);
-=======
-    color: #323232;
-    font-size: 10vh;
-    text-shadow: 3px 3px 0 rgba(50, 50, 50, 0.5);
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.5);
   }
   .mainLanding #howItWorks {
     -webkit-box-align: center;
@@ -1668,7 +1583,7 @@ form.pretty button {
     left: -15%;
     top: -15%;
     z-index: 1;
-    background: #cd361f;
+    background: #ffc20f;
     color: #ffffff;
     height: 30px;
     width: 30px;
@@ -1682,15 +1597,17 @@ form.pretty button {
         -ms-flex-pack: center;
             justify-content: center;
     border-radius: 400px;
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
   }
   .mainLanding #howItWorks .card .description {
-    background: #cd361f;
+    background: #ffcf42;
     border-radius: 7px;
     padding: 10px 8px;
     color: #ffffff;
     font-weight: bold;
-    -webkit-box-shadow: 3px 3px 0 1px rgba(205, 54, 31, 0.4);
-            box-shadow: 3px 3px 0 1px rgba(205, 54, 31, 0.4);
+    -webkit-box-shadow: 3px 3px 0 1px #dba300;
+            box-shadow: 3px 3px 0 1px #dba300;
   }
   .mainLanding #howItWorks .dots {
     font-size: 10vh;
@@ -1710,7 +1627,7 @@ form.pretty button {
     height: 2vh;
     width: 2vh;
     border-radius: 400px;
-    background: #2e2e2e;
+    background: #ffffff;
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -1727,22 +1644,14 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
     color: #2e2e2e;
   }
   .signUp .signUp__left .subtitle {
-<<<<<<< HEAD
-    color: #e56753;
-=======
-    color: #fd9f6b;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffd55c;
   }
   .signUp .signUp__left form {
     display: block;
@@ -1750,11 +1659,7 @@ form.pretty button {
     width: 80%;
   }
   .signUp .signUp__right {
-<<<<<<< HEAD
-    background: #cd361f;
-=======
-    background: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffc20f;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1805,11 +1710,7 @@ form.pretty button {
     padding-bottom: 10%;
   }
   .signUp .signUp__left a.noStyle {
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
     font-size: 5vh;
   }
   .signUp .signUp__left .title {
@@ -1821,11 +1722,7 @@ form.pretty button {
     width: 55%;
   }
   .signUp .signUp__right {
-<<<<<<< HEAD
-    background: #cd361f;
-=======
-    background: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #ffc20f;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1867,11 +1764,7 @@ form.pretty button {
 
 @media (min-width: 320px) {
   .login__right {
-<<<<<<< HEAD
     background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1914,11 +1807,7 @@ form.pretty button {
 
 @media (min-width: 768px) {
   .login__right {
-<<<<<<< HEAD
     color: #ffffff;
-=======
-    color: white;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1950,11 +1839,7 @@ form.pretty button {
         -ms-flex-align: center;
             align-items: center;
     margin-top: 30%;
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
   }
   .login__right .social i {
     font-size: 3vh;
@@ -1970,11 +1855,7 @@ form.pretty button {
     width: 75%;
     height: 100%;
     float: right;
-<<<<<<< HEAD
-    background: #ffffff;
-=======
-    background: #FFE7D0;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    background: #000000;
   }
   .sideContainer .beersContainer {
     display: -webkit-box;
@@ -2039,11 +1920,7 @@ form.pretty button {
   }
   .sideInfo {
     width: 25%;
-<<<<<<< HEAD
     background: #1b1b1b;
-=======
-    background: #1B1B1B;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
     position: fixed;
     padding: 4% 2% 0 2%;
     height: 100vh;
@@ -2068,11 +1945,7 @@ form.pretty button {
     color: white;
   }
   .sideInfo .userInfo {
-<<<<<<< HEAD
-    color: #cd361f;
-=======
-    color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+    color: #ffc20f;
     width: 100%;
     text-align: center;
     background: white;
@@ -2221,12 +2094,20 @@ form.pretty button {
   }
   #adminDashboard .sideLeft {
     width: 20%;
-    background: white;
+    background: #ffffff;
     float: left;
     height: 100vh;
     overflow: auto;
     background: rgba(240, 240, 240, 0.2);
     position: fixed;
+  }
+  #adminDashboard .sideLeft span.pendingNotification {
+    color: white;
+    background: #fe0d05;
+    border-radius: 500px;
+    font-weight: 400;
+    padding: 1px 5px;
+    margin-left: 10px;
   }
   #adminDashboard .sideLeft .brand {
     padding: 0vh 3vh;
@@ -2373,15 +2254,15 @@ form.pretty button {
             justify-content: center;
   }
   #adminDashboard .sideRight .loading .circle {
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 40px;
     border-radius: 500px;
-    border: 8px solid #1b1b1b;
-    border-bottom: 8px solid rgba(0, 0, 0, 0);
-    border-right: 8px solid rgba(0, 0, 0, 0);
-    border-left: 8px solid rgba(0, 0, 0, 0);
-    -webkit-animation: spinner 1s linear infinite;
-            animation: spinner 1s linear infinite;
+    border: 3px solid #1b1b1b;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    border-right: 3px solid rgba(0, 0, 0, 0);
+    border-left: 3px solid rgba(0, 0, 0, 0);
+    -webkit-animation: spinner 0.8s linear infinite;
+            animation: spinner 0.8s linear infinite;
   }
   @-webkit-keyframes spinner {
     0% {
@@ -2416,6 +2297,62 @@ form.pretty button {
     -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
   }
+  #adminDashboard .sideRight .listOfRequests table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #adminDashboard .sideRight .listOfRequests table img {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+  }
+  #adminDashboard .sideRight .listOfRequests table tr {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  #adminDashboard .sideRight .listOfRequests table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  #adminDashboard .sideRight .listOfRequests table th {
+    padding: 13px 15px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  #adminDashboard .sideRight .listOfRequests table td {
+    text-align: center;
+    padding: 0.5vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    white-space: nowrap;
+  }
+  #adminDashboard .sideRight .listOfRequests table i {
+    font-size: 3vh;
+    cursor: pointer;
+  }
+  #adminDashboard .sideRight .listOfRequests table button {
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    margin: 0 2vh;
+  }
+  #adminDashboard .sideRight .listOfRequests .modalImg {
+    z-index: 100;
+  }
+  #adminDashboard .sideRight .listOfRequests .modalImg img {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: auto;
+    width: 20%;
+    padding: 4vh;
+    border-radius: 7px;
+    background: white;
+    z-index: 400;
+  }
 }
 
 /*
@@ -2443,6 +2380,10 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 200;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -2459,11 +2400,7 @@ body {
 }
 
 a {
-<<<<<<< HEAD
-  color: #cd361f;
-=======
-  color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  color: #ffc20f;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -2473,10 +2410,6 @@ a:hover {
 }
 
 a.noStyle {
-<<<<<<< HEAD
-=======
-  color: white;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
   text-decoration: none;
 }
 
@@ -2485,15 +2418,11 @@ a.noStyle:hover {
 }
 
 body {
-  background: white;
+  background: #ffffff;
 }
 
 span {
-<<<<<<< HEAD
-  color: #cd361f;
-=======
-  color: #FC6E20;
->>>>>>> 67b7c472d4bd75e962158870d82fb0d895d4a2db
+  color: #ffc20f;
 }
 
 @media (min-width: 320px) {

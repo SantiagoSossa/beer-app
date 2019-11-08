@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 import "firebase/database";
 
+import deleteBeer from "./deleteBeer";
+
 const Pending = props => {
   const [requestsPending, setRequestsPending] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [modalImage, setModalImage] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -13,16 +16,18 @@ const Pending = props => {
         .database()
         .ref("requestOfficialBeers/")
         .on("value", async snapshot => {
-          const keys = Object.keys(snapshot.val());
-          const request = Object.values(snapshot.val());
-          const pending = [];
-          for (let i = 0; i < request.length; i++) {
-            request[i].id = keys[i];
-            if (request[i].state == "pending") {
-              pending.push(request[i]);
+          if (snapshot.val() != null) {
+            const keys = Object.keys(snapshot.val());
+            const request = Object.values(snapshot.val());
+            const pending = [];
+            for (let i = 0; i < request.length; i++) {
+              request[i].id = keys[i];
+              if (request[i].state == "Pending") {
+                pending.push(request[i]);
+              }
             }
+            setRequestsPending(pending);
           }
-          setRequestsPending(pending);
           setIsLoading(false);
         });
     };
@@ -42,21 +47,21 @@ const Pending = props => {
           rating: 0,
           photo
         });
-      await firebase
-        .database()
-        .ref("requestOfficialBeers/" + id)
-        .update({
-          name,
-          country,
-          alcohol,
-          state: "published",
-          IBU,
-          photo
-        });
+      await deleteBeer("requestOfficialBeers", id);
       return true;
     } catch {
       return false;
     }
+  };
+
+  const showImage = url => {
+    setModalImage(url);
+    const modal = document.querySelector(".modalImg");
+    modal.style.display = "block";
+    modal.addEventListener("click", () => {
+      modal.style.display = "none";
+      modal.removeEventListener("click", () => {});
+    });
   };
 
   let content = isLoading ? (
@@ -67,17 +72,56 @@ const Pending = props => {
     </div>
   ) : (
     <div className="listOfRequests">
-      {" "}
-      {requestsPending.map(request => (
-        <div key={request.name}>
-          <p> {request.name} </p> <p> {request.state} </p>{" "}
-          <button
-            onClick={makeOfficial.bind(null, request)}
-            className="btn btn-primary rounded btn-shadow-hover">
-            Make Official{" "}
-          </button>{" "}
-        </div>
-      ))}{" "}
+      <div className="modal modalImg">
+        <img src={modalImage} alt="" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Alcohol Rate %</th>
+            <th>IBU</th>
+            <th>Photo</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {requestsPending.map(request => (
+            <tr key={request.id}>
+              <td>{request.name}</td>
+              <td>{request.alcohol}</td>
+              <td>{request.IBU}</td>
+              <td>
+                <img
+                  onClick={showImage.bind(null, request.photo)}
+                  src={request.photo}
+                  alt=""
+                />
+              </td>
+              <td>
+                <button>
+                  <i
+                    onClick={makeOfficial.bind(null, request)}
+                    title="Make Official"
+                    className="fas fa-check-square"
+                    style={{ color: "#a9d32e" }}></i>
+                </button>
+                <button>
+                  <i
+                    onClick={deleteBeer.bind(
+                      null,
+                      "requestOfficialBeers",
+                      request.id
+                    )}
+                    title="Discard"
+                    style={{ color: "#e83634" }}
+                    className="fas fa-times-circle"></i>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 
