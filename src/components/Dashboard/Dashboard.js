@@ -55,9 +55,25 @@ export default class Dashboard extends Component {
       });
     }
     return (
-      <div className="dashboard" id="">
-        <div className="sideContainer">
-          <div className="beersContainer">{beers}</div>
+      <div className="dashboard">
+        <div className="sideBar">
+          <div className="brand">
+            <img src="/images/logo/beer-logoOnly.png" alt="" />
+          </div>
+          <div className="sideLinks">
+            <div className="link">
+              <i class="far fa-user-circle"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-beer"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <div className="link">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </div>
         </div>
         <div className="sideInfo">
           <div className="userInfo">
@@ -69,6 +85,9 @@ export default class Dashboard extends Component {
             className="btn btn-block btn-primary rounded btn-shadow-hover">
             Logout
           </button>
+        </div>
+        <div className="sideContainer">
+          <div className="beersContainer">{beers}</div>
         </div>
       </div>
     );
