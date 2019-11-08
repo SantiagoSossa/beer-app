@@ -22,9 +22,15 @@ export default class Dashboard extends Component {
       .database()
       .ref("beers/" + firebase.auth().currentUser.uid)
       .on("value", snapshot => {
-        const beer = snapshot.val();
-        this.setState({ beerList: beer });
-        console.log("here", beer);
+        const keys = Object.keys(snapshot.val());
+        const beer = Object.values(snapshot.val());
+        const pending = [];
+        for (let i = 0; i < beer.length; i++) {
+          beer[i].id = keys[i];
+          pending.push(beer[i]);
+        }
+        this.setState({ beerList: pending });
+        console.log("here", keys);
       });
   };
 
@@ -33,16 +39,17 @@ export default class Dashboard extends Component {
     const firstLetter = userName.charAt(0);
     let beers = [];
     if (this.state.beerList) {
-      console.log("inside", typeof this.state.beerList);
-      beers = Object.values(this.state.beerList).map((beer,i) => {
-        console.log("pola", this.state.beerList[i]);
+      console.log("inside", this.state.beerList);
+      beers = this.state.beerList.map((beer,i) => {
         return (
           <Beer
             name={beer.name}
             country={beer.country}
             alcohol={beer.alcohol}
+            IBU={beer.ibu}
             photo={beer.photo}
             rating={beer.rating}
+            id={beer.id}
           />
         );
       });
