@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 import "firebase/database";
@@ -70,7 +71,7 @@ const Pending = props => {
         <div className="circle"> </div>{" "}
       </div>{" "}
     </div>
-  ) : (
+  ) : requestsPending.length > 0 ? (
     <div className="listOfRequests">
       <div className="modal modalImg">
         <img src={modalImage} alt="" />
@@ -123,6 +124,8 @@ const Pending = props => {
         </tbody>
       </table>
     </div>
+  ) : (
+    <div style={{ padding: "5vh", textAlign: "center" }}>No Data Found</div>
   );
 
   return content;

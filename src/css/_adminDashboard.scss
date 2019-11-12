@@ -1,52 +1,478 @@
 @include mobile {
   #navAdmin {
-    width: 100%;
-    display: block;
-    top: 0;
-    padding: 0vh 3vh;
-    background: #ccc;
-    height: 7vh;
-    background: rgba(240, 240, 240, 0.2);
-    position: fixed;
-
-    ul {
-      list-style: none;
-      display: inline-block;
+    #navAdminDesktop {
+      display: none;
+    }
+    #navAdminMobile {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      top: 0;
+      padding: 0 5vh 0 0;
+      background: #f4f7fd;
       height: 7vh;
-      a {
-        text-decoration: none;
-      }
+      position: fixed;
+      justify-content: space-between;
 
-      li {
-        display: flex;
-        align-items: center;
-        color: $font-color-dark;
-        padding: 0 1vh;
-        height: 7vh;
-        font-size: 3vh;
+      .barsAdminMobile {
+        margin-top: 2vh;
+        i {
+          color: lighten($font-color-dark, 20%);
+          font-size: 3.5vh;
+        }
       }
 
       .userLiItem {
-        margin-top: 1vh;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        margin-top: 1.5vh;
         text-transform: uppercase;
         color: $font-color;
-        height: 5vh;
-        width: 5vh;
+        height: 5.5vh;
+        width: 5.5vh;
         background: $secondary-color;
         border-radius: 500px;
+        position: relative;
+        cursor: pointer;
+
+        .dropDownLiUser {
+          position: absolute;
+          background: white;
+          @include box-shadow;
+          @include border-radius;
+          bottom: -110%;
+          left: -110%;
+          visibility: hidden;
+          z-index: 100;
+          button {
+            border: 0;
+            padding: 1vh 2vh;
+            font-weight: bold;
+            display: block;
+            color: lighten($font-color-dark, 20%);
+            cursor: pointer;
+            // border: 1px solid #ccc;
+            @include border-radius;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
       }
     }
   }
 
   #adminDashboard {
+    background: #f4f7fd;
+    .sideLeft {
+      display: none;
+    }
+
+    .sideLeftMobile {
+      width: 75%;
+      background: $bg-color;
+      height: 100vh;
+      overflow: auto;
+      display: block;
+      position: fixed;
+      z-index: 400;
+      left: -100%;
+      transition: all 0.5s ease;
+
+      span.pendingNotification {
+        color: white;
+        background: #fe0d05;
+        border-radius: 500px;
+        font-weight: 400;
+        padding: 1px 5px;
+        margin-left: 10px;
+      }
+
+      .brand {
+        padding: 0vh 3vh;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        // background: #1e364f;
+        background: white;
+        height: 7vh;
+        // border-bottom: 1px solid #5d6368;
+        // box-shadow: 0 1px 0 0 #5d6368;
+        img {
+          width: 9%;
+          height: auto;
+          margin-right: 10px;
+        }
+        a {
+          text-decoration: none;
+          font-size: 3.5vh;
+          font-weight: 500;
+          color: $font-color-dark;
+        }
+      }
+
+      .item {
+        padding: 0vh 3vh;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        text-align: left;
+        color: #c8d0d8;
+        font-weight: bold;
+        @include transition;
+        cursor: pointer;
+
+        i {
+          height: 18px;
+          width: 18px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background: #f4f7fd;
+          border-radius: 500px 0 0 500px;
+        }
+      }
+      .active {
+        color: #64b5f6;
+        // background: #f0f4fd;
+        background: #f4f7fd;
+        border-radius: 500px 0 0 500px;
+        margin-left: 20px;
+      }
+    }
+
+    .sideRight {
+      display: block;
+      min-height: 100vh;
+      padding-top: 9vh;
+      background: #f4f7fd;
+      width: 90%;
+      margin: auto;
+      padding-bottom: 50px;
+
+      .title {
+        color: lighten($font-color-dark, 10%);
+        margin-bottom: 20px;
+        padding: 0 0.5vh;
+      }
+
+      .active {
+        color: #0984e3;
+      }
+
+      .navSlide {
+        box-shadow: 0px 1px 0 0px #ccc;
+        width: 96%;
+        margin: auto;
+        height: 5vh;
+        overflow: auto;
+        @include transition;
+        ul {
+          font-weight: bold;
+          color: $font-color-dark;
+          list-style: none;
+          white-space: nowrap;
+          li {
+            display: inline-block;
+            height: 4.8vh;
+            padding-top: 1vh;
+            margin: 0 5vh 0 0;
+            cursor: pointer;
+          }
+
+          li.active {
+            box-shadow: 0 2px 0 0 #0984e3;
+          }
+        }
+      }
+
+      .actualInfo {
+        @include border-radius;
+        @include box-shadow;
+        background: white;
+        margin-top: 45px;
+
+        #addBeerAdmin {
+          // padding: 3vh;
+          form {
+            @include border-radius;
+            padding: 2vh;
+            display: block;
+            margin: auto;
+            background: white;
+          }
+        }
+      }
+
+      .loading {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .circle {
+          height: 40px;
+          width: 40px;
+          border-radius: 500px;
+          border: 3px solid $bg-color-dark;
+          border-bottom: 3px solid rgba(0, 0, 0, 0);
+          border-right: 3px solid rgba(0, 0, 0, 0);
+          border-left: 3px solid rgba(0, 0, 0, 0);
+          animation: spinner 0.8s linear infinite;
+        }
+
+        @keyframes spinner {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      .listOfBeers {
+        display: flex;
+        justify-items: left;
+        .beer {
+          margin: 0 15px 0 0;
+          padding: 2vh;
+          @include border-radius;
+          @include box-shadow;
+        }
+      }
+
+      .listOfRequests {
+        .tableContainer {
+          overflow: auto;
+          width: 100%;
+          @include border-radius;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+
+          img {
+            height: 20px;
+            width: auto;
+            cursor: pointer;
+          }
+
+          th:first-child {
+            border-radius: 7px 7px 0 0;
+          }
+          // th:last-child {
+          //   border-radius: 0 7px 0 0;
+          // }
+
+          tr.trSearchBar {
+            border-radius: 7px 7px 0 0;
+            th {
+              position: relative;
+            }
+            input {
+              background: #fafafa;
+              border: 0;
+              padding: 5px 30px;
+              width: 100%;
+            }
+            input::placeholder {
+              color: #ccc;
+            }
+            i {
+              color: #ccc;
+              position: absolute;
+              left: 2%;
+              top: 35%;
+            }
+          }
+
+          th {
+            background: #fafafa;
+            padding: 9px 15px;
+            text-align: left;
+            overflow: hidden;
+            font-size: 12px;
+          }
+
+          thead {
+            border-bottom: 1px solid rgb(211, 211, 211);
+          }
+
+          tbody {
+            tr {
+              border-bottom: 1px solid rgb(230, 230, 230);
+            }
+            tr:last-child {
+              border-bottom: 0;
+            }
+          }
+
+          td {
+            text-align: left;
+            padding: 0.8vh 2vh;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100px;
+            white-space: nowrap;
+          }
+
+          i {
+            font-size: 2vh;
+            cursor: pointer;
+          }
+          button {
+            background: rgba(0, 0, 0, 0);
+            border: 0;
+            margin: 0 2vh;
+          }
+        }
+
+        .modal {
+          z-index: 100;
+        }
+        .modalImg {
+          display: none;
+          position: fixed;
+          z-index: 400;
+          left: 50%;
+          top: 20%;
+          transform: translateX(-50%);
+          img {
+            display: block;
+            height: 50vh;
+            width: auto;
+            padding: 4vh;
+            @include border-radius;
+            background: white;
+          }
+        }
+
+        .modalAdmin {
+          opacity: 0;
+          display: block;
+          visibility: hidden;
+          position: fixed;
+          z-index: 400;
+          left: 50%;
+          top: 25%;
+          overflow: auto;
+          transform: translateX(-50%) scale(0.7);
+          background: #fafafa;
+          padding: 3vh;
+          @include border-radius;
+          @include box-shadow;
+          transition: all 0.3s ease;
+          h1 {
+            font-size: 3vh;
+            color: $font-color-dark;
+            margin-bottom: 0;
+          }
+          .buttons {
+            text-align: right;
+            button {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include desktop {
+  #navAdmin {
+    #navAdminMobile {
+      display: none;
+    }
+    #navAdminDesktop {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      top: 0;
+      padding: 0vh 3vh;
+      background: #ccc;
+      height: 7vh;
+      // background: #f6f7f9;
+      background: white;
+      position: fixed;
+      justify-content: space-around;
+
+      ul {
+        list-style: none;
+        height: 7vh;
+        a {
+          text-decoration: none;
+        }
+
+        li {
+          display: inline-block;
+          color: $font-color-dark;
+          padding: 0 1vh;
+          height: 7vh;
+          font-size: 3vh;
+        }
+
+        .userLiItem {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1vh;
+          text-transform: uppercase;
+          color: $font-color;
+          height: 5vh;
+          width: 5vh;
+          background: $secondary-color;
+          border-radius: 500px;
+          position: relative;
+          cursor: pointer;
+
+          .dropDownLiUser {
+            position: absolute;
+            background: white;
+            @include box-shadow;
+            @include border-radius;
+            bottom: -100%;
+            visibility: hidden;
+            z-index: 100;
+            button {
+              border: 0;
+              padding: 1vh 2vh;
+              font-weight: bold;
+              display: block;
+              color: lighten($font-color-dark, 20%);
+              cursor: pointer;
+              // border: 1px solid #ccc;
+              @include border-radius;
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #adminDashboard {
+    .sideLeftMobile {
+      display: none;
+    }
     .sideLeft {
       width: 20%;
       background: $bg-color;
       float: left;
       height: 100vh;
       overflow: auto;
-      background: rgba(240, 240, 240, 0.2);
+      display: block;
       position: fixed;
 
       span.pendingNotification {
@@ -63,8 +489,11 @@
         display: flex;
         align-items: center;
         text-align: left;
-        background: rgba(240, 240, 240, 0.2);
+        // background: #1e364f;
+        background: white;
         height: 7vh;
+        // border-bottom: 1px solid #5d6368;
+        // box-shadow: 0 1px 0 0 #5d6368;
         img {
           width: 9%;
           height: auto;
@@ -74,6 +503,7 @@
           text-decoration: none;
           font-size: 3.5vh;
           font-weight: 500;
+          color: $font-color-dark;
         }
       }
 
@@ -84,55 +514,42 @@
         align-items: center;
         flex-flow: row wrap;
         text-align: left;
-        color: $font-color;
+        color: #c8d0d8;
         font-weight: bold;
-        color: $font-color-dark;
         @include transition;
         cursor: pointer;
 
         i {
-          height: 13px;
-          width: 13px;
+          height: 18px;
+          width: 18px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
           text-align: center;
           margin-right: 10px;
         }
 
         &:hover {
-          background: darken($bg-color, 3%);
+          background: #f4f7fd;
+          border-radius: 500px 0 0 500px;
         }
       }
       .active {
-        color: #74b9ff;
-        background: white;
+        color: #64b5f6;
+        // background: #f0f4fd;
+        background: #f4f7fd;
+        border-radius: 500px 0 0 500px;
+        margin-left: 20px;
       }
     }
 
     .sideRight {
       width: 80%;
       float: right;
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 9vh;
-
-      .adminCardContainer {
-        display: flex;
-        justify-items: left;
-
-        .adminCard {
-          padding: 3vh;
-          cursor: pointer;
-          color: $font-color;
-          background: $secondary-color;
-          font-size: 1.2rem;
-          @include border-radius;
-          @include box-shadow;
-          @include transition;
-
-          &:hover {
-            box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
-            opacity: 0.9;
-          }
-        }
-      }
+      // background: #f0f4fd;
+      background: #f4f7fd;
 
       .title {
         color: lighten($font-color-dark, 10%);
@@ -171,16 +588,18 @@
       .actualInfo {
         @include border-radius;
         @include box-shadow;
-        padding: 2vh;
+        background: white;
         margin-top: 45px;
 
-        form {
-          background: rgb(221, 221, 221);
-          @include border-radius;
-          padding: 2vh;
-          width: 50%;
-          display: block;
-          // margin: auto;
+        #addBeerAdmin {
+          // padding: 3vh;
+          form {
+            @include border-radius;
+            padding: 2vh;
+            display: block;
+            margin: auto;
+            background: white;
+          }
         }
       }
 
@@ -234,24 +653,59 @@
             cursor: pointer;
           }
 
-          tr {
-            transition: all 0.3s ease;
+          th:first-child {
+            border-radius: 7px 7px 0 0;
           }
+          // th:last-child {
+          //   border-radius: 0 7px 0 0;
+          // }
 
-          tr:nth-child(even) {
-            background-color: rgb(250, 250, 250);
+          tr.trSearchBar {
+            border-radius: 7px 7px 0 0;
+            th {
+              position: relative;
+            }
+            input {
+              background: #fafafa;
+              border: 0;
+              padding: 5px 30px;
+              width: 100%;
+            }
+            input::placeholder {
+              color: #ccc;
+            }
+            i {
+              color: #ccc;
+              position: absolute;
+              left: 2%;
+              top: 35%;
+            }
           }
 
           th {
-            padding: 13px 15px;
-            text-align: center;
+            background: #fafafa;
+            padding: 9px 15px;
+            text-align: left;
             overflow: hidden;
             font-size: 12px;
           }
 
+          thead {
+            border-bottom: 1px solid rgb(211, 211, 211);
+          }
+
+          tbody {
+            tr {
+              border-bottom: 1px solid rgb(230, 230, 230);
+            }
+            tr:last-child {
+              border-bottom: 0;
+            }
+          }
+
           td {
-            text-align: center;
-            padding: 0.5vh;
+            text-align: left;
+            padding: 0.8vh 2vh;
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100px;
@@ -259,7 +713,7 @@
           }
 
           i {
-            font-size: 3vh;
+            font-size: 2vh;
             cursor: pointer;
           }
           button {
@@ -269,20 +723,51 @@
           }
         }
 
-        .modalImg {
+        .modal {
           z-index: 100;
+        }
+        .modalImg {
+          display: none;
+          position: fixed;
+          z-index: 400;
+          left: 50%;
+          top: 20%;
+          transform: translateX(-50%);
           img {
             display: block;
-            position: absolute;
-            left: 50%;
-            top: 20%;
-            transform: translateX(-50%);
-            height: auto;
-            width: 20%;
+            height: 50vh;
+            width: auto;
             padding: 4vh;
             @include border-radius;
             background: white;
-            z-index: 400;
+          }
+        }
+
+        .modalAdmin {
+          opacity: 0;
+          display: block;
+          visibility: hidden;
+          position: fixed;
+          z-index: 400;
+          left: 50%;
+          top: 25%;
+          overflow: auto;
+          transform: translateX(-50%) scale(0.7);
+          background: #fafafa;
+          padding: 3vh;
+          @include border-radius;
+          @include box-shadow;
+          transition: all 0.3s ease;
+          h1 {
+            font-size: 3vh;
+            color: $font-color-dark;
+            margin-bottom: 0;
+          }
+          .buttons {
+            text-align: right;
+            button {
+              font-weight: bold;
+            }
           }
         }
       }

@@ -21,14 +21,14 @@ export default function App(props) {
     <AuthProvider>
       <Router>
         <div>
-          <Route exact path='/' component={Landing} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/signup-admin' component={SignupAdmin} />
-          <Route exact path='/login-admin' component={LoginAdmin} />
-          <Route exact path='/leaderboard' component={Leaderboard} />
-          <PrivateRoute exact path='/dashboard' component={Dashboard} />
-          <Route exact path='/admin-dashboard' component={AdminDashboard} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signup-admin" component={SignupAdmin} />
+          <Route exact path="/login-admin" component={LoginAdmin} />
+          <Route exact path="/leaderboard" component={Leaderboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/admin-dashboard" component={AdminDashboard} />
         </div>
       </Router>
     </AuthProvider>

@@ -8,71 +8,142 @@ export default class AddBeer extends Component {
     name: "",
     country: "",
     alcohol: "",
-    photo: ""
+    photo: "",
+    loading: false,
+    added: false
   };
 
-  addNewBeer = e => {
+  timer = "";
+
+  addNewBeer = async e => {
     e.preventDefault();
-    const { name, country, alcohol, photo } = e.target.elements;
-    const db = firebase.database();
-    db.ref("officialBeers/").push({
-      name: name.value,
-      country: country.value,
-      alcohol: alcohol.value,
-      IBU: 0
+    this.setState({ loading: true });
+    try {
+      const { name, country, alcohol, ibu, rating, photo } = e.target.elements;
+      this.addBeerInfo(
+        name,
+        country,
+        alcohol,
+        ibu,
+        rating,
+        await this.addBeerPicture(photo)
+      );
+      name.value = "";
+      country.value = "";
+      alcohol.value = "";
+      ibu.value = "";
+      this.setState({ loading: false, added: true });
+      this.timer = setTimeout(() => {
+        this.setState({
+          added: false
+        });
+      }, 3000);
+      return true;
+    } catch {
+      this.setState({ loading: false });
+      return false;
+    }
+  };
+
+  addBeerInfo = (name, country, alcohol, ibu, rating, url) => {
+    firebase
+      .database()
+      .ref("officialBeers")
+      .push({
+        name: name.value,
+        country: country.value,
+        alcohol: alcohol.value,
+        IBU: ibu.value,
+        rating: 0,
+        photo: url
+      });
+  };
+
+  addBeerPicture = async photo => {
+    const user = firebase.auth().currentUser.uid.toString();
+    const fileName = photo.files[0].name;
+    const fileDate = photo.files[0].lastModified.toString();
+    var blob = photo.files[0].slice(0, photo.files[0].size, "image/png");
+    const newFile = new File([blob], user + fileDate + fileName, {
+      type: "image/png"
     });
-    const photoUpload = firebase
+    const photoUpload = await firebase
       .storage()
-      .ref("beer_photos/" + photo.files[0].name);
-    const prueba = photoUpload.put(photo.files[0]);
-    console.log("la preuba", prueba);
-    name.value = "";
-    country.value = "";
-    alcohol.value = "";
+      .ref("beer_photos/" + newFile.name);
+    await photoUpload.put(newFile);
+
+    const url = await firebase
+      .storage()
+      .ref()
+      .child("beer_photos/" + newFile.name)
+      .getDownloadURL();
+    return url;
   };
 
   render() {
     return (
-      <div className="addBeer" id="">
+      <div className="" id="addBeerAdmin">
         <form className="" onSubmit={this.addNewBeer}>
-          <div className="form-group">
-            <label style={{ color: "white" }}>
-              Name
-              <input
-                className="form-control"
-                type="text"
-                name="name"
-                id=""
-                placeholder="Beer Name"
-              />
-            </label>
+          <div className="row">
+            <div className="col-12 col-md-6 px-1">
+              <div className="form-group">
+                <label>
+                  Name
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="name"
+                    id=""
+                    placeholder="Beer Name"
+                  />
+                </label>
+              </div>
+            </div>
+            <div className="col-12 col-md-6 px-1">
+              <div className="form-group">
+                <label>
+                  Country
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="country"
+                    id=""
+                    placeholder="Beer Country"
+                  />
+                </label>
+              </div>
+            </div>
+            <div className="col-12 col-md-6 px-1">
+              <div className="form-group">
+                <label>
+                  Alcohol
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="alcohol"
+                    id=""
+                    placeholder="Beer Acohol %"
+                  />
+                </label>
+              </div>
+            </div>
+            <div className="col-12 col-md-6 px-1">
+              <div className="form-group">
+                <label>
+                  IBU
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="ibu"
+                    id=""
+                    placeholder="Beer IBU"
+                  />
+                </label>
+              </div>
+            </div>
           </div>
-          <div className="form-group">
-            <label style={{ color: "white" }}>
-              Country
-              <input
-                className="form-control"
-                type="text"
-                name="country"
-                id=""
-                placeholder="Beer Country"
-              />
-            </label>
-          </div>
-          <div className="form-group">
-            <label style={{ color: "white" }}>
-              Alcohol
-              <input
-                className="form-control"
-                type="text"
-                name="alcohol"
-                id=""
-                placeholder="Beer Acohol %"
-              />
-            </label>
-          </div>
-          <div className="form-group">
-            <label style={{ color: "white" }}>
+          <div className="form-group px-1">
+            <label>
               Photo
               <input
                 className="form-control"
@@ -85,9 +156,11 @@ export default class AddBeer extends Component {
           </div>
           <button
             type="submit"
+            disabled={this.state.loading}
             className="btn btn-block btn-primary rounded btn-shadow-hover">
-            Add
+            {this.state.loading ? <>Loading...</> : <>Add</>}
           </button>
+          {this.state.added ? <div className="success">Beer Added</div> : null}
         </form>
       </div>
     );

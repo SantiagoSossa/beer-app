@@ -4,6 +4,8 @@
 // ---------> Principal Colors
 $primary-color: #000000;
 $secondary-color: #ffc444;
+$warning: #ba2929;
+$success: #218838;
 // $secondary-color: #1C1C1C;
 
 // ---------> Text Color
@@ -104,6 +106,16 @@ $mobile: 320px;
   &-primary {
     color: white;
     background: $link-color;
+  }
+
+  &-warning {
+    color: white;
+    background: $warning;
+  }
+
+  &-success {
+    color: white;
+    background: $success;
   }
 
   &-outline-primary {
@@ -210,6 +222,18 @@ form.pretty {
   button {
     padding: 13px;
   }
+}
+
+/*
+  ALERTS
+*/
+.warning {
+  padding: 1.8vh 3vh;
+  background: #fbe9e7;
+  color: #d32f2f;
+  display: block;
+  margin: 5px auto;
+  font-weight: 550;
 }
 
 /*

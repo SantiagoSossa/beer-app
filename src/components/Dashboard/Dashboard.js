@@ -22,25 +22,28 @@ export default class Dashboard extends Component {
       .database()
       .ref("beers/" + firebase.auth().currentUser.uid)
       .on("value", snapshot => {
-        const keys = Object.keys(snapshot.val());
-        const beer = Object.values(snapshot.val());
-        const pending = [];
-        for (let i = 0; i < beer.length; i++) {
-          beer[i].id = keys[i];
-          pending.push(beer[i]);
+        if (snapshot.val() != null) {
+          const keys = Object.keys(snapshot.val());
+          const beer = Object.values(snapshot.val());
+          const pending = [];
+          for (let i = 0; i < beer.length; i++) {
+            beer[i].id = keys[i];
+            pending.push(beer[i]);
+          }
+          this.setState({ beerList: pending });
+          console.log("here", keys);
         }
-        this.setState({ beerList: pending });
-        console.log("here", keys);
       });
   };
 
   render() {
     const userName = firebase.auth().currentUser.email;
     const firstLetter = userName.charAt(0);
+    console.log(userName);
     let beers = [];
     if (this.state.beerList) {
       console.log("inside", this.state.beerList);
-      beers = this.state.beerList.map((beer,i) => {
+      beers = this.state.beerList.map((beer, i) => {
         return (
           <Beer
             name={beer.name}

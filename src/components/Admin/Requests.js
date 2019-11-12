@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Pending from "./Pending";
 const Requests = props => {
   const [state, setState] = useState(<Pending />);

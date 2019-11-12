@@ -29,12 +29,12 @@ const Beers = props => {
             name="ListOfBeers"
             onClick={changeDiv.bind(null, "ListOfBeers")}
             className="active">
-            List of Beers
+            Official Beers
           </li>
           <li
             name="AddBeerAdmin"
             onClick={changeDiv.bind(null, "AddBeerAdmin")}>
-            Add Beer
+            Add Official Beer
           </li>
           <li name="Leaderboard" onClick={changeDiv.bind(null, "Leaderboard")}>
             Leaderboard
