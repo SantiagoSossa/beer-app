@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import firebase from "firebase";
 import "firebase/database";
 import "firebase/auth";
+import app from "../Backend/Base";
 
 export default class AddBeer extends Component {
   state = {
@@ -46,7 +46,7 @@ export default class AddBeer extends Component {
   };
 
   addBeerInfo = (name, country, alcohol, ibu, rating, url) => {
-    firebase
+    app
       .database()
       .ref("officialBeers")
       .push({
@@ -60,19 +60,17 @@ export default class AddBeer extends Component {
   };
 
   addBeerPicture = async photo => {
-    const user = firebase.auth().currentUser.uid.toString();
+    const user = app.auth().currentUser.uid.toString();
     const fileName = photo.files[0].name;
     const fileDate = photo.files[0].lastModified.toString();
     var blob = photo.files[0].slice(0, photo.files[0].size, "image/png");
     const newFile = new File([blob], user + fileDate + fileName, {
       type: "image/png"
     });
-    const photoUpload = await firebase
-      .storage()
-      .ref("beer_photos/" + newFile.name);
+    const photoUpload = await app.storage().ref("beer_photos/" + newFile.name);
     await photoUpload.put(newFile);
 
-    const url = await firebase
+    const url = await app
       .storage()
       .ref()
       .child("beer_photos/" + newFile.name)
@@ -157,7 +155,8 @@ export default class AddBeer extends Component {
           <button
             type="submit"
             disabled={this.state.loading}
-            className="btn btn-block btn-primary rounded btn-shadow-hover">
+            className="btn btn-block btn-primary rounded btn-shadow-hover"
+          >
             {this.state.loading ? <>Loading...</> : <>Add</>}
           </button>
           {this.state.added ? <div className="success">Beer Added</div> : null}

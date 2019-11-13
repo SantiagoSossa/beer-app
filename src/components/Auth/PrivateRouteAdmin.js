@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { AuthContext } from "./Auth";
 
-const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
+const PrivateRouteAdmin = ({ component: RouteComponent, ...rest }) => {
   const { currentUser } = useContext(AuthContext);
-  console.log("Private Route User", currentUser);
+
   return (
     <Route
       {...rest}
@@ -12,11 +12,11 @@ const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
         !!currentUser ? (
           <RouteComponent {...routeProps} />
         ) : (
-          <Redirect to={"/login"} />
+          <Redirect to={"/login-admin"} />
         )
       }
     />
   );
 };
 
-export default PrivateRoute;
+export default PrivateRouteAdmin;

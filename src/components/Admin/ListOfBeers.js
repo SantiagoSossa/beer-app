@@ -1,8 +1,8 @@
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
-import firebase from "firebase";
 import "firebase/database";
 import "firebase/auth";
+import app from "../Backend/Base";
 import deleteBeer from "./deleteBeer";
 import updateBeer from "./updateBeer";
 import TableBeer from "./TableBeer";
@@ -20,7 +20,7 @@ const ListOfBeers = props => {
   useEffect(() => {
     setIsLoading(true);
     const getData = () => {
-      firebase
+      app
         .database()
         .ref("officialBeers/")
         .on("value", async snapshot => {
@@ -198,12 +198,14 @@ const ListOfBeers = props => {
           <button
             onClick={hideAll}
             className="btn rounded"
-            style={{ opacity: "0.4" }}>
+            style={{ opacity: "0.4" }}
+          >
             Cancel
           </button>
           <button
             onClick={deleteThisBeer.bind(null, "officialBeers", actualBeerId)}
-            className="btn btn-warning rounded">
+            className="btn btn-warning rounded"
+          >
             Delete
           </button>
         </div>
@@ -273,7 +275,8 @@ const ListOfBeers = props => {
           <button
             onClick={hideAll}
             className="btn rounded"
-            style={{ opacity: "0.4" }}>
+            style={{ opacity: "0.4" }}
+          >
             Cancel
           </button>
           <button
@@ -284,7 +287,8 @@ const ListOfBeers = props => {
               beerData
             )}
             disabled={isUpdatingData}
-            className="btn btn-success rounded">
+            className="btn btn-success rounded"
+          >
             {isUpdatingData ? <>Loading...</> : <>Save</>}
           </button>
         </div>

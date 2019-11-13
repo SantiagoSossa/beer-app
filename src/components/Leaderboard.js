@@ -25,7 +25,7 @@ const Leaderboard = props => {
   }, []);
 
   let content = (
-    <div className="" id="">
+    <div className="listOfRequests" id="">
       {isLoading ? (
         <div>Loading...</div>
       ) : (

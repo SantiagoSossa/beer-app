@@ -1,9 +1,9 @@
-import firebase from "firebase";
 import "firebase/database";
+import app from "../Backend/Base";
 
 const deleteBeer = async (ref, id) => {
   try {
-    await firebase
+    await app
       .database()
       .ref(ref + "/" + id)
       .remove();

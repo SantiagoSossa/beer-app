@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect } from "react";
-import firebase from "firebase";
+import app from "../Backend/Base";
 import "firebase/database";
 
 import deleteBeer from "./deleteBeer";
@@ -13,7 +13,7 @@ const Pending = props => {
   useEffect(() => {
     setIsLoading(true);
     const getData = async () => {
-      await firebase
+      await app
         .database()
         .ref("requestOfficialBeers/")
         .on("value", async snapshot => {
@@ -37,7 +37,7 @@ const Pending = props => {
 
   const makeOfficial = async ({ name, country, alcohol, id, IBU, photo }) => {
     try {
-      await firebase
+      await app
         .database()
         .ref("officialBeers/")
         .push({
@@ -105,7 +105,8 @@ const Pending = props => {
                     onClick={makeOfficial.bind(null, request)}
                     title="Make Official"
                     className="fas fa-check-square"
-                    style={{ color: "#a9d32e" }}></i>
+                    style={{ color: "#a9d32e" }}
+                  ></i>
                 </button>
                 <button>
                   <i
@@ -116,7 +117,8 @@ const Pending = props => {
                     )}
                     title="Discard"
                     style={{ color: "#e83634" }}
-                    className="fas fa-times-circle"></i>
+                    className="fas fa-times-circle"
+                  ></i>
                 </button>
               </td>
             </tr>

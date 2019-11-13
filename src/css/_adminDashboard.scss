@@ -322,7 +322,7 @@
             padding: 0.8vh 2vh;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 100px;
+            max-width: 200px;
             white-space: nowrap;
           }
 
@@ -364,8 +364,9 @@
           position: fixed;
           z-index: 400;
           left: 50%;
-          top: 25%;
+          top: 5%;
           overflow: auto;
+          width: 90%;
           transform: translateX(-50%) scale(0.7);
           background: #fafafa;
           padding: 3vh;
@@ -744,6 +745,7 @@
         }
 
         .modalAdmin {
+          width: auto;
           opacity: 0;
           display: block;
           visibility: hidden;
