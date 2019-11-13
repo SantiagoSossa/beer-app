@@ -4,15 +4,30 @@ import firebase from 'firebase';
 import 'firebase/database'; 
 import "firebase/auth";
 import undefined from 'firebase/database';
+import officialBeerHandler from '../officialBeerHandler';
+import MessageModal from './MessageModal';
 
 export default class Modal extends Component {
 
     state = {
-        // editName: this.props.beer.name,
-        // editAlcohol: this.props.beer.alcohol,
-        // editCountry: this.props.beer.country,
-        // editIBU: this.props.beer.IBU,
-        // editPhoto: this.props.beer.photo
+        modalDeleteShow:false,
+        modalEditShow: false
+    }
+
+    handleModalOpen = () => {
+        this.setState({modalDeleteShow: true});
+    }
+
+    handleModalClose = () => {
+        this.setState({modalDeleteShow: false});
+    }
+
+    handleEditModalOpen = () => {
+        this.setState({modalEditShow: true});
+    }
+
+    handleEditModalClose = () => {
+        this.setState({modalEditShow: false});
     }
 
     editBeer = async (e) => {
@@ -62,12 +77,39 @@ export default class Modal extends Component {
     }
 
     deleteBeer = async () =>{
+        console.log("borrar", this.props.id)
         const db =  firebase.database();
         await db.ref().child('beers/'+firebase.auth().currentUser.uid+"/"+this.props.id).remove();
         this.deletePhoto();
     }
 
     render() {
+        const beer ={
+            name:this.props.beer.name,
+            alcohol:this.props.beer.alcohol,
+            country:this.props.beer.country,
+            photo:this.props.beer.photo,
+            IBU:this.props.beer.IBU
+        }
+        let modal = null;
+        if(this.state.modalDeleteShow){
+            console.log("hi");
+            modal = <MessageModal 
+                show={this.state.modalDeleteShow}
+                modalClosed={this.handleModalClose}
+                clicked={this.deleteBeer}
+                message={'Are you sure you want to delete this beer?'}
+                type={'delete'}>
+            </MessageModal>;
+        }
+        if(this.state.modalEditShow){
+            modal = <MessageModal 
+                show={this.state.modalDeleteShow}
+                modalClosed={this.handleEditModalClose}
+                message={'successfully edited'}
+                type={'update'}>
+            </MessageModal>;
+        }
         return(
             <div>
             <Backdrop show={this.props.show} clicked={this.props.modalClosed}/>
@@ -76,6 +118,8 @@ export default class Modal extends Component {
                 <div className="modalBody">
                     <div className="modalPhoto">
                         <img src={this.props.beer.photo} alt="Beer Photo"/>
+                        <button className="btn btn-block btn-primary rounded btn-shadow-hover" 
+                                    onClick={()=>{officialBeerHandler.request(beer)}}>Request this beer</button>
                     </div>
                     <div className="modalInfo">
                         <form className="" onSubmit={this.editBeer}>
@@ -107,13 +151,17 @@ export default class Modal extends Component {
                             <label style={{"color": "black"}}>
                             <div className="star-rating">
                                 Rating
-                                <fieldset>
-                                    <input type="radio" id="star1" name="rating" value="1"/><label htmlFor="star5" title="Outstanding">5 stars</label>
-                                    <input type="radio" id="star2" name="rating" value="2"/><label htmlFor="star4" title="Very Good">4 stars</label>
-                                    <input type="radio" id="star3" name="rating" value="3"/><label htmlFor="star3" title="Good">3 stars</label>
-                                    <input type="radio" id="star4" name="rating" value="4"/><label htmlFor="star2" title="Poor">2 stars</label>
-                                    <input type="radio" id="star5" name="rating" value="5"/><label htmlFor="star1" title="Very Poor">1 star</label>
-                                </fieldset>
+                                <div className="rate">
+                                    <input type="radio" id="star5" name="rating" value="5" /><label htmlFor="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rating" value="4" />
+                                    <label htmlFor="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rating" value="3" />
+                                    <label htmlFor="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rating" value="2" />
+                                    <label htmlFor="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rating" value="1" />
+                                    <label htmlFor="star1" title="text">1 star</label>
+                                </div>
                             </div>
                             </label>
                             </div>
@@ -124,10 +172,11 @@ export default class Modal extends Component {
                             </label>
                             </div>
                             <div className="modalButtons">
-                                <button type="submit" className="btn btn-block btn-primary rounded btn-shadow-hover">Edit</button>
-                                <button className="btn btn-block btn-primary rounded btn-shadow-hover" style={{backgroundColor:'#DE3F44'}} onClick={this.deleteBeer}>Delete</button>
-                                <button className="btn btn-block btn-primary rounded btn-shadow-hover" style={{backgroundColor:'#ccc'}}>Close</button>
+                                <button type="submit" className="btn btn-block btn-primary rounded btn-shadow-hover" onClick={this.handleEditModalOpen}>Edit</button>
+                                <button className="btn btn-block btn-primary rounded btn-shadow-hover" style={{backgroundColor:'#DE3F44'}} onClick={this.handleModalOpen}>Delete</button>
+                                <button className="btn btn-block btn-primary rounded btn-shadow-hover" style={{backgroundColor:'#ccc'}} onClick={this.props.modalClosed}>Close</button>
                             </div>
+                            {modal}
                         </form>
                     </div>
                 </div>

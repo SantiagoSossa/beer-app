@@ -2,7 +2,7 @@
     COLORS
 */
 // ---------> Principal Colors
-$primary-color: #000000;
+$primary-color: #34404A;
 $secondary-color: #ffc444;
 $warning: #ba2929;
 $success: #218838;
@@ -11,7 +11,7 @@ $success: #218838;
 // ---------> Text Color
 $primary-header-color: $primary-color;
 $font-color: #ffffff;
-$font-color-dark: #2e2e2e;
+$font-color-dark: #34404A;
 
 // ---------> Link Color
 // $link-color: #62cffc;
@@ -20,8 +20,8 @@ $font-color-dark: #2e2e2e;
 $link-color: #ffc20f;
 
 // ---------> Bg Color
-$bg-color-dark: #1b1b1b;
-$bg-color: #ffffff;
+$bg-color-dark: #34404A;
+$bg-color: #B88A53;
 
 /*
     MARGIN
@@ -231,6 +231,15 @@ form.pretty {
   padding: 1.8vh 3vh;
   background: #fbe9e7;
   color: #d32f2f;
+  display: block;
+  margin: 5px auto;
+  font-weight: 550;
+}
+
+.success {
+  padding: 1.8vh 3vh;
+  background: #b0cfaf;
+  color: #5c885c;
   display: block;
   margin: 5px auto;
   font-weight: 550;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GetFlag from "../GetFlag";
-import officialBeerHandler from '../officialBeerHandler';
 import Modal from './Modal';
 
 export default class Beer extends Component {
@@ -50,7 +49,6 @@ export default class Beer extends Component {
                         <h1>Alcohol: {this.props.alcohol}%</h1>
                         <h1>Rating: {this.props.rating}</h1>
                         <h1>IBU: {this.props.IBU}</h1>
-                        <button onClick={()=>{officialBeerHandler.request(beer)}}>Make request</button>
                     </div>
                 </div>
                 <i className='fas fa-ellipsis-v' onClick={this.handleModalOpen}></i>{modal}

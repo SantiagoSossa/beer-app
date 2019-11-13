@@ -6,10 +6,12 @@ import firebase from "firebase";
 import "firebase/database";
 import "firebase/auth";
 import Beer from "./Beer";
+import Leaderboard from '../Leaderboard';
 
 export default class Dashboard extends Component {
   state = {
-    beerList: []
+    beerList: [],
+    sideBar: 'mybeers'
   };
 
   logout = () => {
@@ -36,45 +38,51 @@ export default class Dashboard extends Component {
       });
   };
 
+  handleSideBar = (e) => {
+    this.setState({sideBar:e.target.id});
+    document.getElementById(e.target.id).style.opacity = 1;
+  }
+
   render() {
     const userName = firebase.auth().currentUser.email;
     const firstLetter = userName.charAt(0);
     console.log(userName);
-    let beers = [];
+    let sideItems = [];
     if (this.state.beerList) {
-      console.log("inside", this.state.beerList);
-      beers = this.state.beerList.map((beer, i) => {
-        return (
-          <Beer
-            name={beer.name}
-            country={beer.country}
-            alcohol={beer.alcohol}
-            IBU={beer.ibu}
-            photo={beer.photo}
-            rating={beer.rating}
-            id={beer.id}
-          />
-        );
-      });
+      if(this.state.sideBar == 'mybeers'){
+        sideItems = this.state.beerList.map((beer, i) => {
+          return (
+            <Beer
+              name={beer.name}
+              country={beer.country}
+              alcohol={beer.alcohol}
+              IBU={beer.ibu}
+              photo={beer.photo}
+              rating={beer.rating}
+              id={beer.id}
+            />
+          );
+        });
+      }
+      if(this.state.sideBar == 'leaderboard'){
+        sideItems = <Leaderboard/>;
+      }
     }
     return (
       <div className="dashboard">
         <div className="sideBar">
           <div className="brand">
-            <img src="/images/logo/beer-logoOnly.png" alt="" />
+            <img src="/images/logo/beer-logo-nobg.png" alt="" />
           </div>
           <div className="sideLinks">
             <div className="link">
-              <i class="far fa-user-circle"></i>
+              <i className="fas fa-beer" onClick={this.handleSideBar} style={{opacity: "0.4"}} id="mybeers"></i>
             </div>
             <div className="link">
-              <i class="fas fa-beer"></i>
+              <i className="fas fa-chart-bar" onClick={this.handleSideBar} style={{opacity: "0.4"}} id="leaderboard"></i>
             </div>
             <div className="link">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <div className="link">
-              <i class="fas fa-sign-out-alt"></i>
+              <i className="fas fa-sign-out-alt" onClick={this.logout} id="logout" style={{opacity: "0.4"}}></i>
             </div>
           </div>
         </div>
@@ -83,14 +91,9 @@ export default class Dashboard extends Component {
             <div className="userName">{firstLetter}</div>
           </div>
           <AddBeer />
-          <button
-            onClick={this.logout}
-            className="btn btn-block btn-primary rounded btn-shadow-hover">
-            Logout
-          </button>
         </div>
         <div className="sideContainer">
-          <div className="beersContainer">{beers}</div>
+          <div className="beersContainer">{sideItems}</div>
         </div>
       </div>
     );
