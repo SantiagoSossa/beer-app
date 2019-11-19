@@ -7,6 +7,7 @@ import "firebase/database";
 import "firebase/auth";
 import Beer from "./Beer";
 import Leaderboard from '../Leaderboard';
+import { Link } from "react-router-dom";
 
 export default class Dashboard extends Component {
   state = {
@@ -48,6 +49,7 @@ export default class Dashboard extends Component {
     const firstLetter = userName.charAt(0);
     console.log(userName);
     let sideItems = [];
+    let title = '';
     if (this.state.beerList) {
       if(this.state.sideBar == 'mybeers'){
         sideItems = this.state.beerList.map((beer, i) => {
@@ -63,16 +65,20 @@ export default class Dashboard extends Component {
             />
           );
         });
+        title = 'My Beers';
       }
       if(this.state.sideBar == 'leaderboard'){
         sideItems = <Leaderboard/>;
+        title = 'Leaderboard';
       }
     }
     return (
       <div className="dashboard">
         <div className="sideBar">
           <div className="brand">
+          <Link to='/'>
             <img src="/images/logo/beer-logo-nobg.png" alt="" />
+          </Link> 
           </div>
           <div className="sideLinks">
             <div className="link">
@@ -93,7 +99,10 @@ export default class Dashboard extends Component {
           <AddBeer />
         </div>
         <div className="sideContainer">
-          <div className="beersContainer">{sideItems}</div>
+          <h1 className="title">{title}</h1>
+          <div className="beersContainer">
+            {sideItems}
+          </div>
         </div>
       </div>
     );

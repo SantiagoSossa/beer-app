@@ -1956,6 +1956,10 @@ form.pretty button {
     height: auto;
     float: right;
   }
+  .sideContainer .title {
+    margin-top: 50px;
+    margin-left: 20px;
+  }
   .sideContainer .beersContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3150,7 +3154,7 @@ a.noStyle:hover {
 }
 
 body {
-  background: #ffc444;
+  background: #B88A53;
 }
 
 span {

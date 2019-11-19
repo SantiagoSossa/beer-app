@@ -49,13 +49,17 @@
         width: 70%;
         height: auto;
         float: right;
-        
+        .title{
+          margin-top:50px;
+          margin-left:20px ;
+        }
         .beersContainer{
             display: flex;
             flex-flow: row;
             flex-wrap: wrap;
             align-content: stretch;
             margin-top: 80px;
+            
             .beer{
                 position: relative;
                 display: flex;
