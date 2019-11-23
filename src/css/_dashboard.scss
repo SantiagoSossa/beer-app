@@ -59,7 +59,20 @@
             flex-wrap: wrap;
             align-content: stretch;
             margin-top: 80px;
-            
+            background-color: $secondary-color;
+            .listOfRequests{
+              margin: 20px;
+              th{
+                padding: 20px;
+                font-size: 3vh;
+                color: #34404A;
+                background-color: $bg-color;
+              }
+              td{
+                padding: 20px;
+                background-color: #fdd86a;
+              }
+            }
             .beer{
                 position: relative;
                 display: flex;
@@ -160,12 +173,12 @@
                 margin-bottom: 20px;
             
                 label{
-                    display: block;
-                    color:  #6c757d;
+                  display: block;
+                  color:  #6c757d;
                 }
             
                 ::placeholder{
-                    color: #6c757d;
+                  color: #6c757d;
                 }
             
                 input.form-control{
@@ -250,6 +263,15 @@
     font-size: 3vh;
     color: #34404A;
   }
+}
+.fa-camera{
+  width: 100%;
+  text-align: center;
+  margin: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 .editModal {
   position: fixed;

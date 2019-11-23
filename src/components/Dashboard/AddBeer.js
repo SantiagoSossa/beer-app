@@ -35,10 +35,15 @@ export default class AddBeer extends Component {
         });
     }
 
+
+    getRandomId =  () => {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    };
+
     addBeerPicture = async (photo) => {
         const user = (firebase.auth().currentUser.uid).toString();
         const fileName = photo.files[0].name;
-        const fileDate = photo.files[0].lastModified.toString();
+        const fileDate = this.getRandomId();
         console.log("test", user+fileDate+fileName);
         var blob = photo.files[0].slice(0, photo.files[0].size, 'image/png'); 
         const newFile = new File([blob], user+fileDate+fileName , {type: 'image/png'});
@@ -94,7 +99,9 @@ export default class AddBeer extends Component {
                     <div className="form-group">
                     <label style={{"color": "white"}}>
                         Photo
-                        <input className="form-control" type="file" name="photo" id="" placeholder="Beer Photo"/>
+                        <br></br>
+                        <span><i class="fas fa-camera"></i></span>
+                        <input className="form-control" type="file" style={{display:'none'}} name="photo" id="" placeholder="Beer Photo"/>
                     </label>
                     </div>
                     <button type="submit" className="btn btn-block btn-primary rounded btn-shadow-hover">Add</button>

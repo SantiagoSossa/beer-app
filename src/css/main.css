@@ -1973,6 +1973,20 @@ form.pretty button {
     -ms-flex-line-pack: stretch;
         align-content: stretch;
     margin-top: 80px;
+    background-color: #ffc444;
+  }
+  .sideContainer .beersContainer .listOfRequests {
+    margin: 20px;
+  }
+  .sideContainer .beersContainer .listOfRequests th {
+    padding: 20px;
+    font-size: 3vh;
+    color: #34404A;
+    background-color: #B88A53;
+  }
+  .sideContainer .beersContainer .listOfRequests td {
+    padding: 20px;
+    background-color: #fdd86a;
   }
   .sideContainer .beersContainer .beer {
     position: relative;
@@ -2185,6 +2199,15 @@ form.pretty button {
   .modalConfirm h1 {
     font-size: 3vh;
     color: #34404A;
+  }
+  .fa-camera {
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
   }
   .editModal {
     position: fixed;

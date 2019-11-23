@@ -179,7 +179,9 @@ export default class Modal extends Component {
                             <div className="form-group-modal">
                             <label style={{"color": "black"}}>
                                 Photo
-                                <input className="form-control" type="file" name="photo" id="" placeholder="Beer Photo"/>
+                                <br></br>
+                                <span><i class="fas fa-camera"></i></span>
+                                <input className="form-control" type="file" style={{display:'none'}} name="photo" id="" placeholder="Beer Photo"/>
                             </label>
                             </div>
                             <div className="modalButtons">
