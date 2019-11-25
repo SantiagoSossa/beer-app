@@ -9,11 +9,14 @@ export default class AddBeer extends Component {
         name: '',
         country: '',
         alcohol: '',
-        photo: ''
+        photo: '',
+        rating: '',
+        loading: false
     }
 
     addNewBeer = async (e) => {
         e.preventDefault();
+        this.setState({loading:true});
         const { name, country, alcohol, ibu, rating, photo } = e.target.elements;
         this.addBeerInfo(name,country,alcohol,ibu,rating,await this.addBeerPicture(photo));
         name.value = '';
@@ -33,6 +36,7 @@ export default class AddBeer extends Component {
             rating: rating.value,
             photo: url
         });
+        this.setState({loading:false});
     }
 
 
@@ -104,7 +108,13 @@ export default class AddBeer extends Component {
                         <input className="form-control" type="file" style={{display:'none'}} name="photo" id="" placeholder="Beer Photo"/>
                     </label>
                     </div>
-                    <button type="submit" className="btn btn-block btn-primary rounded btn-shadow-hover">Add</button>
+                    <button 
+                    type="submit" 
+                    className="btn btn-block btn-primary rounded btn-shadow-hover"
+                    disabled={this.state.loading}
+                    >
+                        {this.state.loading ? <div class="lds-dual-ring"></div> : <>Add</>}
+                    </button>
                 </form>
             </div>
         )

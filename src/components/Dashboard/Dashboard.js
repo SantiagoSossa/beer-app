@@ -12,7 +12,8 @@ import { Link } from "react-router-dom";
 export default class Dashboard extends Component {
   state = {
     beerList: [],
-    sideBar: 'mybeers'
+    sideBar: 'mybeers',
+    loading: false
   };
 
   logout = () => {
@@ -21,10 +22,13 @@ export default class Dashboard extends Component {
   };
 
   componentWillMount = () => {
+    this.setState({loading: true});
+    console.log("1");
     firebase
       .database()
       .ref("beers/" + firebase.auth().currentUser.uid)
       .on("value", snapshot => {
+        console.log("2");
         if (snapshot.val() != null) {
           const keys = Object.keys(snapshot.val());
           const beer = Object.values(snapshot.val());
@@ -33,8 +37,11 @@ export default class Dashboard extends Component {
             beer[i].id = keys[i];
             pending.push(beer[i]);
           }
-          this.setState({ beerList: pending });
+          this.setState({ beerList: pending, loading:false });
           console.log("here", keys);
+        }
+        else{
+          this.setState({loading:false});
         }
       });
   };
@@ -72,6 +79,9 @@ export default class Dashboard extends Component {
         title = 'Leaderboard';
       }
     }
+    else{
+      sideItems=<h1>Loading</h1>;
+    }
     return (
       <div className="dashboard">
         <div className="sideBar">
@@ -101,7 +111,7 @@ export default class Dashboard extends Component {
         <div className="sideContainer">
           <h1 className="title">{title}</h1>
           <div className="beersContainer">
-            {sideItems}
+            {this.state.loading ? <div class="lds-dual-ring"></div> : sideItems}
           </div>
         </div>
       </div>
