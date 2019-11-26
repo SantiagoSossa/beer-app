@@ -2336,6 +2336,38 @@ form.pretty button {
               transform: rotate(360deg);
     }
   }
+  #stars .rating-group {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  #stars .rating__icon {
+    pointer-events: none;
+  }
+  #stars .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+  }
+  #stars .rating__input--none {
+    display: none;
+  }
+  #stars .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem;
+  }
+  #stars .rating__icon--star {
+    color: orange;
+  }
+  #stars .rating_input:checked ~ .ratinglabel .rating_icon--star {
+    color: #ddd;
+  }
+  #stars .rating-group:hover .rating_label .rating_icon--star {
+    color: orange;
+  }
+  #stars .rating_input:hover ~ .ratinglabel .rating_icon--star {
+    color: #ddd;
+  }
 }
 
 @media (min-width: 320px) {

@@ -365,6 +365,45 @@
     transform: rotate(360deg);
   }
 }
+#stars {
+  .rating-group {
+    display: inline-flex;
+  }
+  
+  .rating__icon {
+    pointer-events: none;
+  }
+  
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+  
+  .rating__input--none {
+    display: none
+  }
 
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem;
+  }
+  
+  .rating__icon--star {
+    color: orange;
+  }
+
+  .rating_input:checked ~ .ratinglabel .rating_icon--star {
+    color: #ddd;
+  }
+  
+  .rating-group:hover .rating_label .rating_icon--star {
+    color: orange;
+  }
+
+  .rating_input:hover ~ .ratinglabel .rating_icon--star {
+    color: #ddd;
+  }
+}
 }
   

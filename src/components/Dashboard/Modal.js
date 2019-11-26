@@ -7,11 +7,14 @@ import undefined from 'firebase/database';
 import officialBeerHandler from '../officialBeerHandler';
 import MessageModal from './MessageModal';
 
+import BeautyStars from 'beauty-stars';
+
 export default class Modal extends Component {
 
     state = {
         modalDeleteShow:false,
-        modalEditShow: false
+        modalEditShow: false,
+        value: this.props.beer.rating
     }
 
     handleModalOpen = () => {
@@ -32,8 +35,8 @@ export default class Modal extends Component {
 
     editBeer = async (e) => {
         e.preventDefault();
-        const { name, country, alcohol, ibu, rating, photo } = e.target.elements;
-        this.editBeerInfo(name,country,alcohol,ibu,rating,(typeof photo.files[0] == 'undefined')? this.props.beer.photo : await this.editBeerPicture(photo));
+        const { name, country, alcohol, ibu, photo } = e.target.elements;
+        this.editBeerInfo(name,country,alcohol,ibu,this.state.value,(typeof photo.files[0] == 'undefined')? this.props.beer.photo : await this.editBeerPicture(photo));
     }
 
     editBeerInfo = (name, country, alcohol, ibu, rating, url) => {
@@ -43,7 +46,7 @@ export default class Modal extends Component {
             country: country.value,
             alcohol: alcohol.value,
             ibu: ibu.value,
-            rating: rating.value,
+            rating: rating,
             photo: url
         });
     }
@@ -81,17 +84,9 @@ export default class Modal extends Component {
         const db =  firebase.database();
         await db.ref().child('beers/'+firebase.auth().currentUser.uid+"/"+this.props.id).remove();
         this.deletePhoto();
+        
     }
-
-    checkRating = (e) => {
-        if(this.props.beer.rating == e.target.value){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
+    
     render() {
         const beer ={
             name:this.props.beer.name,
@@ -158,23 +153,10 @@ export default class Modal extends Component {
                             </label>
                             </div>
                             <div className="form-group-modal">
-                            <label style={{"color": "black"}}>
-                            <div className="star-rating">
-                                Rating
-                                <div className="rate">
-                                    <input type="radio" id="star5" name="rating" value="5" checked={this.checkRating}/>
-                                    <label htmlFor="star5" title="text">5 stars</label>
-                                    <input type="radio" id="star4" name="rating" value="4" checked={this.checkRating}/>
-                                    <label htmlFor="star4" title="text">4 stars</label>
-                                    <input type="radio" id="star3" name="rating" value="3" checked={this.checkRating}/>
-                                    <label htmlFor="star3" title="text">3 stars</label>
-                                    <input type="radio" id="star2" name="rating" value="2" checked={this.checkRating}/>
-                                    <label htmlFor="star2" title="text">2 stars</label>
-                                    <input type="radio" id="star1" name="rating" value="1" checked={this.checkRating}/>
-                                    <label htmlFor="star1" title="text">1 star</label>
-                                </div>
-                            </div>
-                            </label>
+                                <BeautyStars
+                                    value={this.state.value}
+                                    onChange={value => this.setState({ value })}
+                                />
                             </div>
                             <div className="form-group-modal">
                             <label style={{"color": "black"}}>

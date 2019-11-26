@@ -23,7 +23,8 @@ export default class Beer extends Component {
             alcohol:this.props.alcohol,
             country:this.props.country,
             photo:this.props.photo,
-            IBU:this.props.IBU
+            IBU:this.props.IBU,
+            rating: this.props.rating
         }
         let modal = null;
         if(this.state.editBeer){

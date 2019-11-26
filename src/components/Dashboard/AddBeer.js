@@ -3,6 +3,8 @@ import firebase from 'firebase';
 import 'firebase/database'; 
 import "firebase/auth";
 
+import BeautyStars from 'beauty-stars';
+
 export default class AddBeer extends Component {
 
     state = {
@@ -10,15 +12,16 @@ export default class AddBeer extends Component {
         country: '',
         alcohol: '',
         photo: '',
-        rating: '',
+        value: 0,
         loading: false
     }
-
+    
     addNewBeer = async (e) => {
         e.preventDefault();
+        console.log("value",this.state.value);
         this.setState({loading:true});
-        const { name, country, alcohol, ibu, rating, photo } = e.target.elements;
-        this.addBeerInfo(name,country,alcohol,ibu,rating,await this.addBeerPicture(photo));
+        const { name, country, alcohol, ibu, photo } = e.target.elements;
+        this.addBeerInfo(name,country,alcohol,ibu,this.state.value,await this.addBeerPicture(photo));
         name.value = '';
         country.value = '';
         alcohol.value = '';
@@ -28,12 +31,13 @@ export default class AddBeer extends Component {
 
     addBeerInfo = (name, country, alcohol, ibu, rating, url) => {
         const db =  firebase.database();
+        console.log("getvalue",this.state.value);
         const beerReference = db.ref('beers/'+firebase.auth().currentUser.uid).push({
             name: name.value,
             country: country.value,
             alcohol: alcohol.value,
             ibu: ibu.value,
-            rating: rating.value,
+            rating: rating,
             photo: url
         });
         this.setState({loading:false});
@@ -87,18 +91,10 @@ export default class AddBeer extends Component {
                     </label>
                     </div>
                     <div className="form-group">
-                    <label style={{"color": "white"}}>
-                    <div className="star-rating">
-                        Rating
-                        <div className="rate">
-                            <input type="radio" id="star5" name="rating" value="5" /><label htmlFor="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label htmlFor="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label htmlFor="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label htmlFor="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rating" value="1" /><label htmlFor="star1" title="text">1 star</label>
-                        </div>
-                    </div>
-                    </label>
+                        <BeautyStars
+                            value={this.state.value}
+                            onChange={value => this.setState({ value })}
+                        />
                     </div>
                     <div className="form-group">
                     <label style={{"color": "white"}}>
