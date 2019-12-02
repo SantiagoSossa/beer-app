@@ -13,7 +13,8 @@ const LoginAdmin = ({ history }) => {
       const { email, password } = event.target.elements;
       if (
         email.value == "juankmilo_623@hotmail.com" ||
-        email.value == "santiagosossa95@gmail.com"
+        email.value == "santiagosossa95@gmail.com" ||
+        email.value == "admin@beerapp.com"
       ) {
         console.log("si");
         try {
