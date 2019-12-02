@@ -11,7 +11,10 @@ const LoginAdmin = ({ history }) => {
     async event => {
       event.preventDefault();
       const { email, password } = event.target.elements;
-      if (email.value == "juankmilo_623@hotmail.com") {
+      if (
+        email.value == "juankmilo_623@hotmail.com" ||
+        email.value == "santiagosossa95@gmail.com"
+      ) {
         console.log("si");
         try {
           await app
