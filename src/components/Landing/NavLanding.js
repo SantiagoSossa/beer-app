@@ -17,52 +17,53 @@ export default function NavLanding(props) {
   };
 
   return (
-    <nav className='' id='navLanding'>
+    <nav className="" id="navLanding">
       <div
-        className='modal'
+        className="modal"
         onClick={handleModal}
-        style={{ zIndex: "100" }}></div>
-      <div className='navLandingMobile'>
-        <div className='navLandingMobile__mainTitle'>
-          <i onClick={handleBars} className='fas fa-bars'></i>
-          <Link to='/' className='brandMainTitleMobile'>
-            Beer App
+        style={{ zIndex: "100" }}
+      ></div>
+      <div className="navLandingMobile">
+        <div className="navLandingMobile__mainTitle">
+          <i onClick={handleBars} className="fas fa-bars"></i>
+          <Link to="/" className="brandMainTitleMobile">
+            Beer Me App
           </Link>
         </div>
-        <div className='navLandingMobile__side'>
-          <div className='container'>
+        <div className="navLandingMobile__side">
+          <div className="container">
             <ul>
-              <Link className='brand' to='/'>
+              <Link className="brand" to="/">
                 <li>
-                  <img src='/images/logo/beer-logoOnly.png' alt='' />
+                  <img src="/images/logo/beer-logoOnly.png" alt="" />
                 </li>
               </Link>
-              <li className='ghostLi'></li>
-              <a href='#about'>
-                <li className=' '>About</li>
+              <li className="ghostLi"></li>
+              <a href="#about">
+                <li className=" ">About</li>
               </a>
-              <Link to='/dashboard'>
-                <li className='pill shadow'>Go to dashboard</li>
+              <Link to="/dashboard">
+                <li className="pill shadow">Go to dashboard</li>
               </Link>
             </ul>
           </div>
         </div>
       </div>
-      <div className='navLandingDesktop'>
-        <div className='container'>
+      <div className="navLandingDesktop">
+        <div className="container">
           <ul>
-            <Link className='brand' to='/'>
+            <Link className="brand" to="/">
               <li>
-                <img src='/images/logo/beer-logoOnly.png' alt='' />
-                <span>Beer App</span>
+                <img src="/images/logo/beer-logoOnly.png" alt="" />
+                <span>Beer Me App</span>
               </li>
             </Link>
-            <li className='ghostLi'></li>
-            <a href='#about'>
-              <li className=' '>About</li>
+            <li className="ghostLi"></li>
+            <a href="#about">
+              <li className=" ">About</li>
             </a>
-            <Link to='/dashboard'>
-              <li className='pill shadow'>Go to dashboard</li>
+            <Link to="/dashboard">
+              <li className="pill shadow">Go to dashboard</li>
             </Link>
           </ul>
         </div>
