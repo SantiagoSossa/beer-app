@@ -80,11 +80,10 @@ export default class Modal extends Component {
     }
 
     deleteBeer = async () =>{
-        console.log("borrar", this.props.id)
+        console.log("borrar", this.props.id);
+        this.deletePhoto();
         const db =  firebase.database();
         await db.ref().child('beers/'+firebase.auth().currentUser.uid+"/"+this.props.id).remove();
-        this.deletePhoto();
-        
     }
     
     render() {

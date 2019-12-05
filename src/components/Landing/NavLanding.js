@@ -35,7 +35,7 @@ export default function NavLanding(props) {
             <ul>
               <Link className="brand" to="/">
                 <li>
-                  <img src="/images/logo/beer-logoOnly.png" alt="" />
+                  <img src="/images/logo/logo-prototypes/5.png" alt="" />
                 </li>
               </Link>
               <li className="ghostLi"></li>
@@ -54,7 +54,7 @@ export default function NavLanding(props) {
           <ul>
             <Link className="brand" to="/">
               <li>
-                <img src="/images/logo/beer-logoOnly.png" alt="" />
+                <img src="/images/logo/logo-prototypes/5.png" alt="" />
                 <span>Beer Me App</span>
               </li>
             </Link>

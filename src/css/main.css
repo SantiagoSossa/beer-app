@@ -1154,7 +1154,7 @@ form.pretty button {
   .navLandingMobile .navLandingMobile__mainTitle .brandMainTitleMobile {
     text-decoration: none;
     font-size: 4vh;
-    font-weight: bold;
+    font-family: "Berkshire Swash", cursive;
   }
   .navLandingMobile .navLandingMobile__side {
     position: fixed;
@@ -1499,12 +1499,14 @@ form.pretty button {
     padding: 7px;
   }
   .navLandingDesktop .brand span {
-    font-size: 4vh;
+    font-size: 3vh;
     position: absolute;
     top: -40%;
     -webkit-transform: translateX(34%);
             transform: translateX(34%);
     width: 200px;
+    font-weight: normal;
+    font-family: "Berkshire Swash", cursive;
   }
   .navLandingDesktop li {
     list-style: none;

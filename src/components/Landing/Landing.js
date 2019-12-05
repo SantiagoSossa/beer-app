@@ -128,9 +128,7 @@ export default class Landing extends Component {
                     Find the beer <br /> just for <br /> you
                   </div>
                   <div className="text text-medium">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Rerum, repellat nihil laudantium fuga animi quibusdam quasi
-                    placeat nostrum totam veritatis.
+                    Add the information of your favorite beers, give them a rating and then save them in your personal beers dashboard.
                   </div>
                   <Link to="/signup">
                     <button className="btn btn-big btn-primary btn-rounded btn-shadow-hover">
