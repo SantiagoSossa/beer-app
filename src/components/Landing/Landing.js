@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import findRandomBeer from "../findRandomBeer";
 import GetFlag from "../GetFlag";
+import app from "../Backend/Base";
 
 //Components
 import NavLanding from "./NavLanding";
@@ -15,30 +16,44 @@ export default class Landing extends Component {
   };
 
   findBeer = () => {
-    const randomBeer = findRandomBeer();
+    app
+      .database()
+      .ref("officialBeers/")
+      .once("value", snapshot => {
+        if (snapshot.val() != null) {
+          const keys = Object.keys(snapshot.val());
+          const beers = Object.values(Object.values(snapshot.val()));
+          const beersAndKeys = [];
+          for (let i = 0; i < beers.length; i++) {
+            beers[i].id = keys[i];
+            beersAndKeys.push(beers[i]);
+          }
+          const randomBeer =
+            beersAndKeys[Math.floor(Math.random() * beersAndKeys.length)];
+          this.setState({
+            currentBeer: {
+              id: randomBeer.id,
+              name: randomBeer.name,
+              image: randomBeer.photo,
+              country: randomBeer.country,
+              alcoholRate: randomBeer.alcohol,
+              ibu: randomBeer.IBU,
+              rating: randomBeer.rating
+            },
+            currentBeerImage: randomBeer.photo
+          });
 
-    this.setState({
-      currentBeer: {
-        id: randomBeer.id,
-        name: randomBeer.name,
-        image: randomBeer.image,
-        country: randomBeer.country,
-        alcoholRate: randomBeer.alcoholRate,
-        ibu: randomBeer.ibu,
-        rating: randomBeer.rating
-      },
-      currentBeerImage: randomBeer.image
-    });
+          const image = document.querySelector(".currentBeerImageLanding");
+          const imageShadow = document.querySelector(
+            ".currentBeerImageLandingShadow"
+          );
+          const landingCardInfo = document.querySelector("#landingCardInfo");
 
-    const image = document.querySelector(".currentBeerImageLanding");
-    const imageShadow = document.querySelector(
-      ".currentBeerImageLandingShadow"
-    );
-    const landingCardInfo = document.querySelector("#landingCardInfo");
-
-    image.style.transform = "translateX(-60%)";
-    imageShadow.style.transform = "translate(-60%,-10px) rotate(180deg)";
-    landingCardInfo.style.opacity = "1";
+          image.style.transform = "translateX(-60%)";
+          imageShadow.style.transform = "translate(-60%,-10px) rotate(180deg)";
+          landingCardInfo.style.opacity = "1";
+        }
+      });
   };
 
   render() {
@@ -147,7 +162,8 @@ export default class Landing extends Component {
                     <Link
                       to="/signup"
                       style={{ color: "white" }}
-                      className="noStyle">
+                      className="noStyle"
+                    >
                       Create your account
                     </Link>
                   </p>
