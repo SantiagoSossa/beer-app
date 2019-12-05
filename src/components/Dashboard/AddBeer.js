@@ -91,10 +91,13 @@ export default class AddBeer extends Component {
                     </label>
                     </div>
                     <div className="form-group">
+                    <label style={{"color": "white"}}>
+                        Rating
                         <BeautyStars
                             value={this.state.value}
                             onChange={value => this.setState({ value })}
                         />
+                        </label>
                     </div>
                     <div className="form-group">
                     <label style={{"color": "white"}}>

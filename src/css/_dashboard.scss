@@ -1,4 +1,425 @@
+@include mobile {
+  .dashboard{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    background: $secondary-color;
+}
+.sideBar{
+  display: flex;
+  flex-flow: row;
+  z-index: 100;
+    width: 100%;
+    height: 80px;
+    background-color: #B88A53;
+    .brand {
+      padding: 20px;
+      width: 5.5rem;
+      background-color: rgb(97, 86, 73);
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .sideLinks{
+      display: flex;
+      flex-flow: row;
+      span{
+        font-size: 2.5rem;
+        border: 5px solid white;
+        margin-right: 5px;
+      }
+      .link{
+        padding: 10%;
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin: 10px 0;
+        cursor: pointer;
+        i{
+          font-size: 2.5rem;
+          height: auto;
+        }
+      }
+    }
+}
+.sideContainer{
+    display: block;
+    width: 100%;
+    height: auto;
+    float: right;
+    background: $secondary-color;
+    .title{
+      margin-top:50px;
+      margin-left:20px ;
+    }
+    .beersContainer{
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        align-content: stretch;
+        margin-top: 80px;
+        background-color: $secondary-color;
+        .listOfRequests{
+          margin: 20px;
+          th{
+            padding: 20px;
+            font-size: 3vh;
+            color: #34404A;
+            background-color: $bg-color;
+          }
+          td{
+            padding: 20px;
+            background-color: #fdd86a;
+          }
+        }
+        .beer{
+            position: relative;
+            display: flex;
+            flex-flow: row;
+            // justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            margin: 20px;
+            width: 90%;
+            height: 180px;
+            box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            .beerPhoto{
+                margin: 20px;
+                background-color: #ccc;
+                box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+                width: 40%;
+                height: 80%;
+                border-radius: 5%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .beerSide{
+                margin: 10px;
+                height: 80%;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                .beerTitle{
+                    h1{
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .fa-ellipsis-v{
+              cursor: pointer;
+              position: absolute;
+              right: 10px;
+              bottom: 10px;
+              font-size: 24px;
+            }
+        }          
+    }
+}
+.sideInfo{
+  display: block;
+    width: 100%;
+    background: $bg-color-dark;
+    // position: fixed;
+    padding:2% 2% 0 2%;
+    height: auto;
+    box-shadow: 0 10px 10px 0px rgba(0,0,0,0.1);
+
+    form {
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin-bottom: 30px;
+        background: lighten($bg-color-dark,5%);
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+        padding: 20px;
+        @include border-radius;
+
+        .rating{
+            border: none;
+        }
+
+        label {
+            color:white
+        }
+    }
+
+    .userInfo{
+        color: $link-color;
+        width: 100%;
+        text-align: center;
+        background: white;
+        border-radius: 200px;
+        width: 10vh;
+        height: 10vh;
+        overflow: hidden;
+        margin: 30px auto;
+        text-align: center;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+        .userName {
+            font-weight: bold;
+            font-size: 8vh;
+        }
+    }
+    .addBeer{
+        display: flex;
+        flex-flow: column;
+        .form-group{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        
+            label{
+              display: block;
+              color:  #6c757d;
+            }
+        
+            ::placeholder{
+              color: #6c757d;
+            }
+        
+            input.form-control{
+                margin-top:10px;
+                display: block;
+                width: 100%;
+                padding: 10px ;
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                @include transition;
+        
+                &:focus{
+                    box-shadow: 0 0 0px 3px #bfdeff;
+                    border:1px solid #80bdff;
+                }
+            }
+        }
+        
+    }
+}
+
+.rate {
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.backdrop{
+width: 100%;
+height: 100%;
+position: fixed;
+z-index: 100;
+left: 0;
+top: 0;
+background-color: rgba(0,0,0,0.5);
+}
+.modalConfirm{
+position: fixed;
+z-index: 500;
+width: 90%;
+height: auto;
+background-color: white;
+padding: 25px;
+border-radius: 5px;
+/* padding: 30px; */
+left: 5%;
+top: 25%;
+box-sizing: border-box;
+transition: all 0.3s ease-out;
+font-size: 1rem;
+box-shadow: 0px 0px 10px 1000px rgba(0, 0, 0,0.15);
+h1{
+font-size: 3vh;
+color: #34404A;
+}
+}
+.fa-camera{
+width: 100%;
+text-align: center;
+margin: 5px;
+font-size: 2rem;
+cursor: pointer;
+border: 1px solid gray;
+border-radius: 5px;
+}
+.editModal {
+position: fixed;
+z-index: 500;
+width: 90%;
+height: 90%;
+background-color: white;
+padding: 25px;
+border-radius: 5px;
+/* padding: 30px; */
+left: 5%;
+top: 5%;
+box-sizing: border-box;
+transition: all 0.3s ease-out;
+font-size: 1rem;
+h1{
+font-size: 3vh;
+color: #34404A;
+}
+.modalBody{
+display: flex;
+flex-flow: column;
+.btn{
+  margin: 10px 15px;
+}
+.modalLeft{
+  display: flex;
+  flex-flow: row;
+  // justify-content: space-between;
+  margin-top: 10px;
+  button{
+    place-self: flex-end;
+    height: 50px;
+    width: 70%;
+  }
+.modalPhoto{
+  width: 80%;
+  // margin: 0 25%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0,0.15);
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+}
+.modalInfo{
+  width: 100%;
+  height: 100%;
+  .form-group-modal {
+    margin-top: 8px;
+    label {
+      display: block;
+      color: #212529;
+    }
   
+    ::placeholder {
+      color: #6c757d;
+    }
+  
+    input.form-control {
+      margin-top: 8px;
+      display: block;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      @include transition;
+  
+      &:focus {
+        box-shadow: 0 0 0px 3px #bfdeff;
+        border: 1px solid #80bdff;
+      }
+    }
+  }
+  .modalButtons{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+}
+}
+}
+.lds-dual-ring {
+display: inline-block;
+width: 80px;
+height: 80px;
+}
+.lds-dual-ring:after {
+content: " ";
+display: block;
+width: 64px;
+height: 64px;
+margin: 8px;
+border-radius: 50%;
+border: 6px solid #fff;
+border-color: #fff transparent #fff transparent;
+animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+#stars {
+.rating-group {
+display: inline-flex;
+}
+
+.rating__icon {
+pointer-events: none;
+}
+
+.rating__input {
+position: absolute !important;
+left: -9999px !important;
+}
+
+.rating__input--none {
+display: none
+}
+
+.rating__label {
+cursor: pointer;
+padding: 0 0.1em;
+font-size: 2rem;
+}
+
+.rating__icon--star {
+color: orange;
+}
+
+.rating_input:checked ~ .ratinglabel .rating_icon--star {
+color: #ddd;
+}
+
+.rating-group:hover .rating_label .rating_icon--star {
+color: orange;
+}
+
+.rating_input:hover ~ .ratinglabel .rating_icon--star {
+color: #ddd;
+}
+}
+}
 @include desktop {
     .dashboard{
         height: 100vh;
@@ -7,6 +428,8 @@
         background: $secondary-color;
     }
     .sideBar{
+      display: flex;
+      flex-flow: column;
       position: fixed;
         width: 5%;
         height: 100%;
@@ -49,6 +472,7 @@
         width: 70%;
         height: auto;
         float: right;
+        background: $secondary-color;
         .title{
           margin-top:50px;
           margin-left:20px ;
@@ -294,15 +718,27 @@
   .modalBody{
     display: flex;
     flex-flow: row;
-    .modalPhoto{
-      width: 40%;
-      height: 100%;
-      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0,0.15);
+    .btn{
+      margin: 10px 15px;
+    }
+    .modalLeft{
+      display: flex;
+      flex-flow: column;
       margin-right: 30px;
       margin-top: 10px;
+    .modalPhoto{
+      width: 300px;
+      margin: 0;
+      height: auto;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0,0.15);
+     
+      
       img{
         width: 100%;
       }
+    }
+    
     }
     .modalInfo{
       width: 60%;

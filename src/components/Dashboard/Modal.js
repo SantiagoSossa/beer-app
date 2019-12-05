@@ -121,9 +121,12 @@ export default class Modal extends Component {
             <div className="editModal">
                 <h1>Edit Beer</h1>
                 <div className="modalBody">
+                    <div className="modalLeft">
                     <div className="modalPhoto">
                         <img src={this.props.beer.photo} alt="Beer Photo"/>
-                        <button className="btn btn-block btn-primary rounded btn-shadow-hover" 
+                        
+                    </div>
+                    <button className="btn btn-block btn-primary rounded btn-shadow-hover" 
                                     onClick={()=>{officialBeerHandler.request(beer)}}>Request this beer</button>
                     </div>
                     <div className="modalInfo">
@@ -153,10 +156,14 @@ export default class Modal extends Component {
                             </label>
                             </div>
                             <div className="form-group-modal">
+                            <label style={{"color": "black"}}>
+                                Rating
                                 <BeautyStars
                                     value={this.state.value}
                                     onChange={value => this.setState({ value })}
+                                    size="28px"
                                 />
+                            </label>
                             </div>
                             <div className="form-group-modal">
                             <label style={{"color": "black"}}>
