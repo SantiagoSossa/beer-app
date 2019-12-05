@@ -1,7 +1,6 @@
 //Dependencies
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import findRandomBeer from "../findRandomBeer";
 import GetFlag from "../GetFlag";
 import app from "../Backend/Base";
 
